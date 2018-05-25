@@ -1,0 +1,59 @@
+%% ------------------------------------------------------------------------- %%
+\chapter{Conclusions}
+\label{cap:conclusions}
+
+% \epigraph{
+% Let the music in tonight\\
+% Just turn on the music\\
+% Let the music of your life\\
+% Give life back to music}
+% {Daft Punk}
+
+% contribuições para a ciência
+
+% citar fog e edge computing?!
+
+Mobile Music is a growing field that can still be considered in its initial stages of experimentation.
+Mobile technologies are improving and should continue to do so as mobile computing remains the focus of the market.
+Musicians may take advantage of these novelties within their compositional processes, and will benefit the most if they become aware of the constraints inherent to these technologies.
+This work thus proposed to evaluate these technologies and present both quantitative/qualitative data as well as applications as references for those who want to explore mobile music possibilities and experiment with appealing solutions for large scale user interaction, collaboration, and cooperation. 
+
+Delay between messages is an important parameter which was evaluated in the experiments here presented, with reasonable results that reveal the dependence of the statistics on the delay.
+Message loss may have occurred in our evaluations due to overhead on the network buffers:
+in the event that at least two packets are grouped by a network buffer before being sent, it is possible to have more than 10 messages per second even when using 150~ms delays between packets, which would be a problem for Cloud Services such as Pusher, but would work flawlessly for alternatives such as PubNub or Unicast.
+
+When using Cloud Services it is possible that paid plans would offer different clusters that could be selected to optimize routes between performers and users of a mobile music application.
+Although clusters are available around the world for some Cloud Services, there are occasions when it may be necessary to try a different cloud service for better cluster localization and routing.
+
+Results obtained suggest that the mobile music community may use cloud services as a new mode of intercommunication in music applications, an alternative that facilitates implementation and improves scalabity, overcoming technological constraints faced by previous mobile music experiments restricted to small groups of participants.
+The delay and reliability of the service has proven to be suitable for present technologically-demanding applications, and we may expect improvements in a near future broadnening the range of possible applications.
+Push-notifications help users to send and receive data from any part of the world and control the final sound from their own mobile devices, using other users' inputs to influence their music creation in a collaborative way.
+In this way, many musical works formerly conceived for local networks might now be extended to cloud-based services.
+
+The evaluations using the academic network provided insights into many challenges and difficulties that may be faced by those who plan to use it.
+The initial configuration of the network and the requests for changing settings usually depend on many agents and may take from a few weeks to months or even years (e.g., in the cases of Unicast and Multicast, respectively).
+Although the throughput is much better in these cases than using Cloud Services, the burden of the network setup may discourage all but the most tenacious mobile musicians.
+Network services such as IPv6 and Multicast were found to be still unstable within the academic network, despite their great theoretical advantages, and Multicast could not even be adequately tested, due to years of recurring problems with network settings over the full network path, inbound and outbound.
+
+The applications developed during this research were heavily used and are still under constant development and improvement.
+Users around the world are still requesting new features, specially in the case of Sensors2PD, Sensors2OSC, SuperCopair, and Crowd in C[loud], which can be taken to mean that these applications have continued to attract some attention and interest even though their original performances and/or developing scenarios are long gone.
+Their code will remain open source in order to allow users to learn from these technologies and developers to collaborate and improve them, participating in the source code projects as members, which is an important aspect of the free open source software community.
+
+During the development of this research, many papers were published in order to help disseminate its results.
+A list of international papers related to this thesis is given below, and the full content of these papers can be found in the Appendix.
+
+\begin{itemize}
+\item \cite{deCarvalhoJunior2013fftbenchmark}
+\item \cite{deCarvalhoJunior2013touches}
+\item \cite{deCarvalhoJunior2014sensors2pd}
+\item \cite{Bandeira2014notes}
+\item \cite{deCarvalhoJunior2015indoor}
+\item \cite{deCarvalhoJunior2015sensors2osc}
+\item \cite{deCarvalhoJunior2015supercopair}
+\item \cite{deCarvalhoJunior2015cooperative}
+\item \cite{Lee2016crowd}
+\item \cite{deCarvalhoJunior2016understanding}
+\end{itemize}
+
+
+

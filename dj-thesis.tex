@@ -1,0 +1,526 @@
+% Arquivo LaTeX de exemplo de dissertação/tese a ser apresentados à CPG do IME-USP
+% 
+% Versão 5: Sex Mar  9 18:05:40 BRT 2012
+%
+% Criação: Jesús P. Mena-Chalco
+% Revisão: Fabio Kon e Paulo Feofiloff
+%  
+% Obs: Leia previamente o texto do arquivo README.txt
+
+\documentclass[11pt,twoside,a4paper]{book}
+
+% ---------------------------------------------------------------------------- %
+% Pacotes
+\usepackage[T1]{fontenc}
+
+%\usepackage[brazil,greek,english]{babel}
+%\usepackage[brazil]{babel}
+\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[LGRx, T1]{fontenc}
+%\usepackage{textcomp}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[brazil]{babel}
+%\usepackage[latin1]{inputenc}
+
+\usepackage[pdftex]{graphicx}           % usamos arquivos pdf/png como figuras
+\usepackage{setspace}                   % espaçamento flexível
+\usepackage{indentfirst}                % indentação do primeiro parágrafo
+\usepackage{makeidx}                    % índice remissivo
+\usepackage[nottoc]{tocbibind}          % acrescentamos a bibliografia/indice/conteudo no Table of Contents
+\usepackage{courier}                    % usa o Adobe Courier no lugar de Computer Modern Typewriter
+\usepackage{type1cm}                    % fontes realmente escaláveis
+\usepackage{listings}                   % para formatar código-fonte (ex. em Java)
+\usepackage{titletoc}
+%\usepackage[bf,small,compact]{titlesec} % cabeçalhos dos títulos: menores e compactos
+\usepackage[fixlanguage]{babelbib}
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
+%\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{hyperref} % links em preto
+\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true]{hyperref} % links coloridos
+\usepackage[all]{hypcap}                    % soluciona o problema com o hyperref e capitulos
+\usepackage[round,sort,nonamebreak]{natbib} % citação bibliográfica textual(plainnat-ime.bst)
+\bibpunct{(}{)}{;}{a}{\hspace{-0.7ex},}{,} % estilo de citação. Veja alguns exemplos em http://merkel.zoneo.net/Latex/natbib.php
+
+\fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
+
+% ---------------------------------------------------------------------------- %
+% Cabeçalhos similares ao TAOCP de Donald E. Knuth
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}
+\renewcommand{\headrulewidth}{0pt}
+
+% ---------------------------------------------------------------------------- %
+\graphicspath{{./images/}}             % caminho das figuras (recomendável)
+\frenchspacing                          % arruma o espaço: id est (i.e.) e exempli gratia (e.g.) 
+\urlstyle{same}                         % URL com o mesmo estilo do texto e não mono-spaced
+\makeindex                              % para o índice remissivo
+\raggedbottom                           % para não permitir espaços extra no texto
+\fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
+\cleardoublepage
+\normalsize
+
+% ---------------------------------------------------------------------------- %
+% Opções de listing usados para o código fonte
+% Ref: http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+\lstset{ %
+	language=Java,                  % choose the language of the code
+	basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+	numbers=left,                   % where to put the line-numbers
+	numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+	stepnumber=1,                   % the step between two line-numbers. If it's 1 each line will be numbered
+	numbersep=5pt,                  % how far the line-numbers are from the code
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	frame=single,	                % adds a frame around the code
+	framerule=0.6pt,
+	tabsize=2,	                    % sets default tabsize to 2 spaces
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	escapeinside={\%*}{*)},         % if you want to add a comment within your code
+	backgroundcolor=\color[rgb]{1.0,1.0,1.0}, % choose the background color.
+	rulecolor=\color[rgb]{0.8,0.8,0.8},
+	extendedchars=true,
+	xleftmargin=10pt,
+	xrightmargin=10pt,
+	framexleftmargin=10pt,
+	framexrightmargin=10pt
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% dj
+
+\usepackage{nomencl}
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{changepage}
+\usepackage{pdfpages} % Para importar PDFs
+\usepackage{booktabs} % Para tabela de sensores
+\usepackage{siunitx} % Para tabela do N95
+\usepackage{longtable} % Para tabelas ocuparem mais de uma página
+\usepackage{usebib} % Para citar titulo de artigo no texto
+\usepackage[]{epigraph}
+\bibinput{thesisbib} 
+
+\makenomenclature
+\renewcommand{\nomname}{Nomenclatures}
+
+\setlength{\headheight}{25pt}% corrige erro do fancyhdr
+
+\newcommand{\paragraphdesc}[1]{
+	% comentar a linha abaixo para ocultar descrição de parágrafos
+%	\addcontentsline{toc}{subsection}{- #1} 
+}
+
+\usepackage{listings}
+\lstloadlanguages{Ruby} % codigo usado em Touches On The Line
+\usepackage{fancyvrb}
+
+\usepackage{subcaption}
+
+
+\usepackage{tablefootnote}
+
+
+\usepackage{booktabs}  % nice looking tables
+\usepackage{siunitx}
+% \usepackage{fixltx2e}
+
+\usepackage[section]{placeins}
+
+
+%%%%%%%%%%%%%%%%%% dj-end
+
+
+
+
+
+% ---------------------------------------------------------------------------- %
+% Corpo do texto
+\begin{document}
+	\frontmatter 
+	% cabeçalho para as páginas das seções anteriores ao capítulo 1 (frontmatter)
+	\fancyhead[RO]{{\footnotesize\rightmark}\hspace{2em}\thepage}
+	\setcounter{tocdepth}{2}
+	\fancyhead[LE]{\thepage\hspace{2em}\footnotesize{\leftmark}}
+	\fancyhead[RE,LO]{}
+	\fancyhead[RO]{{\footnotesize\rightmark}\hspace{2em}\thepage}
+	
+	\onehalfspacing  % espaçamento
+	
+	% ---------------------------------------------------------------------------- %
+	% CAPA
+	% Nota: O título para as dissertações/teses do IME-USP devem caber em um 
+	% orifício de 10,7cm de largura x 6,0cm de altura que há na capa fornecida pela SPG.
+	% \thispagestyle{empty}
+	% \begin{center}
+	%     \vspace*{2.3cm}
+	%     \textbf{\Large{Mobile Technologies for Music Interaction}}\\
+	
+	%     \vspace*{1.2cm}
+	%     \Large{Antonio Deusany de Carvalho Junior}
+	
+	%     \vskip 2cm
+	%     \textsc{
+	%     Tese apresentada\\[-0.25cm] 
+	%     ao\\[-0.25cm]
+	%     Instituto de Matemática e Estatística\\[-0.25cm]
+	%     da\\[-0.25cm]
+	%     Universidade de São Paulo\\[-0.25cm]
+	%     para\\[-0.25cm]
+	%     obtenção do título\\[-0.25cm]
+	%     de\\[-0.25cm]
+	%     Doutor em Ciências}
+	
+	%     \vskip 1.5cm
+	%     Programa: Pós-Graduação em Ciência da Computação\\
+	%     Orientador: Prof. Dr. Marcelo Gomes de Queiroz
+	
+	%    	\vskip 1cm
+	%     \normalsize{Durante o desenvolvimento deste trabalho o autor recebeu auxílio
+	%     financeiro da CAPES}
+	
+	%     \vskip 0.5cm
+	%     \normalsize{São Paulo, fevereiro de 2017}
+	% \end{center}
+	
+	
+	%--- English version ---%
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace*{2.3cm}
+		\textbf{\Large{Mobile Technologies for Music Interaction}}\\
+		
+		\vspace*{1.2cm}
+		\Large{Antonio Deusany de Carvalho Junior}
+		
+		\vskip 2cm
+		%%MQZ: Esse modelo é oficial? Parece bizarro essa alternância entre português e inglês. Além disso tenho quase certeza que o título seria "Doctor of Science" e não "Science Doctor".
+		\textsc{
+			Thesis presented\\[-0.25cm] 
+			to\\[-0.25cm]
+			Instituto de Matemática e Estatística\\[-0.25cm]
+			from\\[-0.25cm]
+			Universidade de São Paulo\\[-0.25cm]
+            in\\[-0.25cm]
+            partial fulfillment\\[-0.25cm]
+			for the\\[-0.25cm]
+			requirements of the degree\\[-0.25cm]
+			of\\[-0.25cm]
+			Doctor of Science}
+		
+		\vskip 1.5cm
+		Program: Pós-Graduação em Ciência da Computação\\
+		Advisor: Prof. Dr. Marcelo Gomes de Queiroz
+		
+		\vskip 1cm
+		\normalsize{During this work, the author received scholarship from CAPES}
+		
+		\vskip 0.5cm
+		\normalsize{São Paulo, May 2017}
+	\end{center}
+	
+	% ---------------------------------------------------------------------------- %
+	% Página de rosto (SÓ PARA A VERSÃO DEPOSITADA - ANTES DA DEFESA)
+	% Resolução CoPGr 5890 (20/12/2010)
+	%
+	% IMPORTANTE:
+	%   Coloque um '%' em todas as linhas
+	%   desta página antes de compilar a versão
+	%   final, corrigida, do trabalho
+	%
+	%
+	% \newpage
+	% \thispagestyle{empty}
+	%     \begin{center}
+	%         \vspace*{2.3 cm}
+	%         \textbf{\Large{Mobile Technologies for Music Interaction}}\\
+	%         \vspace*{2 cm}
+	%     \end{center}
+	
+	%     \vskip 2cm
+	
+	%     \begin{flushright}
+	% 	Esta é a versão original da tese elaborada pelo\\
+	% 	candidato Antonio Deusany de Carvalho Junior, tal como \\
+	% 	submetida à Comissão Julgadora.
+	%     \end{flushright}
+	
+	% \pagebreak
+	%--- English version ---%
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace*{2.3 cm}
+		\textbf{\Large{Mobile Technologies for Music Interaction}}\\
+		\vspace*{2 cm}
+	\end{center}
+	
+	\vskip 2cm
+	
+	\begin{flushright}
+		This is the original version of the thesis written by\\
+		the candidate Antonio Deusany de Carvalho Junior\\
+		submitted to the Judging Committee. %%MQZ: reconfirmar (era Commission)
+	\end{flushright}
+	
+	\pagebreak
+	
+	
+	% ---------------------------------------------------------------------------- %
+	% Página de rosto (SÓ PARA A VERSÃO CORRIGIDA - APÓS DEFESA)
+	% Resolução CoPGr 5890 (20/12/2010)
+	%
+	% Nota: O título para as dissertações/teses do IME-USP devem caber em um 
+	% orifício de 10,7cm de largura x 6,0cm de altura que há na capa fornecida pela SPG.
+	%
+	% IMPORTANTE:
+	%   Coloque um '%' em todas as linhas desta
+	%   página antes de compilar a versão do trabalho que será entregue
+	%   à Comissão Julgadora antes da defesa
+	%
+	%
+	%\newpage
+	%\thispagestyle{empty}
+	%    \begin{center}
+	%        \vspace*{2.3 cm}
+	%        \textbf{\Large{Título do trabalho a ser apresentado à \\
+	%        CPG para a dissertação/tese}}\\
+	%        \vspace*{2 cm}
+	%    \end{center}
+	%
+	%    \vskip 2cm
+	%
+	%    \begin{flushright} 
+	%    Esta versão da dissertação/tese contém as correções e alterações sugeridas\\
+	%	pela Comissão Julgadora durante a defesa da versão original do trabalho,\\
+	%	realizada em 14/12/2010. Uma cópia da versão original está disponível no\\
+	%	Instituto de Matemática e Estatística da Universidade de São Paulo.
+	%
+	%    \vskip 2cm
+	%
+	%    \end{flushright}
+	%    \vskip 4.2cm
+	%
+	%    \begin{quote}
+	%    \noindent Comissão Julgadora:
+	%    
+	%    \begin{itemize}
+	%		\item Profª. Drª. Nome Completo (orientadora) - IME-USP [sem ponto final]
+	%		\item Prof. Dr. Nome Completo - IME-USP [sem ponto final]
+	%		\item Prof. Dr. Nome Completo - IMPA [sem ponto final]
+	%    \end{itemize}
+	%      
+	%    \end{quote}
+	%\pagebreak
+	
+	
+	\pagenumbering{roman}     % começamos a numerar 
+	
+	% ---------------------------------------------------------------------------- %
+	% Agradecimentos:
+	% Se o candidato não quer fazer agradecimentos, deve simplesmente eliminar esta página 
+	% \chapter*{Agradecimentos}
+	% Texto texto texto texto texto texto texto texto texto texto texto texto texto
+	% texto texto texto texto texto texto texto texto texto texto texto texto texto
+	% texto texto texto texto texto texto texto texto texto texto texto texto texto
+	% texto texto texto texto. Texto opcional.
+	
+	
+	% ---------------------------------------------------------------------------- %
+	
+	% ---------------------------------------------------------------------------- %
+	% Abstract
+	\chapter*{Abstract}
+	\noindent DE CARVALHO JUNIOR, A. D. \textbf{Mobile Technologies for Music Interaction}. 
+	2017. 160 p.
+	Thesis (Doctorate) - Instituto de Matemática e Estatística,
+	Universidade de São Paulo, São Paulo, 2017.
+	\\
+	
+	% Introduction
+	Mobile music applications are becoming commonplace around the world, and mobile devices are used as digital instruments everywhere.
+	Controlling, performing, or composing music in real time with these devices encourages collaboration and interaction, as telecommunication improvements allow many people to cooperate through local networks or the Internet.
+	In this context, the aim of this thesis is to evaluate mobile technologies that might be suitable for mobile musicians and their audiences while performing or composing.
+	% Objectives
+	Specifically, the main goal is to explore technologies for collaborative mobile music and to obtain quantitative and qualitative data regarding these technologies and their settings, so that composers might take full advantage of the available options for mobile applications.
+	% Methods
+	This evaluation focuses on message exchange using Multicast, Unicast, and Cloud Services, using academic networks as the main pathway.
+	With these services, messages are organized as packet streams, characterized by different sizes and time intervals.
+	Evaluation also includes the development of several applications that make use of these technologies running on Android devices and web browsers. 
+	These applications were used in actual performances, serving as both evaluation tools and experimental music instruments.
+	% Results and Discussion
+	The results were analyzed in terms of round trip time and data loss under very different configuration scenarios, demonstrating that although some obvious impediments cannot be circumvented (e.g. significant delays in international settings), it is possible to choose the specific technology and achieve interesting results under most music application scenarios.
+	I argue that although in theory Multicast appears to be the best technology to use by far, it is the most difficult to implement due to the burden of configuring every step of the network pathway.
+	On the other hand, Cloud Services are certainly slower than direct connections, but are the most compatible and easiest technology to set up, and are definitely suitable for many collaborative music experiences.
+	% Conclusions
+	To conclude, there is a discussion of how mobile music practitioners can take advantage of these results for composition and performance by considering specific technological advantages or drawbacks that are inherent to each technology and setting.
+	\\
+	
+	\noindent \textbf{Keywords:} mobile music, computer music, computer networks, cloud services.
+	
+	% Resumo
+	\chapter*{Resumo}
+	
+	\noindent DE CARVALHO JUNIOR, A. D. \textbf{Tecnologias Móveis para Interação Musical}. 
+	2017. 160 f.
+	Tese (Doutorado) - Instituto de Matemática e Estatística,
+	Universidade de São Paulo, São Paulo, 2017.
+	\\
+	
+	%Introduction
+	Aplicações de Música Móvel estão se tornando populares ao redor do mundo e dispositivos móveis estão sendo utilizados como instrumentos musicais em diversos lugares.
+	Controlar, apresentar ou compor música em tempo real com estes dispositivos estimula a colaboração e a interação, e os avanços nas telecomunicações permitem a um grande número de pessoas cooperar musicalmente através de redes locais ou da Internet.
+	Neste contexto, o objetivo desta tese é avaliar as tecnologias móveis que podem ser úteis para músicos e público na performance ou na composição.
+	% Objectives
+	De maneira mais específica, o objetivo principal é explorar as tecnologias para Música Móvel colaborativa e obter resultados quantitativos e qualitativos referentes a estas tecnologias e suas configurações, de modo que compositores possam usufruir de todas as vantagens das opções para aplicações móveis.
+	% Methods
+	Esta avaliação enfoca a troca de mensagens através de Multicast, Unicast e Serviços em Nuvem utilizando redes de computadores acadêmicas como principal caminho.
+	Através destes serviços as mensagens foram organizadas como fluxos de pacotes caracterizados por diversos tamanhos e intervalos entre envios.
+	A avaliação também inclui o desenvolvimento de diversas aplicações fazendo uso destas tecnologias para dispositivos Android e navegadores Web, que foram utilizados em performances reais, servindo tanto como ferramentas de avaliação quanto como instrumentos para música experimental.
+	% Results and Discussion
+	Os dados são analisados com relação ao tempo de ida-e-volta e perda de pacotes em diferentes configurações de cenário, demonstrando que apesar de alguns impedimentos óbvios não poderem ser contornados (como o longo atraso em configurações internacionais, por exemplo), é possível escolher tecnologias adequadamente e alcançar resultados interessantes em muitos cenários de aplicações musicais.
+	Argumenta-se que apesar de em teoria o Multicast se apresentar de longe como a melhor tecnologia para estes cenários, ele é o mais difícil de ser implementado devido à grande complexidade na configuração de cada parte da rede para seu uso.
+	Por outro lado, Serviços em Nuvem são certamente mais lentos, porém se apresentam como os mais compatíveis e fáceis de configurar, sendo definitivamente os mais adequados para muitas experiências de música colaborativa.
+	% Conclusions
+	Em conclusão, discute-se como profissionais de Música Móvel podem se aproveitar dos resultados apresentados, considerando as vantagens e desvantagens tecnológicas específicas que são inerentes a cada tecnologia ou configuração quando utilizada em performances e composições musicais.
+	\\
+	
+	\noindent \textbf{Palavras-chave:} música móvel, computação musical, redes de computadores, serviços de nuvens.
+	
+	% ---------------------------------------------------------------------------- %
+	% Sumário
+	\tableofcontents    % imprime o sumário
+	
+	% ---------------------------------------------------------------------------- %
+	\chapter{List of Abbreviations}
+	\begin{longtable}{ll}
+		AC1750		& TP-Link AC1750 Archer C7 Wireless Dual Band Gigabit Router\\
+        ADT         & Android Development Tools\\
+		bps         & Bits per second\\
+		CHI		    & ACM Conference on Human Factors in Computing Systems\\
+		CIDR        & Classless Inter-Domain Routing\\
+		Compmus		& Computer Music Research Group - IME --- USP\\
+		D686		& LG D686 G Pro Lite Dual\\
+		dBi         & Decibels Isotropic\\
+		DSP		    & Digital Sound Processing\\
+		ECA 	    & Escola de Comunicação e Artes --- USP\\	
+		IrDA        & Infrared Data Association\\
+		Gbps        & Gigabits per second\\
+		I2		    & Internet2\\ 
+		ICMC		& International Computer Music Conference\\
+		IEEE        & Institute of Electrical and Electronics Engineers\\
+		IEEE-SA     & IEEE Standards Association\\
+		IME		    & Instituto de Matemática e Estatística --- USP\\
+		ISM         & Industrial, scientific, and medical\\
+		kbps        & Kilobits per second\\
+		LAN         & Local Area Network\\
+		MANET       & Mobile Ad-hoc Network\\
+		MIS		    & \textit{Museu da Imagem e do Som de São Paulo} (São Paulo Museum of Image and Sound)\\ 
+		MobileHCI	& ACM International Conference on Human-Computer Interaction with Mobile Devices and Services\\
+		Mbps        & Megabits per second\\
+		MIDI        & Musical Instrument Digital Interface\\
+		MM          & Mobile Music\\
+		MoPhO		& Mobile Phone Orchestra (Stanford University)\\
+		MTU			& Maximum Transmission Unit\\
+		MVC         & Model View Controller\\
+		NFC         & Near Field Communication\\
+		NIME		& Conference of New Interfaces for Music Expression\\
+		NuSom		& Research Centre on Sonology - ECA --- USP\\
+		OSC		    & Open Sound Control\\
+		OTG         & USB On-The-Go\\
+		P2P         & Peer to peer\\
+		PDA		    & Personal digital assistant\\
+		RAD		    & Rapid Application Development\\
+		RNP		    & Rede Nacional de Ensino e Pesquisa (Brazilian National Research and Education Network)\\
+		RoR		    & Ruby on Rails\\
+		RTT		    & Round Trip Time\\
+		S3		    & Samsung GT-I9300 Galaxy SIII\\
+		SMC		    & Sound and Music Computing Conference\\
+		ssh		    & Secure Shell\\
+		UFPB	    & Universidade Federal da Paraíba\\
+		UMich	    & University of Michigan\\
+		USP         & Universidade de São Paulo\\
+		VLAN        & Virtual LAN\\
+		Z3		    & Sony D8533 (and D8503) Xperia Z3 Compact\\
+		
+		
+		%          DFT         & Transformada discreta de Fourier (\emph{Discrete Fourier Transform})\\
+	\end{longtable}
+	\printnomenclature
+	
+	
+	% ---------------------------------------------------------------------------- %
+	% \chapter{Lista de Símbolos}
+	% \begin{tabular}{ll}
+	%         $\omega$    & Frequência angular\\
+	%         $\psi$      & Função de análise \emph{wavelet}\\
+	%         $\Psi$      & Transformada de Fourier de $\psi$\\
+	% \end{tabular}
+	
+	% ---------------------------------------------------------------------------- %
+	% Listas de figuras e tabelas criadas automaticamente
+	\listoffigures            
+	\listoftables            
+	
+	% ---------------------------------------------------------------------------- %
+	% Capítulos do trabalho
+	\mainmatter
+	
+	% cabeçalho para as páginas de todos os capítulos
+	\fancyhead[RE,LO]{\thesection}
+	
+	\singlespacing              % espaçamento simples
+	%\onehalfspacing            % espaçamento um e meio
+% 	\doublespacing
+	
+	\input chapterIntro
+	\input chapterMusic
+ 	\input chapterNetworks
+    \input chapterResearch
+ 	\input chapterApplications
+ 	\input chapterEvaluations
+ 	\input chapterResults
+ 	\input chapterConclusion
+	
+	% cabeçalho para os apêndices
+	\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\appendixname\ \thechapter}} {\MakeUppercase{#1}} }
+	\fancyhead[RE,LO]{}
+	\appendix
+	
+	\include{appendices}
+	
+	% ---------------------------------------------------------------------------- %
+	% Bibliografia
+	\backmatter \singlespacing   % espaçamento simples
+	% \bibliographystyle{alpha-ime} % 
+	\bibliographystyle{plainnat-ime} % citação bibliográfica textual
+	% \bibliographystyle{plainnat} % citação bibliográfica textual
+	\bibliography{thesisbib}  % associado ao arquivo: 'bibliografia.bib'
+	
+	% ---------------------------------------------------------------------------- %
+	% Índice remissivo
+	% \index{TBP|see{periodicidade região codificante}}
+	% \index{DSP|see{processamento digital de sinais}}
+	% \index{STFT|see{transformada de Fourier de tempo reduzido}}
+	% \index{DFT|see{transformada discreta de Fourier}}
+	% \index{Fourier!transformada|see{transformada de Fourier}}
+	
+	% \printindex   % imprime o índice remissivo no documento 
+	
+\end{document}

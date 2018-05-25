@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:export-ydpi="90" inkscape:export-xdpi="90" inkscape:export-filename="C:\Users\tm.WEBWO\Downloads\sensors2osc.png" sodipodi:docname="sensors2.base.svg" inkscape:version="0.48.5 r10040"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="566px" height="557px"
+	 viewBox="-27.5 -21.5 566 557" enable-background="new -27.5 -21.5 566 557" xml:space="preserve">
+<sodipodi:namedview  showgrid="false" inkscape:cy="135.53088" inkscape:cx="548.56504" inkscape:zoom="0.70710678" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" id="base" inkscape:window-maximized="0" inkscape:window-y="200" inkscape:window-x="543" inkscape:window-height="751" inkscape:window-width="1332" inkscape:current-layer="layer1" inkscape:document-units="px" inkscape:pageshadow="2" inkscape:pageopacity="0.0">
+	</sodipodi:namedview>
+<path id="circle_outer" sodipodi:end="6.2831106" sodipodi:start="0" sodipodi:ry="261.44681" sodipodi:rx="253.7305" sodipodi:cy="268.70923" sodipodi:cx="259.17731" sodipodi:type="arc" inkscape:export-ydpi="90" inkscape:export-xdpi="90" fill="#A4C639" stroke="#000000" stroke-width="40" stroke-miterlimit="1" d="
+	M256,7.949c136.994,0,248.051,111.056,248.051,248.051c0,136.995-111.057,248.051-248.051,248.051
+	C119.005,504.051,7.949,392.995,7.949,256c0-136.987,111.045-248.041,248.032-248.051L256,256V7.949z"/>
+<path id="circle_inner" inkscape:label="#circle_inner" sodipodi:end="6.2831106" sodipodi:start="0" sodipodi:ry="261.44681" sodipodi:rx="253.7305" sodipodi:cy="268.70923" sodipodi:cx="259.17731" sodipodi:type="arc" inkscape:export-ydpi="90" inkscape:export-xdpi="90" fill="#A4C639" d="
+	M256.017,13.987c133.675,0,242.041,108.345,242.041,241.996S389.691,497.979,256.017,497.979S13.977,389.634,13.977,255.983
+	c0-133.644,108.354-241.986,242.022-241.996l0.018,241.996V13.987z"/>
+<path fill="none" d=""/>
+<path id="arrow_top" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M254.862,159.866"/>
+<path fill="none" d=""/>
+<path id="arrow_left" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M176.569,309.289"/>
+<path fill="none" d=""/>
+<path id="path3792-7_2_" inkscape:connector-curvature="0" d="M416.147,414.185l-68.448-95.704l114.144,28.561
+	C433.768,356.936,415.396,384.111,416.147,414.185z"/>
+<path id="path3792-7_3_" inkscape:connector-curvature="0" d="M297.311,41.912l-42.617,109.673L216.106,40.429
+	C239.756,58.506,272.555,59.002,297.311,41.912z"/>
+<path id="path3792-7_1_" inkscape:connector-curvature="0" d="M53.943,344.646l114.626-26.562l-70.11,94.494
+	C99.735,382.523,81.842,355.03,53.943,344.646z"/>
+<path id="arrow_right" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M336.201,308.484"/>
+<text transform="matrix(1 0 0 1 206.4019 303.3604)" font-family="'Arial-BoldMT'" font-size="159.5411">?</text>
+<rect x="244.5" y="-7.051" stroke="#000000" stroke-width="9" stroke-miterlimit="1" width="21.333" height="72.551"/>
+<rect x="433.143" y="347.438" transform="matrix(0.5761 -0.8173 0.8173 0.5761 -125.5169 525.3833)" stroke="#000000" stroke-width="9" stroke-miterlimit="1" width="21.333" height="72.55"/>
+<rect x="58.477" y="346.312" transform="matrix(-0.5647 -0.8253 0.8253 -0.5647 -207.5428 655.7137)" stroke="#000000" stroke-width="9" stroke-miterlimit="1" width="21.333" height="72.55"/>
+</svg>

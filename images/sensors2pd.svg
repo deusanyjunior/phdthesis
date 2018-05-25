@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:export-ydpi="90" inkscape:export-xdpi="90" inkscape:export-filename="/home/thomas/dev/android/sensors2pd.png" sodipodi:docname="sensors2pd.svg" inkscape:version="0.48.5 r10040"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="552px" height="559px"
+	 viewBox="-16.5 -15.5 552 559" enable-background="new -16.5 -15.5 552 559" xml:space="preserve">
+<path id="circle_outer" sodipodi:end="6.2831106" sodipodi:start="0" sodipodi:ry="261.44681" sodipodi:rx="253.7305" sodipodi:cy="268.70923" sodipodi:cx="259.17731" sodipodi:type="arc" inkscape:export-ydpi="90" inkscape:export-xdpi="90" fill="#A4C639" stroke="#000000" stroke-width="40" stroke-miterlimit="1" d="
+	M256.949,16C393.943,16,505,127.056,505,264.051c0,136.996-111.057,248.051-248.051,248.051
+	c-136.995,0-248.051-111.055-248.051-248.051C8.898,127.063,119.943,16.01,256.931,16l0.019,248.051V16z"/>
+<path id="circle_inner" inkscape:label="#circle_inner" sodipodi:end="6.2831106" sodipodi:start="0" sodipodi:ry="261.44681" sodipodi:rx="253.7305" sodipodi:cy="268.70923" sodipodi:cx="259.17731" sodipodi:type="arc" inkscape:export-ydpi="90" inkscape:export-xdpi="90" fill="#A4C639" d="
+	M256.966,22.038c133.675,0,242.041,108.345,242.041,241.996c0,133.652-108.366,241.998-242.041,241.998
+	S14.926,397.686,14.926,264.033c0-133.643,108.354-241.985,242.021-241.996l0.019,241.996V22.038z"/>
+<path id="path3792-7_2_" inkscape:connector-curvature="0" d="M417.097,422.236l-68.448-95.705l114.144,28.561
+	C434.717,364.986,416.346,392.162,417.097,422.236z"/>
+<path id="path3792-7_3_" inkscape:connector-curvature="0" d="M298.26,48.962l-42.617,109.673L217.055,47.48
+	C240.705,65.557,273.504,66.053,298.26,48.962z"/>
+<path id="path3792-7_1_" inkscape:connector-curvature="0" d="M54.893,352.697l114.626-26.561l-70.11,94.494
+	C100.685,390.574,82.791,363.082,54.893,352.697z"/>
+<rect x="245.449" y="1" stroke="#000000" stroke-width="9" stroke-miterlimit="1" width="21.333" height="72.551"/>
+<rect x="434.092" y="355.49" transform="matrix(0.5762 -0.8173 0.8173 0.5762 -131.6989 529.5565)" stroke="#000000" stroke-width="9" stroke-miterlimit="1" width="21.332" height="72.55"/>
+<rect x="59.426" y="354.364" transform="matrix(-0.5647 -0.8253 0.8253 -0.5647 -212.7023 669.0961)" stroke="#000000" stroke-width="9" stroke-miterlimit="1" width="21.333" height="72.55"/>
+<sodipodi:namedview  showgrid="false" inkscape:cy="245.3531" inkscape:cx="279.99519" inkscape:zoom="1" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" id="base" inkscape:window-maximized="0" inkscape:window-y="303" inkscape:window-x="543" inkscape:window-height="751" inkscape:window-width="1332" inkscape:current-layer="layer1" inkscape:document-units="px" inkscape:pageshadow="2" inkscape:pageopacity="0.0">
+	</sodipodi:namedview>
+<path fill="none" d=""/>
+<path fill="none" d=""/>
+<path fill="none" d=""/>
+<g>
+	<path id="arrow_top_1_" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M255.811,175.917"/>
+	<path id="arrow_left_1_" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M177.519,325.34"/>
+	<path id="arrow_right_1_" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M337.15,324.535"/>
+	<path id="arrow_top" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M254.862,167.866"/>
+	<path id="arrow_left" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M176.569,317.289"/>
+	<path id="arrow_right" sodipodi:nodetypes="cc" inkscape:connector-curvature="0" d="M336.201,316.484"/>
+	
+		<rect id="rect3016" x="151.545" y="188.545" fill="#FFFFFF" stroke="#000000" stroke-width="11.0911" width="208.908" height="114.91"/>
+	<text transform="matrix(1 0 0 1 183.625 262.25)" font-family="'Arial-BoldMT'" font-size="64">pd~</text>
+	
+		<rect id="rect3026" x="161.414" y="194.619" fill="#FFFFFF" stroke="#000000" stroke-width="11.1437" width="41.943" height="1.511"/>
+	
+		<rect id="rect3026-1" x="161.414" y="295.618" fill="#FFFFFF" stroke="#000000" stroke-width="11.1437" width="41.943" height="1.511"/>
+	
+		<rect id="rect3026-1-7" x="308.643" y="193.863" fill="#FFFFFF" stroke="#000000" stroke-width="11.1437" width="41.943" height="1.511"/>
+	
+		<rect id="rect3026-1-7-4" x="308.643" y="295.618" fill="#FFFFFF" stroke="#000000" stroke-width="11.1437" width="41.943" height="1.511"/>
+</g>
+</svg>

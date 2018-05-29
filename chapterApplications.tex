@@ -123,7 +123,7 @@ A discussion regarding this evaluation was published as a paper at the 14th Bras
 
 The multi-thread FFT had worst results than the traditional FFT due to Android constraints regarding the parallelism.
 During this evaluation we decided to create threads using native thread methods available for Java language and these threads run in the same thread of the application as the application was requesting the threads in a wrong way.
-An explanation for this behaviour is that Android programming methodologies require the use of special classes such as AsynkTask, or the packages Executor, ThreadPoolExecutor and FutureTask.
+An explanation for this behaviour is that Android programming methodologies require the use of special classes such as AsynkTask, or the packets Executor, ThreadPoolExecutor and FutureTask.
 Depending on the API and the device limitations, the threads created with these solutions will provide better performance.
 In this case, we found out that concurrency in Android applications is a topic that requires deep discussion and turns out to be too complex for the purpose of this research.
 % Achei o trecho acima meio complicado de entender:
@@ -548,7 +548,7 @@ Every page of the PDF is then converted to an image, and this image is projected
 The application is compatible with any device that has a browser, including smartphones.
 The communication between the master and clients takes advantage of PubNub cloud service.
 This cloud service was selected after some evaluations against Pusher cloud service.
-This comparison is better presented at the Chapter~\ref{cap:evaluations}, but the main point considered was that PubNub offers a low package lost rate even on free plans.
+This comparison is better presented at the Chapter~\ref{cap:evaluations}, but the main point considered was that PubNub offers a low packet lost rate even on free plans.
 
 \begin{figure*}[!ht]
 \centering

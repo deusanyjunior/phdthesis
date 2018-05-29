@@ -73,7 +73,7 @@ These applications were used in the music performances for which they were devel
 A first step in the research process was to study the relevant literature on mobile music.
 Many works present the use of computer networks in music making, especially work related to distributed concerts, under the terms network music and internet music.
 These are described in Section \ref{sec:networkmusic}.
-Music ensembles using computers and laptops as musical instruments for networked collaborative performances dealt with many technical issues, such as latency, jitter, and package loss, especially when using non-local networks (although they also had some restrictions when using local networks).
+Music ensembles using computers and laptops as musical instruments for networked collaborative performances dealt with many technical issues, such as latency, jitter, and packet loss, especially when using non-local networks (although they also had some restrictions when using local networks).
 Scalability is also an important issue in many projects using home routers or web servers (instead of distributed solutions).
 Although most projects focused on performing music within a given space (e.g. a theater), some considered the problem of expanding the number of participants to reach for larger audiences.
 
@@ -89,7 +89,7 @@ Their use requires technical adjustments and configurations that are not suitabl
 For the experimental part, this project explored an academic network which allows many setup options and offers gigabit interconnection (between specific nodes); its evaluation is described in Chapter~\ref{cap:evaluations}.
 Unicast and Multicast\footnote{Unicast was evaluated using IPv4 and IPv6 technology, while Multicast was available only through IPv4 at the time of this research.} are services theoretically available within the networks selected for evaluation in the experiments.
 Pusher and PubNub Cloud Services were also evaluated in comparison with Unicast and Multicast.
-These services are not part of the academic network, so packages must transit through external nodes, but in this case, Cloud Computing benefits were taken into account, such as the localization of the clusters and their scalability.
+These services are not part of the academic network, so packets must transit through external nodes, but in this case, Cloud Computing benefits were taken into account, such as the localization of the clusters and their scalability.
 All services were evaluated using a loopback method, in which a message is sent back to the sender as soon as it is received by a device with timestamps registering the moments when the message passes through each end of the loop.
 
 \paragraphdesc{applications developed and performances}

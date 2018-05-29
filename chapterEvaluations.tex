@@ -15,7 +15,7 @@
 %The past researches decided to transmit audio between devices locally connected or through the Internet, but some researchers were the main inspiration for this work.
 %As previously discussed, \citefullauthor{Schiavoni2013thesis} developed Medusa, a distributed audio environment~\cite{Schiavoni2013thesis} that allows users to interconnect using several  network protocols for audio and MIDI exchange.
 %The protocols implemented were UDP, TCP, DCCP, and SCTP while the audio transmitted was configured to 44.1~kHz and 16~bits that would require a network bandwidth of almost 700~kbps for each audio channel.
-%Many evaluations were conducted in different scenarios for LAN intercommunication, with latency varying from 0.13~ms to 72.06~ms, jitter varying from 0.08~ms to 166.49~ms, and package loss up to 7.065\%.
+%Many evaluations were conducted in different scenarios for LAN intercommunication, with latency varying from 0.13~ms to 72.06~ms, jitter varying from 0.08~ms to 166.49~ms, and packet loss up to 7.065\%.
 %%MQZ: o Marcio não fez avaliações de comunicação em rede.
 %Another research is \citefullauthor{Tomiyoshi2013thesis}, who developed the JackTripMod, a flexible and easy-to-use alternative for network music performances~\cite{Tomiyoshi2013thesis}.
 %As modification of the JackTrip, this project includes a lossy compression using CELT~\cite{Valin2010high}, which is an efficient and low latency solution for encoding audio before transmitting over the network.
@@ -82,7 +82,7 @@ In the end, the Android devices used were two popular models at the time of the 
 Specifications of these devices are presented at Appendix \ref{ape:gsmarena-lg-s3-z3}.
 The difference between the Z3 models D8533 and D8503 refers only to their cellular bands~\cite{Sony2017xperiaz3}, and it is important to notice that only the Z3 supports IPv6 and 802.11ac IEEE wireless standard.
 
-\paragraphdesc{the delay between packages relation with sensors and touch events}
+\paragraphdesc{the delay between packets relation with sensors and touch events}
 %TODO: discuss about MTU, sensors, touch, and the number of data transferred in order to justify the values from 1 to 250 floats per second.
 Android Developer guide for Sensors describe four different sensor rate defined as Normal with a delay of 200~ms between each sample, UI with 60~ms, Game with 20~ms, and Fastest 0~$\mu$~s~\cite{Android2017sensorsoverview}.
 From the experiences with the development of some applications such as the Thereminal~(Section~\ref{sec:appthereminimal}) and Sensors2PD~(Section~\ref{subsec:appsensors2pd}) I noticed that the sensor rate works as expected but the Fastest that was always higher than the defined.
@@ -93,8 +93,8 @@ Bearing in mind these values, the evaluation considers the sampling rate varying
 
 \paragraphdesc{data size, MTU}
 According to the RFC1191, the Maximum Transmission Unit~(MTU) is 1500~bytes in most Ethernet Networks.
-It means that a package will be fragmented in case its size is higher than this unit, and the device will need to wait more than one package to get the full data and interpret the information.
-In that sense, the packages sent during this evaluation were defined to carry less than 1500~bytes of data in order to avoid package fragmentation.
+It means that a packet will be fragmented in case its size is higher than this unit, and the device will need to wait more than one packet to get the full data and interpret the information.
+In that sense, the packets sent during this evaluation were defined to carry less than 1500~bytes of data in order to avoid packet fragmentation.
 
 \paragraphdesc{wifi standard: Mbps and Gbps}
 The WiFi connection was set-up at AC1750 to work only with 802.11a and 802.11ac standards, reaching up to 1Gbps.
@@ -105,7 +105,7 @@ Considering that the Internet options are getting better from time to time, the 
 % Internet2 http://www.internet2.edu/products-services/advanced-networking/
 
 %TODO: discuss the cloud services selected, the message format, the main app
-\paragraphdesc{the cloud services selected, size of packages, and transmission limits}
+\paragraphdesc{the cloud services selected, size of packets, and transmission limits}
 Multicast and Unicast were selected to interconnect the devices inside the academic network due to its benefit of use when configured, while the Cloud Services were selected in order to save effort with a distributed server development for devices interconnection.
 Multicast requires all devices sending and receiving messages through the same group which is defined by an IP and network Port.
 In order to use Unicast, the user need to know the public IPs of all devices with which he wants to exchange messages.
@@ -128,8 +128,8 @@ It was also possible to ask for specific configurations, like Multicast support,
 \paragraphdesc{the main app: PushLoop}
 The application created to simulate devices exchanging data during performances was named PushLoop and is better described at Section \ref{sec:apppushloop}.
 The name is a reference to the idea of pushing messages to another device that is expected to loopback the same message as soon as the message is received.
-In a brief, the user could configure the number of packages to send, the size of packages, the delay between sending each package, the increasing quantity of each of these values, the number of repetition of each test, and also the time to wait after each test.
-During the tests, each package had a unique identifier that was used to calculate the round trip time~(RTT).
+In a brief, the user could configure the number of packets to send, the size of packets, the delay between sending each packet, the increasing quantity of each of these values, the number of repetition of each test, and also the time to wait after each test.
+During the tests, each packet had a unique identifier that was used to calculate the round trip time~(RTT).
 
 %% ------------------------------------------------------------------------- %%
 \section{Network Settings}\index{methodology of evaluation!network settings}

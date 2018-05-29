@@ -23,7 +23,7 @@ We made use of the broadband Internet connection between the universities, whose
 If we consider the distances on the map in Figure \ref{fig:routes}, we have a theoretical (light speed) RTT of 174ms in the first evaluation, between S\~{a}o Paulo and Jo\~{a}o Pessoa (SAO-JPA)\footnote{The route between S\~{a}o Paulo and Jo\~{a}o Pessoa is 34,800km.}, and of 104ms in the second evaluation, between Ann Arbor and Jo\~{a}o Pessoa (ARB-JPA)\footnote{The route between Ann Arbor and Jo\~{a}o Pessoa is 20,940km.}.
 
 The actual RTT for each message sent is presented in the charts of Figure \ref{fig:z3-d685-evaluation}.
-Some values overshoot the chart limit (chosen to maintain the scale of all charts), and they are considered to be lost during transmission (i.e. either a package loss or a broken connection). 
+Some values overshoot the chart limit (chosen to maintain the scale of all charts), and they are considered to be lost during transmission (i.e. either a packet loss or a broken connection). 
 Table \ref{tab:sao-jpa} and Table \ref{tab:arb-jpa} show a summary with the main results extracted from these measurements.
 
 
@@ -124,8 +124,8 @@ This evaluation was conducted between Ann Arbor, São Paulo, and João Pessoa in
 In this case, we evaluated the Pusher and PubNub cloud services regarding their free and paid plans, and we included the Unicast as a reference.
 The tables below presents the results of the evaluations including these services and the statistical evaluation of the RTT results.
 The Pusher paid plan is named pusherP, while the PubNub paid plan is name pubnubP.
-At the tables' header, Nobs is the number of observations and when this number is under 1000 it means the we had package loss during the evaluation.
-The size is the number of float numbers inside the package sent.
+At the tables' header, Nobs is the number of observations and when this number is under 1000 it means the we had packet loss during the evaluation.
+The size is the number of float numbers inside the packet sent.
 
 
 \subsection*{Evaluation between São Paulo and João Pessoa} 
@@ -133,8 +133,8 @@ The size is the number of float numbers inside the package sent.
 The Table~\ref{tab:secondtrialsaojpa} presents the results of RTT evaluation with all the services between São Paulo and João Pessoa.
 The results from PubNub were better than the results with the Pusher in most of the cases.
 The possible reason is because PubNub presents a cluster in Brazil.
-In this case, the packages from PubNub had a shortest path.
-The packages sent by Pusher had to travel from São Paulo to USA before coming to João Pessoa, and they also traveled to USA before coming back to São Paulo.
+In this case, the packets from PubNub had a shortest path.
+The packets sent by Pusher had to travel from São Paulo to USA before coming to João Pessoa, and they also traveled to USA before coming back to São Paulo.
 
 \begin{table}[!htb]
 \small
@@ -233,9 +233,9 @@ unicast & 250          & 150   & \textbf{999}  & 233   & 52   & 2,748.36      & 
 
 The Table~\ref{tab:secondtrialarbjpa} presents the results of RTT evaluation with all the services between Ann Arbor and João Pessoa.
 The results of this evaluation presented similar values between Pusher and Unicast, which were unexpected.
-As we are unable to determine the routes of the packages sent through the cloud services.
-The possible reason is that the packages sent using Unicast were passing by São Paulo PoP before leaving the academic network.
-Another option is that the packages sent using Pusher were travelling through other route due to the fact that the clusters IPs are outside academic networks and may confuse the routing algorithms.
+As we are unable to determine the routes of the packets sent through the cloud services.
+The possible reason is that the packets sent using Unicast were passing by São Paulo PoP before leaving the academic network.
+Another option is that the packets sent using Pusher were travelling through other route due to the fact that the clusters IPs are outside academic networks and may confuse the routing algorithms.
 
 \begin{table}[!htb]
 \small
@@ -292,8 +292,8 @@ We spent more than one year trying to setup the Multicast between RNP and Intern
 The network managers did their best, but in the end we decided to abort the evaluation due to time limit constraints to finish this thesis.
 
 In the end, the evaluation with on IPv4 and IPv6 had interesting results.
-IPv6 seems to offer fastest paths than IPv4, although IPv4 presents less package loss.
-The package loss was present in all evaluations with IPv6 and the possible reason for this situation is that the protocol is still being implemented and evaluated at some paths of the academic network.
+IPv6 seems to offer fastest paths than IPv4, although IPv4 presents less packet loss.
+The packet loss was present in all evaluations with IPv6 and the possible reason for this situation is that the protocol is still being implemented and evaluated at some paths of the academic network.
 Another possible reason is that some devices may not work properly with this protocol yet.
 
 

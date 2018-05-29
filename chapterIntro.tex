@@ -16,7 +16,7 @@ With computer networks and recent telecommunication technologies, the possibilit
 \paragraphdesc{mobile music, mobile controllers, and mobile instruments}
 At another front of technological developments, portable devices appeared on the market and entered the music scene.
 Synthesizers could be devised as minikeyboards running on batteries, and smartphones became hosts for musical instrument apps, based on knowledge and technology inherited from the fields of mobile computing and computer music. 
-Interest in portability, both in terms of size and space, such as independent wiring and electrical connections, accompanied the emergence of music performance groups using mainly mobile controllers and instruments, a practice that is well-described by the term Mobile Music.
+Interest in portability considering size, space, and wireless connections accompanied the emergence of music performance groups using mainly mobile controllers and instruments, a practice that is well-described by the term Mobile Music.
 
 %%MQZ: Não tem conexão com o resto do parágrafo
 %%The idea of using portable devices as music controllers started with the MIDI conception and continued with the appearance of OSC.
@@ -30,7 +30,7 @@ Interest in portability, both in terms of size and space, such as independent wi
 %%MQZ: misused?? Essa é a principal razão da invenção dessas tecnologias!
 
 \paragraphdesc{statement of the problem: ease the massive local/distributed collaboration}
-The recent boom of music app development for smartphones using mobile technologies explores the fact that many users are always connected and able to interact with other users. 
+The recent boom of musical application development for smartphones using mobile technologies explores the fact that many users are always connected and able to interact with other users. 
 Several music performances connecting participants through local networks and web servers have taken place worldwide with very interesting results. 
 A downside is the fact that the constraints imposed by the systems and technologies used restricts scalability and, in many cases, user participation in distant places is hampered by network infrastructures or server capacities. 
 Another downside is that overcoming the complexity and logistics of implementation of such systems and technologies renders them virtually inaccessible to musicians without technical knowledge (or the assistance of a person with this knowledge).
@@ -42,7 +42,7 @@ Moreover, few network evaluations in terms of statistical data were made with th
 
 \paragraphdesc{hypothesis and link to goals}
 From my personal perspective, it is possible to use mobile and network technologies for music purposes without a profound knowledge regarding their technical details. 
-Some available technologies, such as Cloud Services and Multicast, can easily provide connections for music interaction, even in the long-distance scenarios. 
+Some available technologies, such as Cloud Services and Multicast, can provide connections for music interaction, even in the long-distance scenarios. 
 Users' mobile devices are already communicating with these, but the awareness of their usefulness for music purposes remains unknown to many potentially interested parties, which creates a gap between potential and actual use of these technologies for music collaboration and interaction. 
 Bridging this gap is the motivation leading to the goals of this study.
 
@@ -86,7 +86,7 @@ Current and actual solutions for the interaction of a large number of users are 
 Their use requires technical adjustments and configurations that are not suitable for users without a technical background, since they require knowledge regarding setting up web servers or virtual machines in the Cloud.
 
 \paragraphdesc{methods of evaluation}
-For the experimental part, this project explored an academic network which allows many setup options and offers gigabit interconnection (between specific nodes); its evaluation is described in Chapter~\ref{cap:evaluations}.
+For the experimental part, this project took advantage of an academic network which allows many setup options and offers gigabit interconnection (between specific nodes); its evaluation is described in Chapter~\ref{cap:evaluations}.
 Unicast and Multicast\footnote{Unicast was evaluated using IPv4 and IPv6 technology, while Multicast was available only through IPv4 at the time of this research.} are services theoretically available within the networks selected for evaluation in the experiments.
 Pusher and PubNub Cloud Services were also evaluated in comparison with Unicast and Multicast.
 These services are not part of the academic network, so packets must transit through external nodes, but in this case, Cloud Computing benefits were taken into account, such as the localization of the clusters and their scalability.
@@ -96,11 +96,29 @@ All services were evaluated using a loopback method, in which a message is sent 
 An application called \textit{PushLoop} was specifically designed for the quantitative evaluation of the above services.
 %% MQZ: muito específico para introdução...: Although the application had all its settings available for configuration, during the tests, some specific values were fixed in order to simulate common interactions in mobile music performances.
 This and many other applications developed during this research process are presented in Chapter~\ref{cap:applications}, including their technical discussion and motivational aspects.
-The codes for these applications are available at Github under different licenses when defined by the creators.
+The codes for these applications are available at Github~\footnote{Programmer's Github account: \url{www.github.com/deusanyjunior}} under different licenses when defined by the creators.
 
 \paragraphdesc{contributions for future works}
 Both quantitative experiments and music applications are products of this research, which are contributions to the field of mobile music with the intention of helping interested musicians and non-musicians to explore available technologies for mobile music.
 Most contributions presented here were also published as papers at international conferences in order to help disseminate the knowledge gained during the research process.
+
+The list of conference papers based on thesis research is presented below.
+The full content of these papers can be found in the Appendix.
+
+\begin{itemize}
+	\item \cite{deCarvalhoJunior2013fftbenchmark}
+	\item \cite{deCarvalhoJunior2013touches}
+	\item \cite{deCarvalhoJunior2014sensors2pd}
+	\item \cite{Bandeira2014notes}
+	\item \cite{deCarvalhoJunior2015indoor}
+	\item \cite{deCarvalhoJunior2015sensors2osc}
+	\item \cite{deCarvalhoJunior2015supercopair}
+	\item \cite{deCarvalhoJunior2015cooperative}
+	\item \cite{Lee2016crowd}
+	\item \cite{deCarvalhoJunior2016understanding}
+	\item \cite{Stolfi2017openwac}
+	\item \cite{Stolfi2017openam}
+\end{itemize}
 
 
 %TODO: describe the chapters

@@ -427,4 +427,83 @@ These experiences are described in Section~\ref{sec:appsumich}.
 Other partnerships occurred during this research that deserve mention.
 Long distance communication with mobile devices situated at the Federal University of Paraíba was made possible due to the contact with the student Carlos André Lacerda de Carvalho, member of the Digital Video Applications Lab~(LAViD).
 The setup for long-distance communication was made possible with the help of RNP team, especially the system analyst Valter Pereira.
-These partnerships are discussed in Chapter~\ref{cap:evaluations} about evaluations.
+
+
+%These partnerships are discussed in Chapter~\ref{cap:evaluations} about evaluations.
+
+
+
+
+%% ------------------------------------------------------------------------- %%
+\section{Network evaluation on Android: PushLoop}
+\label{sec:apppushloop}
+
+During this research, many network technologies were evaluated through a simple application.
+The code of this application was organized to work as an example of how user can communicate through the network options selected and the whole codification was simplified by its maximum.
+The main intention was is to provide an easy way to exchange messages between mobile devices around the world with minimum codification effort.
+The application created for this evaluation was named PushLoop and included settings for evaluating Unicast IPv4, Unicast IPv6, Multicast, and Cloud Services.
+
+PushLoop Android application is based on the loop-back concept, so one device would send messages, the ``\textit{sender}'', while the other device, the ``\textit{loopback}'', would answer the message as soon as possible, simulating a loop-back circuit.
+The first device registered all messages sent and received on a report file with millisecond time-stamp precision.
+The method used to register the events on the report was \textit{SystemClock.elapsedRealtime()}.
+We also run AsyncTask invoking \textit{executeOnExecutor()} with \textit{THREAD\_POOL\_EXECUTOR} in order to have parallel execution on Android.
+The messages had five divisions: a unique device id; message number with cycle number on the range of thousands; the total number of messages; a random integer as a key for message identification; and a block of floats.
+An example of a message used during the tests is presented below:
+
+\begin{footnotesize}
+	\begin{center}
+		23.0.1.A87422113 1001 1000 76 [0.28506452]
+	\end{center}
+\end{footnotesize}
+
+An activity diagram is presented on Figure~\ref{fig:pushloopactivityDiagram} representing the point of view of a sender activity on the application.
+The class diagram is presented on Figure~\ref{fig:pushloopclassdiagram}.
+This diagram includes all class from the current version of the application after many changes during the development process due to network experimentation.
+Screenshots of the PushLoop application are presented on Figure~\ref{fig:pushloopscreenshots}.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.40\columnwidth]{testActivityDiagram-BW}
+	\caption{PushLoop activity diagram of the test from the sender point of view.}
+	\label{fig:pushloopactivityDiagram}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\columnwidth]{PushLoop_ClassDiagram}
+	\caption{PushLoop class diagram.}
+	\label{fig:pushloopclassdiagram}
+\end{figure}
+
+\begin{figure*}[!ht]
+	\centering
+	\begin{subfigure}{.20\textwidth}
+		\includegraphics[width=\columnwidth]{pushloop_screenshot}
+		\caption{Main screen}
+		\label{fig:pushloopss1}
+	\end{subfigure}
+	\begin{subfigure}{.20\textwidth}
+		\includegraphics[width=\columnwidth]{pushloop_screenshot2}
+		\caption{Settings screen}
+		\label{fig:pushloopss2}
+	\end{subfigure}
+	\begin{subfigure}{.20\textwidth}
+		\includegraphics[width=\columnwidth]{pushloop_screenshot3}
+		\caption{Test settings screen}
+		\label{fig:pushloopss3}
+	\end{subfigure}
+	\begin{subfigure}{.20\textwidth}
+		\includegraphics[width=\columnwidth]{pushloop_screenshot4}
+		\caption{Test settings screen continuation}
+		\label{fig:pushloopss4}
+	\end{subfigure}
+	
+	\caption{PushLoop application screenshots.}
+	\label{fig:pushloopscreenshots}
+\end{figure*}
+
+The code of the application is available at \url{https://github.com/deusanyjunior/PushLoop}. 
+The first evaluation using this application was published as a paper at the International Computer Music Conference, 2015, Denton, Texas, in 2015~\citep{deCarvalhoJunior2015computer}.
+This paper is presented at Appendix~\ref{ape:papericmc2015}.
+The Chapter~\ref{cap:evaluations} is based on the evaluations conducted with this application.
+

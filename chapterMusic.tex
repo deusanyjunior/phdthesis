@@ -2,14 +2,14 @@
 \chapter{Mobile Music Overview}
 \label{cap:mobilemusic}
 
-% \epigraph{
-% Buy it, use it, break it, fix it,\\
-% Trash it, change it, mail - upgrade it,\\
-% Charge it, point it, zoom it, press it,\\
-% Snap it, work it, quick - erase it..\\
-% ..\\
-% Technologic. technologic.}
-% {Daft Punk}
+ \epigraph{
+ Buy it, use it, break it, fix it,\\
+ Trash it, change it, mail - upgrade it,\\
+ Charge it, point it, zoom it, press it,\\
+ Snap it, work it, quick - erase it..\\
+ ..\\
+ Technologic. technologic.}
+ {Daft Punk}
 
 \paragraphdesc{the first days of mobile music using cellphones and ringtones}
 The idea of using mobile devices in art emerged with the development of mobile technologies during the 1990's~\citep{deSouzaeSilva2004}.
@@ -217,12 +217,11 @@ Although only new devices are closely related to these new features, smartphones
 
 \paragraphdesc{mobile devices evolution in processing and computing}
 Nowadays, the evolution in mobile devices' processing and computing capabilities follow a similar pace as personal computers, even though their purpose and usefulness are considerably different.
-The mobile has been reduced in size, increased in power, saves energy, and efficiently dissipates heat, similar to other computational platforms.
-Even the habit of using a mobile device as a personal computer is becoming increasingly accepted, as users are able to connect mobile devices to peripherals such as a keyboard, mouse, and screens, which removes the mobility of the platform and creates a hybrid condition.
+Mobile devices have been reduced in size, increased in power, saves energy, and efficiently dissipates heat with the benefit of continuous research that also improved other computing systems such as servers and desktop computers~\cite{Barroso2007energy}.
 
 \paragraphdesc{combining mobile hardware into musical processes}
-Yet, a significant mobility-preserving trace of the mobile evolution involves the possibility of combining other mobile hardware, such as cameras, communication interfaces, and sensors. 
-These are just a few examples of features that appear from time to time, which, once available, attract the attention of performers and musicians due to their artistic affordances. 
+The mobile evolution also involves the possibility of combining other mobile hardware, such as cameras, communication interfaces, and sensors. 
+These are features that appear from time to time, which, once available, attract the attention of performers and musicians due to their artistic affordances.
 The musical use of such technology allows the inclusion of both sensors and network data into musical processes that can include gestural control and interaction among users.
 
 \paragraphdesc{operating system evolution: performance for fast interaction}
@@ -254,7 +253,7 @@ Audio streaming has been an alternative since the beginning of the Internet.
 
 Other audio resources on browsers include audio synthesis through Web Audio API with high performance and flexibility, even on mobile browsers.
 Applications with Web Audio API are turning web pages into desktop software, like the interactive audio renderer~\citep{Matuszewski2016interactive} and DAWs~\citep{Kleimola2015daw}.
-Web Audio libraries like Gibber~\citep{Roberts2012gibberlivecoding,Roberts2013webbrowser} and WAAX~\citep{Choi2013waax} have facilitated the use of music technologies on browsers by reducing the complexity of coding required and the interface design.
+Web Audio libraries like Gibber~\citep{Roberts2012gibberlivecoding} and WAAX~\citep{Choi2013waax} have facilitated the use of music technologies on browsers by reducing the complexity of coding required and the interface design.
 Moreover, the majority of new mobile devices can run Web Audio API applications through browsers, which makes it portable to many systems and platforms.
 
 \paragraphdesc{direct manipulation: buttons and touch}
@@ -306,8 +305,10 @@ The possible ways of using smartphones discussed in Section~\ref{sec:mobiletechn
 
 \paragraphdesc{the bottleneck: data processing, OS, programming languages}
 Adopting mobile devices as musical instruments has some restrictions.
-During musical performances and musical practices, real-time signal processing and network data streaming are some of the bottlenecks that require attention.
-Current mobile devices have processing similarities with desktop computers, but there are still critical issues with some algorithms, e.g. any acoustic simulation with many objects, parameters, and variables.
+During musical performances and musical practices, real-time signal processing and network data streaming 
+%are some of the bottlenecks that 
+require attention.
+%Current mobile devices have processing similarities with desktop computers, but there are still critical issues with some algorithms, e.g. any acoustic simulation with many objects, parameters, and variables.
 Processing high quality audio on mobile devices in real-time while applying effects on many audio sources can result in undesirable glitches that also occur on any computer.
 Despite that, companies are constantly improving device hardware and software, and offering new options for composers and performers.
 The composers can also avoid some strategies until they become adept at running them on a possible device.
@@ -392,7 +393,9 @@ SuperCollider code fragments can be sent to the server through native language m
 
 \paragraphdesc{mobile phone orchestras}
 The idea of using mobile phones as musical instruments goes far beyond simply creating applications to be used during performances.
-The first mobile phone orchestra was conceived in 2007 by \citefullauthor{Wang2008domobilephones} at Stanford University and is known as MoPhO~\citep{Wang2008domobilephones}.
+The first mobile phone orchestra was conceived in 2007
+% by \citefullauthor{Wang2008domobilephones} 
+at Stanford University and is known as MoPhO~\citep{Wang2008domobilephones}.
 In the beginning, they used the Nokia N95, a revolutionary smartphone from that time in terms of functionalities, available buttons, and the number of sensors.
 Later they changed to iPhone devices due to iOS SDK advantages already explained in this section.
 The musicians amplified the sound of smartphones with speakers attached to the arms and plugged to the mobile device.
@@ -402,7 +405,7 @@ Georg Essl conducted the Michigan Mobile Phone Orchestra at the University of Mi
 This movement inspired the conception of new orchestras at other US universities and countries like South Korea and Japan.
 
 \paragraphdesc{Lee's echobo}
-A referential application that was used to propose a collaborative performance with audiences as musicians was the ``echobo'' from \citeauthor{Lee2013echobo}.
+A reference application that was used to propose a collaborative performance with audiences as musicians was the ``echobo'' from \citeauthor{Lee2013echobo}.
 This mobile instrument had an audio engine based on the MoMu Toolkit, the user interface created on COCOS 2D API, and the server programed in PHP language. 
 The user would interact during a performance through a piano-like interface using the touchscreen of an iOS device.
 A musician guided the harmony of the performance by sending chords information to all devices connected to the same room on the application.
@@ -441,14 +444,13 @@ This field improved interaction paradigms by permitting user's intercommunicatio
 
 \paragraphdesc{data transmission channels and noise}
 Users may have different constraints in MM interactions depending on the channel and noise during communication.
-The Intranet through a home router is expected to be a channel with less noise than the Internet through 4G technology, while the latter presents a bigger structure with the throughput reaching hundreds of gigabits per second on some paths and the Intranet offers communication at around 1 gigabit per second.
-Another important point is the distance that the data will travel through in the selected channel.
-Both Intranet and Internet allow short and long range interconnection with unpredictable probability of noise in most situations.
-Data loss and delay can be unacceptable for some MM experiences, although it is not a general rule. 
-
+%The Intranet through a home router is expected to be a channel with less noise than the Internet through 4G technology, while the latter presents a bigger structure with the throughput reaching hundreds of gigabits per second on some paths and the Intranet offers communication at around 1 gigabit per second.
+%Another important point is the distance that the data will travel through in the selected channel.
+%Both Intranet and Internet allow short and long range interconnection with unpredictable probability of noise in most situations.
+%Data loss and delay can be unacceptable for some MM experiences, although it is not a general rule. 
 \paragraphdesc{synchronization problems: example of a simple call}
 Data exchange constraints can also affect the idea of synchronization during collaborative MM experiences.
-Some works already discussed in Section \ref{sec:networkmusic} determined that network interaction have problems with delays higher than 50~ms.
+Some works already discussed in Section \ref{sec:networkmusic} determined that network interaction have problems with delays higher than 30~ms~\cite{Lago2004thequest}.
 Imagine a single call between two extremes of the Equator through an optical fiber.
 The data would be transmitted at 200,000~km/s over 20,000~km, and the communication would have 100~ms of delay, which is unacceptable by the telephony industry~\citep{Cheshire1996latency}.
 Another example is a call using optical fiber between Brazilian extremes, North-South or East-West, through a path of approximately 4,000~km.
@@ -473,7 +475,7 @@ The Master/Slave approach is applied when there is lager latency between partici
 In this case, one of the participants acts as a master, executing their part during the performance without waiting for the slave's responses in real time.
 The slave can react to the master's events while the slave's events can only affect future events on the master's side from the slave's perspective.
 CloudOrch, TweetDreams, and Crowd in C[loud] are some examples of this approach as the interaction acts through external servers that provide latencies higher than 25~ms in practice.
-The CloudOrch was proposed by \citefullauthor{Hindle2014cloudorch} deployed virtual machines for client and server users.
+The CloudOrch was proposed by \citefullauthor{Hindle2014cloudorch} and deployed virtual machines for client and server users.
 In this project, the audio would be streamed from cloud instruments to both desktop computers and mobile devices.
 While the cloud server would act as a master sound card, the devices would act as slaves using web browsers and websockets for intercommunication~\citep{Hindle2014cloudorch}.
 At TweetDreams, the users would contribute to the main performance through the Tweeter system by sending specified search terms translated into musical and visual reactions~\citep{Dahl2011tweetdreams}.
@@ -507,7 +509,7 @@ The first is rarely available on mobile devices but is one of the cheapest inter
 Although it requires a close face-to-face interaction, the data exchange is simply pointing one device at another.
 Bluetooth technology permits wireless communication with close devices in a range from 10 to 100 square meters and the devices are free to move even during the connection.
 WiFi is the commonest of these three and the communication range can exceed hundreds of meters with local connections available in open places, which is sufficient for short range situations.
-In this case, the compatibility depends on the WiFi standards available at the router
+In this case, the compatibility depends on the WiFi standards available at the router. 
 Although current devices can reach gigabits per second of data transfer using 802.11~ac, megabits per second solutions are more common and compatible nowadays.
 
 \paragraphdesc{technologies as solution for long distance communication: WiFi, 4G, cloud}
@@ -519,7 +521,7 @@ Considering the antennas, the ability of keeping the connection on movement is a
 \paragraphdesc{discussion about scalability and mobile networks}
 Internet access may be required for short or long range communications during collaborative practices.
 Infrared, Bluetooth, and WiFi permit access to the Internet through the use of other devices such as switch or access point, while the 4G technology offers Internet from the service provider.
-A common approach can be the use of servers in order to interconnect the devices, but the advances in Cloud Computing are encouraging its use.
+A common approach can be the use of servers in order to interconnect the devices, and the advances in Cloud Computing are encouraging its use.
 Cloud solutions can provide features like scalability and also different levels of services such as infrastructure, platform, software, monitoring, communication, or even anything as a service.
 
 From the perspective of internet music, once connected to the Internet, a device can interconnect with an unlimited number of devices.

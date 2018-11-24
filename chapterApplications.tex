@@ -1,6 +1,6 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Applications created during the research}
-\label{cap:applications}
+%\chapter{Applications created during the research}
+%\label{cap:applications}
 
 %% lembrar de mencionar publicações decorrentes
 
@@ -8,10 +8,18 @@
 
 \paragraphdesc{inspiration, motivation, development, evaluation}
 % The technologies evaluated during this research inspired their use in some applications.
-Most of the applications presented here have been created just for case-study experiments while others are currently helpful tools for the computer music community.
+%Most of the applications presented here have been created just for case-study experiments while others are currently helpful tools for the computer music community.
+Many of the applications presented here are intentionally similar to other applications described in Chapter~\ref{cap:mobilemusic}. 
+At times the idea was to simplify codes and settings for novices, such as in \textit{thereminimal}~(Section~\ref{sec:appthereminimal}) and \textit{pubslides}~(Section~\ref{sec:apppubslides}).
+However, some applications were created to offer solutions for gaps and needs identified in the literature, such as \textit{Sensors2Pd}~(Section~\ref{subsec:appsensors2pd}) and \textit{Sensors2OSC}~(Section~\ref{subsec:appsensors2osc}).
 Application's open source code exemplify the use of the technologies and allow other researchers to get through code examples for getting started with MM.
 The order presented here follows the application conception and the order that I was learning the technologies.
 % The topics below will be presented following the conception order of the applications and the personal learning order of the technologies.
+
+\paragraphdesc{partnership with researchers, musicians, and developers}
+Partnership with musicians, researchers, and developers was a methodological approach for aggregating knowledge and experience from the community of potentially interested parties to this research.
+Many of the performances were only possible due to the musical conception of fellow musicians and artist-researchers.
+Some applications received contributions from the developers' community and also from artist-researchers that collaborated with their development from the initial conception to the evaluation process.
 
 The initial motivation for these applications was indeed two courses taken during the first semester of 2012.
 The first was the course of ``\textit{Computação Móvel''}~(Mobile Computing).
@@ -93,8 +101,8 @@ However, the variations in the values are too high that the changes in the frequ
 The changes in the volume are not perceived like that by most of users. % volume > amplitude
 
 The code of the application is distributed with open source on github at the address: \url{https://github.com/deusanyjunior/thereminimal
-}.
-A discussion about using libpd with Android applications was presented during a talk in the regular Compmus seminars at IME-USP on October 18, 2012~\footnote{Talk about libpd and Android: \url{http://compmus.ime.usp.br/en/node/320}}.
+} (visited on May, 2017).
+A discussion about using libpd with Android applications was presented during a talk in the regular Compmus seminars at IME-USP on October 18, 2012~\footnote{Talk about libpd and Android: \url{http://compmus.ime.usp.br/en/node/320} (visited on May, 2017)}.
 
 
 %% ------------------------------------------------------------------------- %%
@@ -111,13 +119,13 @@ traditional FFT, FFTW, multi-thread FFTW, double FFT, multi-thread double FFT.
 While the FFTW is using JNI for calculating the FFTW coded in C language, the double FFT is based on the JTransforms library for parallel FFT calculation in Java language.
 
 Although better performance was expected with these non-traditional approaches, running C/C++ code for small blocks increases the complexity of the application and also the cost for processing the same audio block.
-A discussion regarding this evaluation was published as a paper at the 14th Brasilian Simposium of Computer Music~(SBCM) in 2013~\citep{deCarvalhoJunior2013fftbenchmark} and is presented in Appendix~\ref{ape:papersbcm2013}.
+A discussion regarding this evaluation was published as a paper at the 14th Brazilian Symposium of Computer Music~(SBCM) in 2013~\citep{deCarvalhoJunior2013fftbenchmark} and is presented in Appendix~\ref{ape:papersbcm2013}.
 
 The multi-thread FFT had worst results than the traditional FFT due to Android constraints regarding the parallelism.
 During this evaluation we decided to create threads using native thread methods available for Java language and these threads run in the same thread of the application as the application was requesting the threads in a wrong way.
 An explanation for this behaviour is that Android programming methodologies require the use of special classes such as AsynkTask, or the packets Executor, ThreadPoolExecutor and FutureTask.
 Depending on the API and the device limitations, the threads created with these solutions will provide better performance.
-In this case, we found out that concurrency in Android applications is a topic that requires deep discussion and turns out to be too complex for the purpose of this research.
+In this case, we found out that concurrency in Android applications is a topic that requires deep discussion and turns out to be outside of the scope of this research.
 % Achei o trecho acima meio complicado de entender:
 % Utilizar os métodos de threads nativas do Java fez com que as threads fossem criadas de forma errada? Se sim, por que?
 % A exigência de utilizar AsynkTask, Executor, ThreadPoolExecutor e FutureTask foi considerada positiva ou negativa?
@@ -128,7 +136,7 @@ In this case, we found out that concurrency in Android applications is a topic t
 % Não sei se nessa altura do campeonato eu ajudo ou atrapalho com comentários assim, mas achei importante chamar a atenção.
 
 
-The code of the application is distributed with open source on github at the address:~\url{https://github.com/andrejb/DspBenchmarking}.
+The code of the application is distributed with open source on github at the address:~\url{https://github.com/andrejb/DspBenchmarking} (visited on May, 2017).
 
 %% ------------------------------------------------------------------------- %%
 \section{Android, CSound, and RoR: Touches On The Line}
@@ -148,13 +156,13 @@ An advantage for this solution is also that the POST and GET requests using JSON
 The CSound portability for Android devices was published on Linux Audio Conference in 2012~\citep{Yi2012csound}.
 This paper inspired the use of CSound for mobile applications as it presented many samples using diverse approaches for interaction through Android inputs and CSound scores.
 % This paper inspired the use of CSound for mobile applications because it presented many examples using numerous approaches [...]          
-The \textit{MultiTouchXY}~\footnote{MultiTouchXY code: \url{https://github.com/csound/csound/blob/develop/android/CsoundAndroidExamples/src/com/csounds/examples/tests/MultiTouchXYActivity.java}} application was selected as a starting point for the development of \textit{Touches On The Line} application due to the high sample rate of events available from touch events.
+The \textit{MultiTouchXY}~\footnote{MultiTouchXY code: \url{https://github.com/csound/csound/blob/develop/android/CsoundAndroidExamples/src/com/csounds/examples/tests/MultiTouchXYActivity.java} (visited on May, 2017)} application was selected as a starting point for the development of \textit{Touches On The Line} application due to the high sample rate of events available from touch events.
 Touch responsiveness on Android devices can have values up to 120~Hz and provides up to 10 fingers position, what implies 10 pair of position values~(x and y) on every 8~ms in the best situation~\cite{Padre2017touchresponsiveness}.
 
 \textit{Touches On The Line} application was defined as an application proposed to share touch's movements online and have its position synthesized as sound.
 % 2x application
 % Acho que pode remover o "proposed"
-The \textit{MultiTouchXY} demo application was provided with a CSound score that receives two values and control a sound synthesis varying frequency and timber~\footnote{MultiTouchXY score for CSound: \url{https://github.com/csound/csound/blob/develop/android/CsoundAndroidExamples/res/raw/multitouch_xy.csd}}.
+The \textit{MultiTouchXY} demo application was provided with a CSound score that receives two values and control a sound synthesis varying frequency and timber~\footnote{MultiTouchXY score for CSound: \url{https://github.com/csound/csound/blob/develop/android/CsoundAndroidExamples/res/raw/multitouch_xy.csd} (visited on May, 2017)}.
 The demo was first changed to send every new event to the web server, and in the background the application would request new available values from the server.
 This approach was changed even during the development due to many reasons: the communication with the web server was taking too long; the application was getting
 unresponsive in case many touch events were sent at the same time, due to many posts running in background;
@@ -176,7 +184,7 @@ This data is exchanged with the web service using JSON format and contains only 
 
 Although this application allows many devices to participate in the same session, it was evaluated only with three devices available at lab during the period of its conception.
 After its development, the application was used in some solo performances and experienced by many users during talks and presentations without problems for music interaction.
-A log with all events sent through the application is available online through the main page of the web application at \url{http://wscompmus.deusanyjunior.dj/cscores}.
+A log with all events sent through the application is available online through the main page of the web application at \url{http://wscompmus.deusanyjunior.dj/cscores} (visited on May, 2017).
 An example of an event is presented below:
 
 \begin{itemize}\itemsep0em
@@ -186,7 +194,7 @@ An example of an event is presented below:
 This event includes the timestamp of received event, the random identification selected for the user from the application, and the score.
 The score initiates with the xy initial position of the finger, includes the required delay applied before using the next finger position before each other finger position, and finishes with the delay before releasing the finger.
 
-The development of Android applications with CSound was the topic of a talk during the regular seminars of Compmus at IME-USP, on October 1st, 2013~\footnote{Talk about Android and CSound: \url{http://compmus.ime.usp.br/en/node/377}}.
+The development of Android applications with CSound was the topic of a talk during the regular seminars of Compmus at IME-USP, on October 1st, 2013~\footnote{Talk about Android and CSound: \url{http://compmus.ime.usp.br/en/node/377} (visited on May, 2017)}.
 The application was published as a technical paper at 2nd International Conference in 2013~\citep{deCarvalhoJunior2013touches} and is presented in Appendix~\ref{ape:papericsc2013}.
 
 
@@ -197,13 +205,13 @@ The application was published as a technical paper at 2nd International Conferen
 % The creation of the \textit{thereminimal} provided the necessary code for any person with minimum knowledge about Android programming to use the Android sensors.
 Using the Android sensors for creating the \textit{thereminimal} provided the necessary code for any person with minimum knowledge about Android programming.
 However, some users would find it still hard to take advantage of all Android sensors in this case. % some users found?
-The idea of creating an Android application that could make the use of Android sensors feasible started with Sensors2Pd and extended to Sensors2OSC, resulting in the conception of Sensors2~\footnote{Sensors2 web site: \url{sensors2.org}} in a partnership with Thomas Mayer from Residuum.
+The idea of creating an Android application that could make the use of Android sensors feasible started with Sensors2Pd and extended to Sensors2OSC, resulting in the conception of Sensors2~\footnote{Sensors2 web site: \url{sensors2.org} (visited on May, 2017)} in a partnership with Thomas Mayer from Residuum.
 
 The idea behind Sensors2 is to develop mobile applications that can help users to use Android sensors with many other technologies.
 \textit{Sensors2Pd} aims the use of Android sensors with Pure Data patches that can be loaded on the application.
 \textit{Sensors2OSC} sends Android sensors through the network using OSC format.
 \textit{Sensors2Log} is an application that can save the sensors inputs to files inside device's internal or external memory.
-The applications are being distributed through the F-Droid~\footnote{F-Droid website: \url{https://f-droid.org/}} platform as well as through the github.
+The applications are being distributed through the F-Droid~\footnote{F-Droid website: \url{https://f-droid.org/} (visited on May, 2017)} platform as well as through the github.
 A description of the development process of each application is present below.
 
 %%%%%%%%
@@ -215,13 +223,14 @@ Additionally, some applications provided the option to use Android sensors for m
 The main restriction of these applications is that they support only few sensors, while Android sensor options are increasing through the time.
 Based on this condition, \textit{Sensors2Pd} was created following an approach that is able to support all current and future Android sensors.
 
-The idea behind \textit{Sensors2Pd} comes from the Android Sensors API~\footnote{Android Sensors API header file from repository: \url{https://android.googlesource.com/platform/hardware/libhardware/+/master/include/hardware/sensors.h}}.
+The idea behind \textit{Sensors2Pd} comes from the Android Sensors API~\footnote{Android Sensors API header file from repository: \url{https://android.googlesource.com/platform/hardware/libhardware/+/master/include/hardware/sensors.h} (visited on May, 2017)}.
 Every type of sensor is registered at the API with an integer number.
 A list of these sensors and IDs is presented at Appendix~\ref{ape:android-sensors}.
 The sensor manager used on Android applications provides a listener which informs the sensor ID and the latest values from an event received by a sensor. % by it?
 Although it is possible to register for receiving only the data regarding a specific sensor, the API offers the option to receive information regarding all sensors.
 % Although it is possible to register to receive only [...]
-In this case, \textit{Sensors2Pd} provides an interface for sending the sensor's events to receivers at Pure Data patches using that need to follow the pattern:
+In this case, \textit{Sensors2Pd} provides an interface for sending the sensor's events to receivers at Pure Data patches.
+The receivers inside the patches must follow the patterns:
 % In this case, \textit{Sensors2Pd} provides an interface to send the sensor's events [...]
 % Não consegui entender o finalzinho da frase: "using that need to follow the pattern".
 
@@ -278,8 +287,8 @@ In case the WiFi SSID is "MyRouter", the receiver needs to be:
 \end{itemize}
 
 % 2x "The application" - Você poderia tirar o ponto-final e escrever "and its code" (não esquecendo de ajeitar o outro "and" mais para frente).
-The application was presented during the regular talks from Compmus at IME-USP on August 25th, 2014~\footnote{Talk about Sensors2Pd: \url{http://compmus.ime.usp.br/en/node/432}}.
-The application code can be found at \url{https://github.com/SensorApps/Sensors2Pd} and was used during the development of the project Hoketus described at Section \ref{sec:apphoketus}.
+The application was presented during the regular talks from Compmus at IME-USP on August 25th, 2014~\footnote{Talk about Sensors2Pd: \url{http://compmus.ime.usp.br/en/node/432} (visited on May, 2017)}.
+The application code can be found at \url{https://github.com/SensorApps/Sensors2Pd} (visited on May, 2017) and was used during the development of the project Hoketus described at Section \ref{sec:apphoketus}.
 This application was published as a paper at the Joint Conference of the 40th International Computer Music Conference and 11th Sound and Music Computing Conference, Athens, Greece, in 2014~\citep{deCarvalhoJunior2014sensors2pd}.
 This paper is presented at Appendix~\ref{ape:papericmc2014}.
 
@@ -291,7 +300,7 @@ The development of \textit{Sensors2OSC} followed a strategy similar to the one a
 The application adapts to the available sensors at any Android device without restricting the use of new sensors that may become available.
 Sensor events are converted to OSC messages and sent through UDP to a IP and Port specified by the user on the settings screen of this application.
 The namespaces used for sending OSC messages have been updated for some sensors.
-Table~\ref{tab:mapping} with current personalized OSC prefixes.
+Table~\ref{tab:mapping} presents the current personalized OSC prefixes.
 New sensors receive the prefix based on sensor ID, as for example the new sensor with ID=30 that receives the prefix /30.
 % New sensors receive the prefix based on its ID. For instance, a new sensor with ID=30 will receive the prefix /30.
 
@@ -331,8 +340,8 @@ ID & OSC prefix                  & Dimensions \\   \hline
 
 The first design of \textit{Sensors2OSC} had the option to select the coordinates of each sensor that would be sent through OSC, as presented in Figure~\ref{fig:appsensors2oscfirstdesign}.
 In this case, one OSC message would be sent for every coordinate selected.
-Some users reported that this approach was blocking them from using the application for controlling 3D objects as the UDP messages are not sequentially received and they can be lost even on local networks.
-These reports led to an update on the application in which the user selects only the sensor instead of its variables.
+As the UDP messages are not sequentially received, some coordinates of a punctual sample can be lost even on local networks.
+This condition led to an update on the application in which the user selects only the sensor instead of its coordinates, and all coordinates are sent in a single bundle.
 The current version of \textit{Sensors2OSC} packs all values and send them in a single OSC message, and its design is presented in Figure~\ref{fig:appsensors2oscseconddesign}.
 
 \begin{figure*}[!ht]
@@ -352,14 +361,14 @@ The current version of \textit{Sensors2OSC} packs all values and send them in a 
 \label{fig:sensors2oscmainscreen}
 \end{figure*}
 
-The application has been used by Thomas Mayer in many of his performances, and I used this application in the performance \textit{AntonioZ} at \textit{Concertos de Computação Musical}~(Computer Music Concerts)~\footnote{Concerts description: \url{http://prceu.usp.br/semanadearteecultura/evento/concertos-computacao-musical/}} organized by me in 2016 at the IME-USP during \textit{Semana de Arte e Cultura da USP}~(Art and Culture Week from USP).
+The application has been used by Thomas Mayer in many of his performances, and I used this application in the performance \textit{AntonioZ} at \textit{Concertos de Computação Musical}~(Computer Music Concerts)~\footnote{Concerts description: \url{https://theantonioz.wordpress.com/} (visited on November, 2018)} organized by me in 2016 at the IME-USP during \textit{Semana de Arte e Cultura da USP}~(Art and Culture Week from USP).
 Other users have reported the use of this application and requested modifications.
 Mladen Radolovic is a Croatian user that requested the addition of an option to send NFC tags' information through OSC and now the application is able to send the NFC tags identification through the namespace /nfc.
 Tal Kirshboim is a German user that included the Multitouch option on the application and continue debugging the code. % and he continues to debug the code
 A user from Japan also contributed with the translation of the application to Japanese, and now the application is internationalized to four languages including English, German, and Portuguese.
 
-A discussion about mapping Android sensors using OSC on Android devices with this application was presented during a talk in the regular Compmus seminars at IME-USP on June 29th, 2015~\footnote{Talk about mapping Android sensors to OSC: \url{http://compmus.ime.usp.br/en/node/465}}.
-The application code can be found at \url{https://github.com/SensorApps/Sensors2OSC}.
+A discussion about mapping Android sensors using OSC on Android devices with this application was presented during a talk in the regular Compmus seminars at IME-USP on June 29th, 2015~\footnote{Talk about mapping Android sensors to OSC: \url{http://compmus.ime.usp.br/en/node/465} (visited on May, 2017)}.
+The application code can be found at \url{https://github.com/SensorApps/Sensors2OSC} (visited on May, 2017).
 This application was published as paper at the Sound and Music Computing Conference at Maynooth, Ireland, in 2015~\citep{deCarvalhoJunior2015sensors2osc}.
 This paper is presented at Appendix~\ref{ape:papersmc2015}.
 
@@ -388,7 +397,7 @@ Although the application was recording data for more than 10~hours in a row, the
 
 After the experiments, the application was dubbed \textit{Sensors2Log} and aggregated to the \textit{Sensors2} collection.
 The application can be used in many monitoring process with options for selecting the sensors and the audio recording settings.
-Figure~\ref{fig:sensors2log} shows two screens of the application and the current application code can be found at \url{https://github.com/SensorApps/Sensors2Log}.
+Figure~\ref{fig:sensors2log} shows two screens of the application and the current application code can be found at \url{https://github.com/SensorApps/Sensors2Log} (visited on May, 2017).
 
 \begin{figure*}[!ht]
 \centering
@@ -412,7 +421,7 @@ Figure~\ref{fig:sensors2log} shows two screens of the application and the curren
 \section{Indoor localization and Pure Data: Hoketus installation}
 \label{sec:apphoketus}
 
-The code of \textit{Sensors2Pd} was used to create the application \textit{Hokeuts} during an installation under the same name.
+The code of \textit{Sensors2Pd} was used to create the application \textit{Hoketus} during an installation under the same name.
 This installation took advantage of the WiFi level to identify users close to specific routers.
 The application was created with the Sensors2Pd code embedded and the application interface was personalized especially for this installation. 
 
@@ -432,12 +441,12 @@ In both images the hotspots have a circle representing their best signal strengt
 \begin{subfigure}{.45\textwidth}
 	\includegraphics[width=.90\columnwidth]{nime2015-schema}
     \caption{Network communication}
-	\label{fig:installation}
+	\label{fig:installation-schema}
 \end{subfigure}
 \begin{subfigure}{.45\textwidth}
 	\includegraphics[width=\columnwidth]{nime2015-installation}
 	\caption{Four hotspots installation}
-	\label{fig:installation-schema}
+	\label{fig:installation}
 \end{subfigure}
 
 \caption{Hoketus installation.}
@@ -447,7 +456,7 @@ In both images the hotspots have a circle representing their best signal strengt
 An aesthetic discussion about this installation and other experiences with Sensors2PD can be found at the paper presented at The Fourteenth Biennial Symposium on Arts and Technology, Connecticut College, New London, CT, USA, in 2014~\citep{Bandeira2014notes}.
 A discussion about the advantage of using WiFi for indoor localization with this application during the Hoketus project was published as a paper and presented as a poster during at the International Conference on New Interfaces for Musical Expression, Baton Rouge, Lousianna, USA, in 2015~\citep{deCarvalhoJunior2015indoor}.
 These papers are presented at Appendix~\ref{ape:paperbats2014} and Appendix~\ref{ape:papernime2015}, respectively.
-The code used on \textit{Hoketus} mobile application is available at \url{https://github.com/deusanyjunior/hoketus}.
+The code used on \textit{Hoketus} mobile application is available at \url{https://github.com/deusanyjunior/hoketus} (visited on May, 2017).
 
 %
 %%% ------------------------------------------------------------------------- %%
@@ -518,7 +527,7 @@ The code used on \textit{Hoketus} mobile application is available at \url{https:
 %\label{fig:pushloopscreenshots}
 %\end{figure*}
 %
-%The code of the application is available at \url{https://github.com/deusanyjunior/PushLoop}. 
+%The code of the application is available at \url{https://github.com/deusanyjunior/PushLoop} (visited on May, 2017). 
 %The first evaluation using this application was published as a paper at the International Computer Music Conference, 2015, Denton, Texas, in 2015~\citep{deCarvalhoJunior2015computer}.
 %This paper is presented at Appendix~\ref{ape:papericmc2015}.
 %The Chapter~\ref{cap:evaluations} is based on the evaluations conducted with this application.
@@ -560,8 +569,8 @@ This comparison is better presented at the Chapter~\ref{cap:evaluations}, but th
 \end{figure*}
 
 
-This application is currently used at the \textit{TV CompMus} page~\footnote{TV CompMus page: \url{http://compmus.ime.usp.br/en/tv}} used during the regular talks of the Compmus group.
-The code of the application is available at \url{https://github.com/deusanyjunior/pubslides}.
+This application is currently used at the \textit{TV CompMus} page~\footnote{TV CompMus page: \url{http://compmus.ime.usp.br/en/tv} (visited on May, 2017)} used during the regular talks of the Compmus group.
+The code of the application is available at \url{https://github.com/deusanyjunior/pubslides} (visited on May, 2017).
 
 %% ------------------------------------------------------------------------- %%
 \section{Cloud Services and SuperCollider: SuperCopair}
@@ -571,10 +580,10 @@ The conception of \textit{SuperCopair} application happened during the period wh
 I was interacting the live coder Sang Won Lee and noticed that few solutions are available for a distributed collaborative live coding.
 After some research we discussed solutions and alternatives with Georg Essl and a the application presented in this section came out.
 
-The \textit{SuperCopair} application was created as a package to the Atom.io~\footnote{Atom.io website: \url{http://atom.io}} IDE.
+The \textit{SuperCopair} application was created as a package to the Atom.io~\footnote{Atom.io website: \url{http://atom.io} (visited on May, 2017)} IDE.
 Defined as 'a hackable text editor for the 21st Century' on its site, Atom is a text editor created using web technologies and has its development powered by the github community.
 This IDE has numerous packages for many programming languages and presents some solutions for coding, debugging, and managing projects.
-Atom packages are programmed in CoffeeScript~\footnote{CoffeeScript website: \url{coffeescript.org}}, which is a programming language that can easily be converted to Javascript and can also integrate its libraries.
+Atom packages are programmed in CoffeeScript~\footnote{CoffeeScript website: \url{coffeescript.org} (visited on May, 2017)}, which is a programming language that can easily be converted to Javascript and can also integrate its libraries.
 The developers can install Atom packages to enable various functionalities in the IDE such as: communicate through chats, use auto-complete in certain programming language syntax, interact with desktop and web applications, integrate with the terminal command line, and have many options based on other packages.
 These features have motivated the development of SuperCopair package for Atom.
 
@@ -589,7 +598,8 @@ The main idea is that all participants have the opportunity to evolve into a col
 The IDEs for SuperCollider have, by default, shortcuts to evaluate a line, a block, and to stop all sound process that is running.
 In addition to these options, the SuperCopair package includes methods and shortcuts to broadcast these events and execute them on all users connected at the same pairing session.
 Through the shortcuts, one can decide to evaluate selected code either only in the local machine, or in all computers of the session.
-One can also turn on and off a broadcast alert option in the settings in order to be asked or not before evaluating every broadcast event sent by another user in the same session. This allows each individual has control over which code to be evaluated in the local machine.
+One can also turn on and off a broadcast alert option in the settings in order to be asked or not before evaluating every broadcast event sent by another user in the same session. 
+This allows each individual to have control over which portion of code can be evaluated in the local machine.
 The broadcast events are diffused through the cloud service and are expected to be evaluated as soon as each device receives the event message.
 
 Networked live coding environments have been focused in collaboration.
@@ -608,8 +618,8 @@ The errors coming from novice programmers were often fixed by the experienced us
 Some tricks from the live coding practice were introduced by advanced users and the initial learners rapidly became instructors for new users and these instructors were following the same cooperative practices of the experienced users.
 These events are examples of how this application can be used in many different ways: for collaborative and also cooperative performances.
 
-A discussion about the use of cloud services for designing collaborative applications was presented during a talk in the regular Compmus seminars at IME-USP on April 6th, 2015~\footnote{Talk about cloud services: \url{http://compmus.ime.usp.br/en/node/461}}, and the discussion about the use of SuperCopair for live coding was presented August 19th, 2015~\footnote{Talk about SuperCopair: \url{http://compmus.ime.usp.br/en/node/469}}.
-The code of this application is available at \url{https://atom.io/packages/supercopair} with the documentation and environment setup instructions.
+A discussion about the use of cloud services for designing collaborative applications was presented during a talk in the regular Compmus seminars at IME-USP on April 6th, 2015~\footnote{Talk about cloud services: \url{http://compmus.ime.usp.br/en/node/461} (visited on May, 2017)}, and the discussion about the use of SuperCopair for live coding was presented August 19th, 2015~\footnote{Talk about SuperCopair: \url{http://compmus.ime.usp.br/en/node/469} (visited on May, 2017)}.
+The code of this application is available at \url{https://atom.io/packages/supercopair} (visited on May, 2017) with the documentation and environment setup instructions.
 The application was published as a paper at International Conference on Live Coding, Leeds, West Yorkshire, UK, in 2015~\citep{deCarvalhoJunior2015supercopair}, which is presented at Appendix~\ref{ape:papericlc2015}.
 A discussion about using SuperCopair for cooperative live coding was published at Simposio Latinoamericano de Informática y Sociedad from the XLI Conferencia Latinoamericana en Informática (CLEI), Arequipa, Peru, in 2015~\citep{deCarvalhoJunior2015cooperative}, and is presented at Appendix~\ref{ape:paperclei2015}.
 
@@ -625,7 +635,7 @@ As the name of the piece suggests, the crowd (audience) plays the musical instru
 This is directly inspired from the piece \textit{In C}, by Terry Riley~\citep{Riley1964inc}. 
 In this piece, musicians (with various instruments) were guided to play pre-composed melodic fragments in sequence for a random amount of time. 
 As it is up to each musician to decide how many times to play one fragment, the collective outcome of the ensemble creates a heterophonic texture of chance.
-Similarly, in \textit{Crowd in C[loud]}, each audience member plays a series of short snippets composed by herself and by other audience members.
+Similarly, in \textit{Crowd in C[loud]}, each audience member plays a series of short snippets composed by himself/herself and by other audience members.
 The interface provided will first guide a participant to compose a short \texttt{``tune''} that has five musical notes in C major.
 
 Once the participant finishes the composition, he or she can browse, and play, what other audience members have composed. 
@@ -633,7 +643,7 @@ It is thus quite similar to Terry Riley's \textit{In C}, in that one determines 
 The difference is that there is no pre-composed fragments but each audience member will contribute to the piece by submitting a short melody.
 In this way, participants will have their own tunes and a chord scale become the common ground upon which the entire audience plays. 
 In addition, there is a separate musician performing the piece on stage at the same time with the audience members in \textit{Crowd in C[loud]}.
-The role of the musician is a meta-performer who can control the chord scale in which the audience members are playing.
+The role of the musician is to be a meta-performer who can control the chord scale in which the audience members are playing.
 For example, the meta performer can, on the fly, change the instrument tuned in C major scale to a different chord scale (e.g., C Minor, Pentatonic Scale). 
 This performer cannot generate sound at all on his/her end but only controls the harmonic flow of the piece as generated by the crowd.
 The interplay between the musician and audience members ensures that each audience member will play individual patterns while a musician can progress the piece by changing chord scales. 
@@ -649,13 +659,13 @@ This provides a convenient abstraction that is robust against changes in network
 The push(or publish) notifications paradigm also makes performances more robust against technical disruptions such as disconnection and delays.
 
 The left side of Figure \ref{fig:performance} presents the performance setup at the concert hall.
-There were two kinds of web pages running during the performance, one for the performer and another for the audience.
-The performer sat center-stage and his application (a web page) was project onto a screen for the participants seated in the audience.
-They were instructed to visit their application that has the musical instrument on.
-The performance hall had wireless network available from the university and had a good reception of mobile network connectivity such as 3G.
+There are two kinds of web pages running during the performance, one for the performer and another for the audience.
+The performer seat center-stage and his application (a web page) is projected onto a screen for the participants seated in the audience.
+The audience is instructed to visit the application that has the musical instrument on.
+The performance hall has wireless network available from the university and has a good reception of mobile network connectivity such as 3G.
 
-A representation of the cloud service with the channels we used is on the right side of the Figure~\ref{fig:performance}.
-In our performance we designed three types of channels following the PubNub API for web application: a performer channel, an audience channel and individual channels equaling the participant number. 
+A representation of the cloud service with the channels is on the right side of the Figure~\ref{fig:performance}.
+For this application there are three types of channels following the PubNub API for web application: a performer channel, an audience channel and individual channels equaling the participant number. 
 The performer application is subscribed to the performer channel to receive messages sent from audience member's devices. 
 Once a participant visits, it requests a performer's application to create an individual channel by publishing a message to the performer channel.
 The individual channel is then created to respond to an audience application's request, typically for the audience to retrieve a tune composed by others.
@@ -670,13 +680,13 @@ This channel is used for crowd control: to send textual instructions, to live-co
 	\label{fig:performance}
 \end{figure}
 
-\textit{Crowd in C[loud]} was performed at many venues during the past two years and the debut happened on April 18, 2015 in Stamps Auditorium at the Walgreen Drama Center on the U-M North Campus~\footnote{Debut of \textit{Crowd in C[loud]}: \url{http://www.eecs.umich.edu/eecs/about/articles/2015/w15-mobile-phone-ensemble-performance.html}}.
-The video from the debut is available at \url{https://www.youtube.com/watch?v=8RWgXoM2BCA} and a multi-camera video of a performance in Atlanta is available at ~\url{https://www.youtube.com/watch?v=8nnrKJ4Ap0c}.
+\textit{Crowd in C[loud]} was performed at many venues during the past two years and the debut happened on April 18, 2015 in Stamps Auditorium at the Walgreen Drama Center on the U-M North Campus~\footnote{Debut of \textit{Crowd in C[loud]}: \url{http://www.eecs.umich.edu/eecs/about/articles/2015/w15-mobile-phone-ensemble-performance.html} (visited on May, 2017)}.
+The video from the debut is available at \url{https://www.youtube.com/watch?v=8RWgXoM2BCA} (visited on May, 2017) and a multi-camera video of a performance in Atlanta is available at ~\url{https://www.youtube.com/watch?v=8nnrKJ4Ap0c} (visited on May, 2017).
 
 The discussion about sound synthesis was published as a paper in 2nd Web Audio Conference (WAC), Atlanta, Georgia,  USA, in 2016~\citep{Lee2016crowd} and the discussion regarding network communication through the cloud services was published in the 16h International Conference of New Instruments for Musical Expression, Brisbane, Australia, in 2016~\citep{deCarvalhoJunior2016understanding}.
 The papers published in these conferences are presented in Appendix~\ref{ape:paperwac2016} and Appendix~\ref{ape:papernime2016}, respectively.
-A discussion about the application was presented during a talk in the regular Compmus seminars at IME-USP on September 16th, 2015~\footnote{Talk about Crowd in C[loud]: \url{http://compmus.ime.usp.br/en/node/475}}
-The code used on the application is available at \url{https://github.com/panavrin/tindermusic}.
+A discussion about the application was presented during a talk in the regular Compmus seminars at IME-USP on September 16th, 2015~\footnote{Talk about Crowd in C[loud]: \url{http://compmus.ime.usp.br/en/node/475} (visited on May, 2017)}
+The code used on the application is available at \url{https://github.com/panavrin/tindermusic} (visited on May, 2017), with a live demo for the performer at \url{https://crowdinc.github.io/performer} (visited on November, 2018) and for the audience at \url{https://crowdinc.github.io} (visited on November, 2018).
 
 %% ------------------------------------------------------------------------- %%
 \section{iOS, Lua, and Network communication: Performances with urMus}
@@ -692,7 +702,7 @@ The technology used in this case was the Bonjour methods for network advertising
 The master device was configured to discover all other devices advertisements.
 Every discovered device is attached to a list of available devices and the master device can use this list to send messages to all devices in this situation.
 This approach was evaluated for different numbers of devices and the more devices we added the more the application was overloaded with the network communication.
-The solution is similar to the Multicast algorithm available in many routers and the code is presented at Listing~\ref{urMusLuaMulticast}.
+The code for urMus is presented at Listing~\ref{urMusLuaMulticast}.
 The pieces are described in the next sections.
 
 \begin{footnotesize}
@@ -766,7 +776,7 @@ In the beginning the performers will play only their specific notes, but some of
 As the performers decide to walk on the stage, it will became hard to know who is expected to play the right note.
 
 The audience will expect some control from composer hands, but he is using a headphone and will not hear anything. 
-In the middle the composer will take out the headphone, he will try to control the performers again, and stop sending notes to the end the piece.
+In the middle the composer will take out the headphone, he will try to control the performers again, and stop sending notes to the end of the piece.
 The sound experience comes from the idea that the audience will expect some melodies based on the notes that are falling down, but it doesn't depend only on the composer's composition, because the composer is not a player.
 
 %%%%%%%%
@@ -789,8 +799,8 @@ Each person has a different frequency than those next to them, giving a spatial 
 The performance is then made more musically interesting with the addition of different pitches, dynamics, and ``beating''. 
 This is where our simulation grows and differs from the original, making the performance something new entirely.
 
-These performances were performed on April 18, 2015 in Stamps Auditorium at the Walgreen Drama Center on the U-M North Campus~\footnote{Performances with urMus: \url{http://www.eecs.umich.edu/eecs/about/articles/2015/w15-mobile-phone-ensemble-performance.html}}.
-The videos from these performances are available at \url{https://www.youtube.com/watch?v=8RWgXoM2BCA}.
+These performances were performed on April 18, 2015 in Stamps Auditorium at the Walgreen Drama Center on the U-M North Campus~\footnote{Performances with urMus: \url{http://www.eecs.umich.edu/eecs/about/articles/2015/w15-mobile-phone-ensemble-performance.html} (visited on May, 2017)}.
+The videos from these performances are available at \url{https://www.youtube.com/watch?v=8RWgXoM2BCA} (visited on May, 2017).
 
 
 %% ------------------------------------------------------------------------- %%
@@ -807,13 +817,13 @@ After some discussions, I decided to participate in a new version of the perform
 The current version of the ``Open Band'' is now entirely based on web audio synthesis and reduced the bandwidth requirements for the audience participation.
 This upgrade to the performance removed the restriction for performing in local networks and the system used can now be deployed on web servers.
 
-During the development of this new version we opted to evaluate some ready-made solutions for web audio synthesis like Gibber~\citep{Roberts2012gibberlivecoding}, Waax~\citep{Choi2013waax}, and meSpeak.js~\footnote{meSpeak.js website: \url{http://www.masswerk.at/mespeak/}}.
+During the development of this new version we opted to evaluate some ready-made solutions for web audio synthesis like Gibber~\citep{Roberts2012gibberlivecoding}, Waax~\citep{Choi2013waax}, and meSpeak.js~\footnote{meSpeak.js website: \url{http://www.masswerk.at/mespeak/} (visited on May, 2017)}.
 These solutions are able to facilitate the use of web audio technology and other browser facilities, but also create barriers and sometimes limitations that are not imposed by pure web audio.
 Furthermore, sometimes frameworks could offer more than what was required by the application, which can lead to more confusion during development. 
 We tried to use, meSpeak.js as a simple and interesting text-to-speech library but the resulting sound was not musically satisfactory, and the framework limited messages to play on top of each other.
 The current version focus on pure web audio for sound synthesis and we also decided to follow some aesthetic concepts based on phonetic and audio typography, to experiment with new kind of music, avoiding traditional chords and scales. 
 These concepts surrounded the whole development of this new version of ``Open Band'' and had a great impact in the new result obtained.
 
-The code of the current version of the application used during this performance is available at \url{https://github.com/fabiogoro/banda/tree/master/bandawa}.
+The code of the current version of the application used during this performance is available at \url{https://github.com/fabiogoro/banda/tree/master/bandawa} (visited on May, 2017).
 We submitted a full paper to the 3rd Web Audio Conference~(WAC) that will be held in the end of August, 2017 at the Centre for Digital Music, Queen Mary University of London.
 The submitted version of this paper is available at Appendix~\ref{ape:paperwac2017}.

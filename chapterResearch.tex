@@ -10,11 +10,9 @@
  {Daft Punk}
 
 \paragraphdesc{description of the research: qualitative and quantitative}
-This research was conducted following a qualitative and quantitative approach.
-The qualitative research was mainly collaborative, based in the gathering of data from forms, e-mails, Github, and oral evaluation of applications and performances with partner musicians and audiences.
+This research was conducted following a quantitative and qualitative approach.
+The quantitative research evaluated the technologies selected for the experiments, while and the qualitative research gathered data from applications' users.
 Data was analyzed and used as basis for improvements of applications based on users expectations.
-Quantitative research was based on pilot trial experiments with the technologies studied.
-Insights acquired on the trials as well as technological constraints were used to define the network evaluations.
 
 \paragraphdesc{remember goals: this is where you want to go}
 The primary goal of this research, as stated in the first chapter, is to evaluate the current technologies and trends for mobile interaction, whereas 
@@ -24,17 +22,23 @@ These goals seek to bridge the gaps identified in mobile music practices, target
 
 \paragraphdesc{how to define the paths that lead to the goals (this is the methodology!)}
 To accomplish these goals, applications were developed to provide working solutions for specific scenarios in mobile music, and experiments were conducted to map possibilities and difficulties found in such scenarios.
-The applications developed are presented in Chapter~\ref{cap:applications}, following a chronological order that reflect the research process.
-The network technologies evaluation is presented in Chapter~\ref{cap:evaluations} along with discussions of the use of these technologies and identified constraints.
+The applications developed during this research have their description at Appendix~\ref{ape:applications}, following a chronological order that reflect the research process.
+Chapter~\ref{cap:evaluations} presents the network technologies evaluation along with discussions of the use of these technologies and identified constraints.
+%%%
+\paragraphdesc{evaluate mobile technologies in/for performances}
+Technology evaluation follows two patterns. 
+Some technologies targeted the automatic exploration of different parameters used in mobile music interaction, different services and routing schemes, and data was gathered over long periods of time.
+%; the results and discussion of these evaluations is presented in Chapter~\ref{cap:evaluations}.
+%Other technologies were evaluated during actual performances, and are discussed in Chapter~\ref{cap:applications}.
+%%
 Papers, talks, demonstrations, installations, and performances were the key to accomplish the secondary goal.
 The papers, published and presented at several computer music conferences in Brazil and abroad, offered opportunities to reach researchers, musicians, and lay audiences interested in mobile music.
 These papers were included in this thesis as Appendix~\ref{ape:papers}
 
-
 \paragraphdesc{methodologies of past projects from compmus: inspire, cooperate, collaborate}
 During the development of this research, other related projects were developed by members of the computer music research group at IME/USP, whose methodologies were considered in this study.
 André Bianchi's study of mobile platforms for realtime audio processing~\cite{Bianchi2012ontheperformance} produced the \textit{DSPBenchmarking}, an open source application for Android DSP evaluation.
-A partnership with André allowed evaluations of DSP techniques that outperform traditional approaches, and presented in Section~\ref{sec:appdspbenchmarking}.
+A partnership with André allowed evaluations of DSP techniques that outperform traditional approaches, with more detail presented in Section~\ref{sec:appdspbenchmarking} from Appendix~\ref{ape:applications}.
 Flávio Schiavoni developed an open source tool for network distributed performances with audio and MIDI named \textit{Medusa}~\cite{Schiavoni2011medusa}.
 In Flávio's research, network tests using the loopback approach were conducted in order to calculate RTT between desktop computers using different network transport protocols; this methodology was adapted to be used here with mobile devices and different services and routing schemes.
 
@@ -54,24 +58,26 @@ To propose innovative solutions and to try them out by developing software were 
 
 \paragraphdesc{research plan #1: evaluate current options}
 The explorative investigation of technologies for mobile music may be categorized in two main branches or research plans.
-The first research plan is based on the evaluation of currently explored options from the mobile music state of art, as found in existing literature.
-Many of the applications developed here are intentionally similar to other applications described in Chapter~\ref{cap:mobilemusic}. At times the idea was to simplify codes and settings for novices, such as in \textit{thereminimal}~(Section~\ref{sec:appthereminimal}) and \textit{pubslides}~(Section~\ref{sec:apppubslides}).
-However, some applications were created to offer solutions for gaps and needs identified in the literature, such as \textit{Sensors2Pd}~(Section~\ref{subsec:appsensors2pd}) and \textit{Sensors2OSC}~(Section~\ref{subsec:appsensors2osc}).
+The first research plan focused on the evaluation of currently explored options from the mobile music state of art, as found in existing literature.
+Appendix~\ref{ape:applications} offers a comprehensive description of this first research plan containing the steps dealt with in detail.
+% dj: moved to appendix
+%Many of the applications developed here are intentionally similar to other applications described in Chapter~\ref{cap:mobilemusic}. 
+%At times the idea was to simplify codes and settings for novices, such as in \textit{thereminimal}~(Section~\ref{sec:appthereminimal}) and \textit{pubslides}~(Section~\ref{sec:apppubslides}).
+%However, some applications were created to offer solutions for gaps and needs identified in the literature, such as \textit{Sensors2Pd}~(Section~\ref{subsec:appsensors2pd}) and \textit{Sensors2OSC}~(Section~\ref{subsec:appsensors2osc}).
 %%%%%
 \paragraphdesc{research plan #2: evaluate future (or not) options}
-A second research plan is based on exploring options for mobile music from trending mobile technologies that had not been well-known or widespread used in mobile music scenarios. These include newer technologies such as IPv6 and gigabit connections, that will be broadly available in the future but aren't yet at the time and place where this research was conducted, and also technologies that were available but didn't yet make their way into mobile music projects, such as Multicast routing and Cloud Services.
+A second research plan is based on exploring options for mobile music from trending mobile technologies that had not been well-known or widespread used in mobile music scenarios. 
+These include newer technologies such as IPv6 and gigabit connections, that will be broadly available in the future but aren't yet at the time and place where this research was conducted, and also technologies that were available but didn't yet make their way into mobile music projects, such as Multicast routing and Cloud Services.
 
 
-\paragraphdesc{evaluate mobile technologies in/for performances}
-Technology evaluation follows two patterns. Some technologies targeted the automatic exploration of different parameters used in mobile music interaction, different services and routing schemes, and data was gathered over long periods of time; the results and discussion of these evaluations is presented in Chapter~\ref{cap:evaluations}.
-Other technologies were evaluated during actual performances, and are discussed in Chapter~\ref{cap:applications}.
 
 
-\paragraphdesc{partnership with researchers, musicians, and developers}
-Partnership with musicians, researchers, and developers was a methodological approach for aggregating knowledge and experience from the community of potentially interested parties to this research.
-Many of the performances discussed were only possible due to the musical conception of fellow musicians and artist-researchers.
-Some applications received contributions from the developers' community and also from artist-researchers that collaborated with their development from the initial conception to the evaluation process.
 
+%\paragraphdesc{partnership with researchers, musicians, and developers}
+%Partnership with musicians, researchers, and developers was a methodological approach for aggregating knowledge and experience from the community of potentially interested parties to this research.
+%Many of the performances discussed were only possible due to the musical conception of fellow musicians and artist-researchers.
+%Some applications received contributions from the developers' community and also from artist-researchers that collaborated with their development from the initial conception to the evaluation process.
+% dj: moved to applications
 
 %\paragraphdesc{create applications for learners}
 %\paragraphdesc{create applications for community}
@@ -101,37 +107,55 @@ The Android operating system was selected as the main focus for application deve
 Applications were developed under free licenses with open sources and became available for use through Github repositories, F-Droid and compiled applications. On one hand, source-based distribution is useful for collaborative development, and on the other hand distribution of compiled versions (apk) is more friendly to interested users and beta testers.
 Android also offers possibility of distributing applications through Bluetooth, WiFi, or web pages, without the burden of having to publish them or sign provisioning profiles with a device ID as in the case of iOS applications.
 
+%%%
 \paragraphdesc{price of devices}
-Another reason for selecting Android devices in this research was the bare fact that these devices have a larger specification spectrum and are generally cheaper than iOS devices.
-Particularly in Brazil, where most of the research was conducted, Android devices are more popular and have lower prices than iOS devices with similar hardware.
+%Another reason for selecting Android devices in this research was the bare fact that these devices have a larger specification spectrum and are generally cheaper than iOS devices.
+%Particularly in Brazil, where most of the research was conducted, Android devices are more popular and have lower prices than iOS devices with similar hardware.
 
 \paragraphdesc{development with Eclipse + ADT}
 Android application development was based in two main IDEs.
 The Eclipse IDE was used during the development of the first applications, mainly due to its popularity among Android developers.
 This IDE requires the Android Development Tools~(ADT) plugin for compiling applications and communicating with Android devices and emulators.
-By the end of the research period, the Eclipse ADT became deprecated and the application development moved on to Android Studio. 
-
+By the end of the research period, the Eclipse ADT became deprecated and the application development moved on to Android Studio.
+%%%
 \paragraphdesc{development with Android Studio}
-Android Studio is the official IDE for the development of Android applications and replaced the Eclipse ADT by the end of 2015.
-This IDE presents a complete and specific environment offering many tools for debugging and monitoring running applications.
-At the current version it is also possible to update the application code without recompiling the full application, improving application development (as compilation usually takes a long time).
+Android Studio is the official IDE for the development of Android applications and replaced the Eclipse ADT by the end of 2015~\footnote{An update on Eclipse Android Developer Tools - Android Developers Blog: \url{https://android-developers.googleblog.com/2015/06/an-update-on-eclipse-android-developer.html} (visited on May, 2017)}.
+This IDE presents a complete environment offering many tools for debugging and monitoring running applications.
+%At the current version it is also possible to update the application code without recompiling the full application, improving application development (as compilation usually takes a long time).
 
 \paragraphdesc{application testing with emulators (why not)}
-Some applications were tested on emulators running together with the IDEs.
-This option was useful for specific situations, such as for interface design or Internet access.
-The emulators used during this research were based on the native images that come with the Android SDK, and also the Genymotion Android Emulator~\footnote{Genymotion Android Emulator website: \url{https://www.genymotion.com/}}.
-Although Android emulators can simulate virtual sensors at their current versions, some applications required the evaluation of sensors and other features unavailable at emulators during the development period and obliged the use of real devices.
+Emulators allowed running applications together with the IDEs inside the same machine.
+This option facilitates interface design and local network simulation.
+The emulators used during this research were based on the native images that come with the Android SDK, and also the Genymotion Android Emulator~\footnote{Genymotion Android Emulator website: \url{https://www.genymotion.com/} (visited on May, 2017)}.
+Although Android emulators can simulate virtual sensors at their current versions, some applications required the evaluation of sensors and other features unavailable at emulators during the development period and obliged the use of real devices as well.
 
 \paragraphdesc{real devices for testing: devices used during research}
-The real devices used during this research were personal devices or devices available at the laboratories where the research was conducted.
-The settings of the devices used during the network evaluations are described in Appendix~\ref{ape:gsmarena-lg-s3-z3}.
-Other personal devices were used during the application development process (by beta testers) and also during the installations (by the audiences), and they were not catalogued.
+The mobile devices used during this research were LG D686 G Pro Dual Lite, Samsung GT-I9300 Galaxy SIII, and Sony Xperia D8533 (and D8503) Z3 Compact.
+Their main technical specifications are presented on the Table \ref{tab:gsmarena-lg-s3-z3-short}, and the complete settings of the devices are described in Appendix~\ref{ape:gsmarena-lg-s3-z3}.
+Other personal devices were used during the application development process (by beta testers) and also during the installations (by the audiences), and they were not cataloged.
+
+\begin{longtable}{llp{0.2\linewidth}p{0.2\linewidth}p{0.2\linewidth}}
+	\caption{Main technical specifications of the mobile devices used during this research: D686, S3, and Z3. Source: Adapted from \cite{GSMARENA2017-lg-s3-z3}} \\ \hline
+	&               & LG D686 G Pro Lite Dual                              & Samsung GT-I9300 Galaxy SIII                                                                  & Sony D8533 (and D8503) Xperia Z3 Compact                                                          \\ \hline \endhead
+	LAUNCH   & Announced     & 2013, October                                   & 2012, May                                                                                   & 2014, September                                                                                                \\
+	& Status        & Available. Released 2013, November              & Available. Released 2012, May                                                               & Available. Released 2014, September                                                                            \\ \hline
+	PLATFORM & OS            & Android OS, v4.1.2 (Jelly Bean)                 & Android OS, v4.0.4 (Ice Cream Sandwich), 4.3 (Jelly Bean)                                   & Android OS, v4.4.4 (KitKat), upgradable to v6.0 (Marshmallow)                                                  \\
+	& Chipset       & Mediatek MT6577                                 & Exynos 4412 Quad                                                                            & Qualcomm MSM8974AC Snapdragon 801                                                                              \\
+	& CPU           & Dual-core 1.0 GHz Cortex-A9                     & Quad-core 1.4 GHz Cortex-A9                                                                 & Quad-core 2.5 GHz Krait 400                                                                                    \\
+	& GPU           & PowerVR SGX531                                  & Mali-400MP4                                                                                 & Adreno 330                                                                                                     \\ \hline
+	MEMORY   & Card slot     & microSD, up to 32 GB (dedicated slot)           & microSD, up to 64 GB (dedicated slot)                                                       & microSD, up to 256 GB (dedicated slot)                                                                         \\
+	& Internal      & 8 GB, 1 GB RAM                                  & 16/32/64 GB, 1 GB RAM                                                                       & 16 GB, 2 GB RAM                                                                                                \\ \hline
+	COMMS    & WLAN          & Wi-Fi 802.11 b/g/n, Wi-Fi Direct, DLNA, hotspot & Wi-Fi 802.11 a/b/g/n, dual-band, Wi-Fi Direct, DLNA, hotspot                                & Wi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi Direct, DLNA, hotspot                                                \\
+	& Bluetooth     & v3.0, A2DP                                      & v4.0, A2DP, EDR, aptX                                                                       & v4.0, A2DP, LE, aptX                                                                                           \\ \hline
+	FEATURES & Sensors       & Accelerometer, proximity, compass               & Accelerometer, gyro, proximity, compass, barometer                                          & Accelerometer, gyro, proximity, compass, barometer                                                             \\ \hline
+	\label{tab:gsmarena-lg-s3-z3-short}
+\end{longtable}
 
 \paragraphdesc{iOS}
-The applications for iOS devices using the \textit{\textit{urMus}} platform were developed during the period as an exchange student at the University of Michigan under the supervision of Professor Georg Essl.
+Some applications for iOS devices using the \textit{\textit{urMus}} platform were developed during the period as an exchange student at the University of Michigan under the supervision of Professor Georg Essl.
 Within Professor Essl's group many iOS devices, such as iPods, iPhones, and iPads, were available for research purposes.
 A better description regarding this partnership is presented in Section~\ref{sec:partnerships}
-
+%%%%%
 \paragraphdesc{\textit{urMus}}
 All of these devices had the \textit{urMus} platform installed and this allowed the development of mobile music applications without the need of subscribing to the Apple Developer Program.
 A web interface for the \textit{urMus} platform  is available, which allows developers to deploy new codes and interfaces for mobile applications.
@@ -142,8 +166,6 @@ The main evaluation of these applications was made through qualitative reports d
 Although the development of hybrid solutions has generally been avoided in this research, the creation of applications using web technologies was proposed.
 The main web technology considered was Audio Synthesis with Web Audio and network communication through Cloud Services.
 The compatibility of the Web Audio API with browsers available for several mobile platforms allows the participation of many users in a mobile music performance without the burden of having to install OS dependent applications, since all interaction and control is done within a web site.
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,7 +186,7 @@ An additional evaluation was made using the network infrastructure available for
 
 \paragraphdesc{Academic Networks}
 Academic institutions are usually connected through national networks which are in turn connected to other backbone networks in different countries.
-The Rede Nacional de Pesquisa~(RNP) manages the academic network available for Brazilian universities, while the Internet2 is responsible for interconnecting US universities, and RedCLARA is a network that interconnects Latin America's academic networks.
+The Rede Nacional de Ensino e Pesquisa~(RNP) manages the academic network available for Brazilian universities, while the Internet2 is responsible for interconnecting US universities, and RedCLARA is a network that interconnects Latin America's academic networks.
 These interconnected backbone networks were used in this research in order to evaluate long distance communication between Brazil and US.
 This academic network allows the use of services available on local networks and also offers public IPs for devices (with the permission of a participating institution).
 Due to their private access, the use of these networks was only made possible after registering the research project and participating research groups within the academic network managerial infrastructure.
@@ -187,7 +209,7 @@ A web server allows the creation of an online application on a shared computer t
 \paragraphdesc{POST and GET approach}
 The traditional HTTP requests GET and POST are common options available in APIs developed for web services.
 During an interactive performance, the applications are expected to GET the most updated data and POST updated data in order to share with other devices, so the idea of focusing only on these requests was a natural approach for real-time interaction.
-Other requests such as UPDATE or DELETE would not be very useful in a realtime context where data is immediately used after it is shared, so there is no need to manage previously exchanged data.
+Other requests such as UPDATE or DELETE would not be very useful in a real time context where data is immediately used after it is shared, so there is no need to manage previously exchanged data.
 
 \paragraphdesc{Ruby on Rails}
 Web service development with an API can be hard for users without technical knowledge.
@@ -202,8 +224,8 @@ This format was used in many applications developed during this research due to 
 
 \paragraphdesc{deploy at Dreamhost shared server + Passenger}
 The evaluation of the web service was done in local servers during development, but eventually the application was deployed on a shared web server.
-The Dreamhost~\footnote{Dreamhost website: \url{https://www.dreamhost.com/}} web-hosting plan was used in this case with a shared machine including two 4-cores AMD Opteron(tm) Processors (model 4122) with 32Gb of RAM. 
-The Phusion Passenger~\footnote{Phusion Passenger website: \url{https://www.phusionpassenger.com/}} was the web server and application server installed in this machine in order to offer support for the RoR application.
+The Dreamhost~\footnote{Dreamhost website: \url{https://www.dreamhost.com/} (visited on May, 2017)} web-hosting plan was used in this case with a shared machine including two 4-cores AMD Opteron(tm) Processors (model 4122) with 32Gb of RAM. 
+The Phusion Passenger~\footnote{Phusion Passenger website: \url{https://www.phusionpassenger.com/} (visited on May, 2017)} was the web server and application server installed in this machine in order to offer support for the RoR application.
 The setup of these technologies was based on user panels that required little effort in order to get at a complete ready-to-use solution.
 
 %%
@@ -255,14 +277,14 @@ PubNub  & Free         & Free          & 100         & 1M/Month & Unlimited  & 3
 \end{table}
 
 \paragraphdesc{paid plans used for comparison and performance}
-Although the limits of the paid plan and the free plan are similar, these limits are high enough to accomodate traditional mobile music performances as found in the literature. 
+Although the limits of the paid plan and the free plan are similar, these limits are high enough to accommodate traditional mobile music performances as found in the literature. 
 The idea of comparing both plans was to figure out whether the paid plan had technical advantages regarding the Cloud technologies.
 From the developer point-of-view, the only coding difference between the free or paid plans was the key used to connect to the Cloud Service platform (i.e. there is no significant difference).
 The paid plan was used during actual performances to try to avoid problems with limits imposed by the free plan.
 
 \paragraphdesc{Mobile and web applications created}
 Some applications were created using Cloud Services that focused on performance and network evaluation.
-PubNub was used in the Crowd in C[loud] application described in Section~\ref{sec:appcrowdincloud}, and this application was evaluated during a real performance described in the same section.
+PubNub was used in the Crowd in C[loud] application described in Section~\ref{sec:appcrowdincloud} from Appendix~\ref{ape:applications}, and this application was evaluated during a real performance described in the same section.
 The \textit{PushLoop} application described in Section~\ref{sec:apppushloop} was developed to evaluate both plans and compare their performance with other network alternatives.
 
 \subsection*{Protocols and Routing}
@@ -282,7 +304,7 @@ In both universities devices were connected to the network through specific VLAN
 
 During the network evaluation, parameters were defined for simulating specific performance constraints.
 The number of packets per second was varied by introducing a delay between packets of up to 1000~ms, and packet sizes varied from 1 to 250 32-bit floating-point values. These parameters were taken to represent typical rates and values that could be acquired from mobile sensors and inputs, either in single events or grouped events.
-These values were used for the comparison of the network alternatives described above, as detailed in Section~\ref{cap:evaluations}.
+These values were used for the comparison of the network alternatives described above, as detailed in Chapter~\ref{cap:evaluations}.
 
 
 %%%%%%%%%%%%%%%%%%
@@ -295,20 +317,20 @@ The mobile music scenarios addressed in this research always considered that aud
 
 %%\subsection*{Pure Data}
 \paragraphdesc{Pure Data}
-Pure Data was the main computer music language used in this research, and is used in the applications described in Sections~\ref{sec:appthereminimal}, \ref{subsec:appsensors2pd}, and \ref{sec:apphoketus}.
+Pure Data was the main computer music language used in this research, and is used in the applications described in Sections~\ref{sec:appthereminimal}, \ref{subsec:appsensors2pd}, and \ref{sec:apphoketus} from Appendix~\ref{ape:applications}.
 %%The language was also selected to create a course to introduce computer music lessons at the summer courses available at the IME-USP.
 %%This course was ministered in 2016 and 2017 and is expected to continue as part of the program in the next years.
 %%
 %%
 %%\subsection*{CSound}
 \paragraphdesc{Csound}
-The CSound laguage was used for the development of the application \textit{Touches On The Line}, described in Section~\ref{sec:apptouchesontheline}.
+The CSound language was used for the development of the application \textit{Touches On The Line}, described in Section~\ref{sec:apptouchesontheline} from Appendix~\ref{ape:applications}.
 %%This application development took advantage of the examples available for this language and was used to introduce the concept of collaborative performances through web services.
 %%
 %%
 %%\subsection*{SuperCollider}
 \paragraphdesc{SuperCollider}
-SuperCollider was used in the development of the collaborative and cooperative live coding application named \textit{SuperCopair}, which is presented in Section~\ref{sec:appsupercopair}.
+SuperCollider was used in the development of the collaborative and cooperative live coding application named \textit{SuperCopair}, which is presented in Section~\ref{sec:appsupercopair} from Appendix~\ref{ape:applications}.
 %%This language was selected due to its availability on the Atom.io platform which served as the IDE for the live coding performances.
 %%The Cloud Services were used in this application and some distributed experiences were then scheduled during this research with members of the SuperCollider discussion list.
 
@@ -316,7 +338,7 @@ SuperCollider was used in the development of the collaborative and cooperative l
 \paragraphdesc{Web Audio}
 The applications developed for mobile music interaction through a web browser were created using the Web Audio API for audio synthesis.
 %Although many libraries have been created for facilitation the use of Web Audio, the audio synthesis was programmed with native Web Audio API functions in all applications.
-Section~\ref{sec:appcrowdincloud} and \ref{sec:appbandaaberta} describe the applications \textit{Crowd in C[loud]} and \textit{Open Band}, respectively, that used Web Audio for music processing.
+Section~\ref{sec:appcrowdincloud} and \ref{sec:appbandaaberta} from Appendix~\ref{ape:applications} describe the applications \textit{Crowd in C[loud]} and \textit{Open Band}, respectively, that used Web Audio for music processing.
 
 %%
 %%\subsection*{STK}
@@ -339,22 +361,22 @@ This research was conducted within the Computer Music (CompMus) Research Group a
 Regular weekly discussions allowed the diffusion of particular research problems by group members and also provided a space for research interactions and intersections.
 
 \paragraphdesc{Medusa and Flavio}
-A project focused on multichannel audio transmission over computer networks was led by Flávio Luiz Shiavoni and overlapped the beginning of this research.
+A project focused on multichannel audio transmission over computer networks was led by Flávio Luiz Schiavoni and overlapped the beginning of this research.
 His project's questions provided many opportunities for discussions regarding the many ways of dealing with data transmission over network protocols.
 Many insights and alternatives for music collaboration came from the experiments and performances using the Medusa framework created by Flávio.
 
 \paragraphdesc{André Bianchi and DSPBenchmarking}
 A project focused on realtime audio processing in mobile devices and developed by André Jucovsky Bianchi provided many essential interchanges of ideas during the preliminary/defining stages of this research.
 Setting up a partnership with Bianchi was a natural move based on my initial interests with Android application development and audio processing evaluation.
-The result of this partnership was the contribution in the development of the application \textit{DSPBenchmarking} and of some algorithms evaluated through this tool, and is described in Section~\ref{sec:appdspbenchmarking}.
+The result of this partnership was the contribution in the development of the application \textit{DSPBenchmarking} and of some algorithms evaluated through this tool, and is described in Section~\ref{sec:appdspbenchmarking} from Appendix~\ref{ape:applications}.
 
 \paragraphdesc{Gilmar Dias, Thilo Koch, Guilherme Feulo and technical support}
 Many evaluations here presented had to be coordinated between places and groups far away from each other, requiring the recruitment of volunteers to participate in the setups, who besides helping to conduct the evaluations also made contributions to this research.
-Gilmar Rocha de Oliveira Dias, Thilo Koch, and Guilherme Feulo do Espírito Santo participated actively during most of the experiments with the \textit{PushLoop} application described in Section~\ref{sec:apppushloop}.
+Gilmar Rocha de Oliveira Dias, Thilo Koch, and Guilherme Feulo do Espírito Santo participated actively during most of the experiments with the \textit{PushLoop} application described in Section~\ref{sec:apppushloop} from Appendix~\ref{ape:applications}.
 
 \paragraphdesc{Fábio Goródscy and Banda aberta with Web Audio}
 Another important partnership formed towards the final stages of this research was with Fábio Goródscy, whose research interests started with the exploration of the Web Audio API.
-He had developed the \textit{Open Band} project in collaboration with Ariane Stolfi (from the NuSom group discussed below) for audience interaction based on sampling, and we decided to build together a new lightweight version using only the Web Audio API, which is presented in Section~\ref{sec:appbandaaberta}
+He had developed the \textit{Open Band} project in collaboration with Ariane Stolfi (from the NuSom group discussed below) for audience interaction based on sampling, and we decided to build together a new lightweight version using only the Web Audio API, which is presented in Section~\ref{sec:appbandaaberta} from Appendix~\ref{ape:applications}.
 
 
 %%
@@ -371,7 +393,7 @@ Even though no partnerships were formed at that time, their work served as motiv
 
 \paragraphdesc{André Bandeira and Música Mobilis Crítica}
 André Damião Bandeira was a contemporary NuSom composer and researcher studying mobile music and aiming to use some new technologies for his projects and performances.
-A collaboration emerged that led us to the development of \textit{Hoketus} presented in Section~\ref{sec:apphoketus}, which merged many technological and musical concepts into a musical distributed installation.
+A collaboration emerged that led us to the development of \textit{Hoketus} presented in Section~\ref{sec:apphoketus} from Appendix~\ref{ape:applications}, which merged many technological and musical concepts into a musical distributed installation.
 
 %%MQZ: tudo isso é repetição do que já apareceu antes...
 %\paragraphdesc{Ariane Stolfi and Banda Aberta}
@@ -388,7 +410,7 @@ A collaboration emerged that led us to the development of \textit{Hoketus} prese
 The Pure Data discussion list is the main place for posting questions and solutions for Pure Data users.
 The collaboration with Thomas Mayer from Residuum (https://www.residuum.org/) took place after his post on that list regarding the idea of using Android sensors to control Pure Data patches.
 At this time, \textit{Sensors2Pd} was already published and running on the \textit{Hoketus} installation.
-This interaction through the list offered us the opportunity to start a collaboration within a larger project named Sensors2, described in Section~\ref{sec:appsensors2}
+This interaction through the list offered us the opportunity to start a collaboration within a larger project named Sensors2, described in Section~\ref{sec:appsensors2} from Appendix~\ref{ape:applications}.
 
 The collaboration with Thomas resulted in the development of \textit{Sensors2OSC} application, an improvement of \textit{Sensors2Pd}, and many other ideas for applications.
 This project is receiving contributions from other developers around the world and the current applications are translated in four languages (English, German, Portuguese and Japanese).
@@ -425,7 +447,7 @@ A local network at the University of Michigan was used during the whole research
 Application development with the \textit{urMus} platform was mostly based on the knowledge acquired while auditing the multidisciplinary course ``Building a Mobile Phone Ensemble'', taught by Professor Essl in 2015.
 In this course, many exploratory exercises were proposed, freeing students' creativity leading to many interesting/unpredictable applications.
 The idea of exploring local networks within some exercises was an opportunity to evaluate mobile music interaction strategies in this context, with first attempts related to Unicast, Multicast, and the Bonjour technology.
-These experiences are described in Section~\ref{sec:appsumich}. 
+These experiences are described in Section~\ref{sec:appsumich} from Appendix~\ref{ape:applications}. 
 
 %%
 \subsection*{LAViD and RNP}
@@ -509,7 +531,7 @@ Screenshots of the PushLoop application are presented on Figure~\ref{fig:pushloo
 	\label{fig:pushloopscreenshots}
 \end{figure*}
 
-The code of the application is available at \url{https://github.com/deusanyjunior/PushLoop}. 
+The code of the application is available at \url{https://github.com/deusanyjunior/PushLoop} (visited on May, 2017). 
 The first evaluation using this application was published as a paper at the International Computer Music Conference, 2015, Denton, Texas, in 2015~\citep{deCarvalhoJunior2015computer}.
 This paper is presented at Appendix~\ref{ape:papericmc2015}.
 The Chapter~\ref{cap:evaluations} is based on the evaluations conducted with this application.

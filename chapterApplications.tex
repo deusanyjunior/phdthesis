@@ -698,20 +698,29 @@ Two other performances described below were based on mobile applications created
 Both performances used a similar approach regarding the network communication inside the platform using the Lua language.
 
 Although the \textit{urMus} supports OSC, listening to OSC messages through a specific IP is unavailable so then the Multicast communication was discarded.
-The technology used in this case was the Bonjour methods for network advertising and discovery.
-The master device was configured to discover all other devices advertisements.
-Every discovered device is attached to a list of available devices and the master device can use this list to send messages to all devices in this situation.
-This approach was evaluated for different numbers of devices and the more devices we added the more the application was overloaded with the network communication.
-The code for urMus is presented at Listing~\ref{urMusLuaMulticast}.
-The pieces are described in the next sections.
+The technology used in this case was the ZeroConf and Bonjour methods for network advertising and discovery.
+A Lua code simulating Multicast for urMus is presented and commented at Listing~\ref{urMusLuaMulticast}.
+In a brief, the master device was configured to discover all other devices advertisements.
+Every discovered device is attached to a list of available devices.
+The master device can use this list to send messages to all devices.
 
 \begin{footnotesize}
-\lstset{language=Java, caption=Example of Lua code used at urMus platform for Multicast networking simulation, captionpos=b, label=urMusLuaMulticast, numbers=none, numberstyle=\scriptsize}
+\lstset{language=Java, caption=Example of Lua code used at urMus platform for Multicasting in LAN, captionpos=b, label=urMusLuaMulticast, numbers=none, numberstyle=\scriptsize}
 \begin{lstlisting}[frame=single]
-local myIP, myPort = HTTPServer()
-endPoint = string.find(myIP, '.', string.find(myIP,     '.',string.find(myIP, '.',1, true)+1, true)+1, true)
-local ownId = tonumber(string.sub(myIP, endPoint+1))
+friends = {} -- List with IPs from friends
+friendsKey = {} -- List that associates the latest byte from friend's IP with its index at friends list
 
+local myIP, myPort = HTTPServer()
+
+-- The latestDot is the index before the latest byte from an IP.
+latestDot = string.find(myIP, '.', 
+				string.find(myIP,'.',
+					string.find(myIP, '.', 1 , true)+1, true)+1, true)
+
+-- The id will be the latest byte from the IP
+local ownId = tonumber(string.sub(myIP, latestDot+1))
+
+-- Call this function when a device joins the performance
 local function NewConnection(self, name)
 	DPrint("new friend "..name)
 	DPrint("")
@@ -720,12 +729,13 @@ local function NewConnection(self, name)
 			return
 		end
 	end
-	friendEndPoint = string.find(name, '.', string.find(name, '.',string.find(name, '.',1, true)+1, true)+1, true)
-	friendId = tonumber(string.sub(name, friendEndPoint+1))
-	table.insert(friends, name)
-	friendsKey[friendId] = table.getn(friends)
+	friendLatestDot = string.find(name, '.', string.find(name, '.',string.find(name, '.',1, true)+1, true)+1, true)
+	friendId = tonumber(string.sub(name, friendLatestDot+1))
+	table.insert(friends, name) -- Adds IPs to the list friends
+	friendsKey[friendId] = table.getn(friends) -- Sets the IP index to the lates byte
 end
 
+-- Call this function when a device leaves the performance
 local function LostConnection(self, name)
 	for l,w in pairs(friends) do
 		if w == name then
@@ -734,32 +744,47 @@ local function LostConnection(self, name)
 	end
 end
 
+-- Call this function to send a message to every participant device
 function sendNote(noteToSend)
 	DPrint("sent "..noteToSend)
 	DPrint("")
+	-- Send the message to every device on the list
 	for indexIp = 1, table.getn(friends) do
 		local ip = friends[indexIp]
 		SendOSCMessage(ip,8888,"/urMus/numbers",noteToSend, ownId, currentPage)
 	end
 end
 
+-- Call this function when a packet is received from network
 function gotOSC(self, noteReceived, senderId, senderPage)
 	DPrint("got osc")
 	DPrint("")
-	if senderPage == 3 then
-		addPoints(senderId)
-	elseif senderPage == 2 then
-		createNote(keysP[noteReceived])
+	...
 	end
 end
-...
+
+-- Call these functions when a friend joins or leaves the network
+bg:Handle("OnNetConnect", NewConnection)
+bg:Handle("OnNetDisconnect", LostConnection)
+
+-- Listen and receive messages in the same Bonjour group
 StartNetAdvertise("ttss",8889)
 StartNetDiscovery("ttss")
-...
+
+-- Call this function for every OSC message received
+bg:Handle("OnOSCMessage",gotOSC)
+
 SetOSCPort(8888)
 host, port = StartOSCListener()
 \end{lstlisting}
 \end{footnotesize}
+
+This approach was evaluated for different numbers of devices and the more devices we added the more the application was overloaded with the network communication.
+The problem happens due to the loop throughout the list of IPs for every message occur inside the device instead of a loop at the router.
+
+The pieces using this code are described in the next sections.
+The performances were performed on April 18, 2015 in Stamps Auditorium at the Walgreen Drama Center on the U-M North Campus~\footnote{Infomation about performances with urMus in 2015: \url{http://www.eecs.umich.edu/eecs/about/articles/2015/w15-mobile-phone-ensemble-performance.html} (visited on May, 2017)}.
+The videos from these performances are available at \url{https://www.youtube.com/playlist?list=PLcDYUKIkEOpZ9qMRzlfEg2ziEeJxBG4dF} (visited on May, 2017).
 
 %%%%%%%%
 \subsection*{Twinkle, Twinkle Smartphone Star}
@@ -779,10 +804,12 @@ The audience will expect some control from composer hands, but he is using a hea
 In the middle the composer will take out the headphone, he will try to control the performers again, and stop sending notes to the end of the piece.
 The sound experience comes from the idea that the audience will expect some melodies based on the notes that are falling down, but it doesn't depend only on the composer's composition, because the composer is not a player.
 
+The code used for the performance is available at \url{https://github.com/deusanyjunior/ttss} (visited on November, 2018).
+
 %%%%%%%%
 \subsection*{Himalayan Singing Bowl}
 
-Biqiao ``Didi'' Zhang was the composer of this piece and I participated with Zachary Boulanger as partners during the development of the mobile application.  
+Biqiao ``Didi'' Zhang was the composer of this piece and I participated with Zachary Boulanger as partners during the development of the mobile application.
 In this piece we simulate a himalayan singing bowl through multiple mobile devices. 
 One person is the ``conductor''/``leader'' of the performance and this person controls which note the devices are playing (e.g. C3) and how people should be moving their devices. 
 Ideally, only the performers know who the leader is.
@@ -799,8 +826,7 @@ Each person has a different frequency than those next to them, giving a spatial 
 The performance is then made more musically interesting with the addition of different pitches, dynamics, and ``beating''. 
 This is where our simulation grows and differs from the original, making the performance something new entirely.
 
-These performances were performed on April 18, 2015 in Stamps Auditorium at the Walgreen Drama Center on the U-M North Campus~\footnote{Performances with urMus: \url{http://www.eecs.umich.edu/eecs/about/articles/2015/w15-mobile-phone-ensemble-performance.html} (visited on May, 2017)}.
-The videos from these performances are available at \url{https://www.youtube.com/watch?v=8RWgXoM2BCA} (visited on May, 2017).
+The code used for the performance is available at\\ \url{https://github.com/deusanyjunior/Himalayan-Singing-Bowl} (visited on November, 2018).
 
 
 %% ------------------------------------------------------------------------- %%
@@ -825,5 +851,7 @@ The current version focus on pure web audio for sound synthesis and we also deci
 These concepts surrounded the whole development of this new version of ``Open Band'' and had a great impact in the new result obtained.
 
 The code of the current version of the application used during this performance is available at \url{https://github.com/fabiogoro/banda/tree/master/bandawa} (visited on May, 2017).
-We submitted a full paper to the 3rd Web Audio Conference~(WAC) that will be held in the end of August, 2017 at the Centre for Digital Music, Queen Mary University of London.
-The submitted version of this paper is available at Appendix~\ref{ape:paperwac2017}.
+A discussion about the technologies used in this application is presented on a full paper published at the 3rd Web Audio Conference~(WAC) held in August 21-23, 2017 at the Centre for Digital Music, Queen Mary University of London.
+The paper is available at Appendix~\ref{ape:paperwac2017}.
+A discussion about the performances using this application is presented on a full paper published at the Audio Mostly Conference held in August 23-26, 2017 at the Centre for Digital Music, Queen Mary University of London.
+The paper is available at Appendix~\ref{ape:paperam2017}.

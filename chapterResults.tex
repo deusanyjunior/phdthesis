@@ -20,89 +20,89 @@ In this case, the evaluation simulated messages in a range from 7 to 1750 floats
 
 The geographic configuration imposes physical restrictions on the lower bounds of network performance.
 We made use of the broadband Internet connection between the universities, whose actual interconnection medium is an optical fiber, with a light traveling speed of about 200,000 km/s.
-If we consider the distances on the map in Figure \ref{fig:routes}, we have a theoretical (light speed) RTT of 174ms in the first evaluation, between S\~{a}o Paulo and Jo\~{a}o Pessoa (SAO-JPA)\footnote{The route between S\~{a}o Paulo and Jo\~{a}o Pessoa is 34,800km.}, and of 104ms in the second evaluation, between Ann Arbor and Jo\~{a}o Pessoa (ARB-JPA)\footnote{The route between Ann Arbor and Jo\~{a}o Pessoa is 20,940km.}.
+The cloud service main cluster is situated at Northern Virginia~(NVG) in USA~\footnote{Information about Pusher cluster: \url{https://pusher.com/docs/clusters} (visited on November, 2018)}.
+The Internet connection between Jo\~{a}o Pessoa~(JPA) and the world has three intermediary nodes in the path inside RNP: Fortaleza~(FOR), S\~{a}o Paulo~(SAO), and Porto Alegre~(POA)~\footnote{RNP routes: \url{https://www.rnp.br/servicos/conectividade/rede-ipe} (visited on November, 2018)}.
+The route passing through SAO has the highest throughput, and was selected for the next measures.
+Additionally, all messages should pass through the main cluster.
+Considering the distances and routes on the map in Figure~\ref{fig:routes}, we have a theoretical (light speed) RTT of 174ms in the first evaluation, between S\~{a}o Paulo and Jo\~{a}o Pessoa (SAO-JPA)\footnote{The distance between S\~{a}o Paulo and Jo\~{a}o Pessoa is 34,800km (route SAO-NVG-SAO-JPA-SAO-NVG-SAO).}, and of 104ms in the second evaluation, between Ann Arbor and Jo\~{a}o Pessoa (ARB-JPA)\footnote{The distance between Ann Arbor and Jo\~{a}o Pessoa is 20,940km (route ARB-NVG-SAO-JPA-SAO-NVG-ARB).}.
 
-The actual RTT for each message sent is presented in the charts of Figure \ref{fig:z3-d685-evaluation}.
+
+The actual RTT for each message sent is presented in the charts of Figure~\ref{fig:z3-d685-evaluation}.
 Some values overshoot the chart limit (chosen to maintain the scale of all charts), and they are considered to be lost during transmission (i.e. either a packet loss or a broken connection). 
-Table \ref{tab:sao-jpa} and Table \ref{tab:arb-jpa} show a summary with the main results extracted from these measurements.
+Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main results extracted from these measurements.
 
 
 \begin{figure*}[!ht]
 \centering
-\begin{subfigure}{.30\textwidth}
-	\includegraphics[width=\columnwidth]{z3-d685-5-c001}
+\begin{subfigure}{.45\textwidth}
+	\includegraphics[width=\columnwidth]{z3-d685-c001}
     \caption{One float}
 	\label{fig:z3-d685-c001}
 \end{subfigure}
-\begin{subfigure}{.30\textwidth}
-	\includegraphics[width=\columnwidth]{z3-d685-5-c050}
+\begin{subfigure}{.45\textwidth}
+	\includegraphics[width=\columnwidth]{z3-d685-c050}
 	\caption{50 floats}
 	\label{fig:z3-d685-c050}
 \end{subfigure}
-\begin{subfigure}{.30\textwidth}
-	\includegraphics[width=\columnwidth]{z3-d685-5-c100}
+\par\bigskip
+\begin{subfigure}{.45\textwidth}
+	\includegraphics[width=\columnwidth]{z3-d685-c100}
 	\caption{100 floats}
 	\label{fig:z3-d685-c100}
 \end{subfigure}
-\par\bigskip
-\begin{subfigure}{.30\textwidth}
-	\includegraphics[width=\columnwidth]{z3-d685-5-c150}
+\begin{subfigure}{.45\textwidth}
+	\includegraphics[width=\columnwidth]{z3-d685-c150}
 	\caption{150 floats}
 	\label{fig:z3-d685-4-c150}
 \end{subfigure}
-\begin{subfigure}{.30\textwidth}
-	\includegraphics[width=\columnwidth]{z3-d685-5-c200}
+\bigskip
+\begin{subfigure}{.45\textwidth}
+	\includegraphics[width=\columnwidth]{z3-d685-c200}
 	\caption{200 floats}
 	\label{fig:z3-d685-c200}
 \end{subfigure}
-\begin{subfigure}{.30\textwidth}
-	\includegraphics[width=\columnwidth]{z3-d685-5-c250}
+\begin{subfigure}{.45\textwidth}
+	\includegraphics[width=\columnwidth]{z3-d685-c250}
 	\caption{250 floats}
 	\label{fig:z3-d685-c250}
 \end{subfigure} 
 
-\caption{RTT for each message.}
+\caption{RTT comparison for different number of floats included in messages sent from São Paulo to João Pessoa~(SAO-JPA) and Ann Arbor to João Pessoa~(ARB-JPA). Lost messages are represented with 0ms RTT. The y-axis maximum is 2000ms for better visualization, but there are some RTTs reaching 4s.}
 \label{fig:z3-d685-evaluation}
 \end{figure*}
 
 
-\begin{table}[!ht]
-\begin{center}
-\begin{tabular}{|l|llllll|}
-\hline 
-Floats    & 1     & 50    & 100    & 150   & 200    & 250   \\
-\hline
-Lost msgs & 14    & 26    & 25     & 3     & 21     & 38    \\
-Msg size  & 41    &	614   &	1190   & 1782  & 2355   & 2950  \\
-Minimum   & 342   & 332   & 332    & 329   & 332    & 352   \\
-Maximum   & 2430  & 3916  & 4371   & 1595  & 3014   & 1700  \\
-Average   & 515   & 578   & 563    & 486   & 536    & 543   \\
-Std. dev. & 224   & 366   & 394    & 181   & 305    & 168   \\
-\hline
-\end{tabular}
-\end{center}
+\begin{table}[]
+	\centering
+	\begin{tabular}{ll|llllll|}
+		&                    & \multicolumn{6}{c|}{Floats per message} \\
+		&                    & 1    & 50   & 100  & 150  & 200  & 250  \\ \hline
+		\multirow{2}{*}{Message}            & Loss (for 1000)      & 14   & 26   & 25   & 3    & 21   & 38   \\
+		& Size (bytes)       & 41   & 614  & 1190 & 1782 & 2355 & 2950 \\ \cline{1-2}
+		\multirow{4}{*}{RTT (milliseconds)} & Minimum            & 342  & 332  & 332  & 329  & 332  & 352  \\
+		& Maximum            & 2430 & 3916 & 4371 & 1595 & 3014 & 1700 \\
+		& Average            & 515  & 578  & 563  & 486  & 536  & 543  \\
+		& Standard deviation & 224  & 366  & 394  & 181  & 305  & 168  \\ \hline
+	\end{tabular}
 
- \caption{SPA-JPA tests: Results from RTT evaluation using cloud services between S\~{a}o Paulo and Jo\~{a}o Pessoa. RTT is in milliseconds and average message size is in bytes.}
+ \caption{SPA-JPA tests: Results from RTT evaluation using cloud services between S\~{a}o Paulo and Jo\~{a}o Pessoa.}
  \label{tab:sao-jpa}
 \end{table}
 
-\begin{table}[!ht]
-\begin{center}
-\begin{tabular}{|l|llllll|}
-\hline 
-Floats     & 1     & 50    & 100    & 150   & 200    & 250   \\
-\hline
-Lost msgs  & 3     & 0     & 0      & 17    & 5      & 0     \\
-Msg size   & 43    & 613   & 1189   & 1784  & 2378   & 2935  \\
-Minimum    & 166   & 172   & 172    & 182   & 199    & 190   \\
-Maximum    & 1953  & 1052  & 898    & 3100  & 1869   & 951   \\
-Average    & 243   & 230   & 273    & 316   & 348    & 329   \\
-Std. dev.  & 138   & 83    & 103    & 317   & 143    & 101   \\
-\hline
-\end{tabular}
-\end{center}
+\begin{table}[]
+	\centering
+	\begin{tabular}{ll|llllll|}
+		&                    & \multicolumn{6}{c|}{Floats per message}  \\
+		&                    & 1    & 50   & 100  & 150  & 200  & 250  \\ \hline
+		Message             & Loss (for 1000)      & 3    & 0    & 0    & 17   & 5    & 0    \\
+		& Size (bytes)       & 43   & 613  & 1189 & 1784 & 2378 & 2935 \\ \cline{1-2}
+		RTT (milliseconds) & Minimum            & 166  & 172  & 172  & 182  & 199  & 190  \\
+		& Maximum            & 1953 & 1052 & 898  & 3100 & 1869 & 951  \\
+		& Average            & 243  & 230  & 273  & 316  & 348  & 329  \\
+		& Standard deviation & 138  & 83   & 103  & 317  & 143  & 101  \\ \hline
+	\end{tabular}
 
-\caption{ARB-JPA tests: Results from RTT evaluation using cloud services between Ann Arbor and Jo\~{a}o Pessoa. RTT is in milliseconds and average message size is in bytes.}
+\caption{ARB-JPA tests: Results from RTT evaluation using cloud services between Ann Arbor and Jo\~{a}o Pessoa.}
  \label{tab:arb-jpa}
 \end{table}
 
@@ -111,10 +111,11 @@ Another point from ARB-JPA evaluation is that the more floats we have on a messa
 The SAO-JPA evaluation presented some instability regarding the average RTT and there was no discernible pattern linking the number of floats to the average RTT.
 Although we have had some high RTT values during the tests, the concentration of high RTT values appear to be more frequent in clustered sequential messages than when messages are isolated (meaning musical algorithms based on sporadic communication would suffer less). Furthermore, it was relatively common for the service to lose at least one message after a high RTT value.
 
-The results summarized in Table \ref{tab:sao-jpa} present a minimum RTT of 329ms with 150 floats and average RTT values between 486-578ms for all message sizes.
-On the other hand, we have a minimum RTT of 166ms with 1 float in Table \ref{tab:arb-jpa}, and average RTT values between 230-348ms.
+The results summarized in Table~\ref{tab:sao-jpa} present a minimum RTT of 329ms with 150 floats and average RTT values between 486-578ms for all message sizes.
+On the other hand, we have a minimum RTT of 166ms with 1 float in Table~\ref{tab:arb-jpa}, and average RTT values between 230-348ms.
 We sent 1000 messages on each test and lost no more than 4\% of the messages in the worst case, and we lost more messages in the SAO-JPA evaluation than in ARB-JPA.
 Moreover, ARB-JPA evaluation had tests with zero message loss.
+These results are also discussed in the paper presented at Appendix~\ref{ape:papericmc2015}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Second trial: Delay between packets}

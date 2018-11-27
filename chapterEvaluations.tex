@@ -24,10 +24,11 @@
 %High quality audio transmission through a large bandwidth can be considered a problem at some contexts and the addition of delays to permit this high quality may be another problem as well.
 
 %%MQZ: As duas frases abaixo têm cara de introdução
-Although mobile devices present wireless connection as an alternative to wired solutions, the bandwidth of new wireless standards is quite comparable to wired options.
-Additionally, new mobile devices present multicore processors and optimized operating systems that surpass previous devices settings and drawbacks from old systems regarding the audio stack.
+%Although mobile devices present wireless connection as an alternative to wired solutions, the bandwidth of new wireless standards is quite comparable to wired options.
+%Additionally, new mobile devices present multicore processors and optimized operating systems that surpass previous devices settings and drawbacks from old systems regarding the audio stack.
+
 \paragraphdesc{description of our evaluation: data transmission over long distance}
-The context of this research follows the proposals and results from past researches from Compmus group members, including some other assumptions.
+The context of the evaluations in this chapter follows the proposals and results from past researches from Compmus group members, including some other assumptions.
 \paragraphdesc{audio synthesis in realtime on mobile devices}
 In the beginning of my research I collaborated with a project by \citefullauthor{bianchi2014processamento}, in which he evaluated realtime DSP on Android devices.
 Together we explored the advantages of using JNI instead of pure Java with results described in \citep{deCarvalhoJunior2013fftbenchmark}.
@@ -38,7 +39,7 @@ In his thesis, \citefullauthor{bianchi2014processamento} concluded that most And
 
 \textbf{In that sense, I decided to evaluate the performance of mobile device technologies related to data transmission using different network alternatives for long distance interaction.}
 %%MQZ: Não faz sentido insistir nessa altura da tese que você não vai transmitir áudio. Isso tem que estar claro desde a introdução, e não precisa repetir.
-Particularly in this research, the evaluation focuses on the transmission of symbolic data (i.e. synthesis and effects parameters, control data, sensors).
+Particularly in this research, the evaluation focuses on the transmission of symbolic data (i.e. synthesis and effects parameters, control data, and sensors values).
 %In order to evaluate an alternative that would have high audio quality and small bandwidth consumption through mobile networks.
 
 %%MQZ: Está quase igual na metodologia:
@@ -72,7 +73,7 @@ These technologies are presented below and discussed afterwards:
 	\item The wireless router TP-Link AC1750 Archer C7 Wireless Dual Band Gigabit Router~(AC1750) used at USP and UMich was set up just for this research, while the AirPort Time Capsule used at UFPB was the available router for users at the Digital Video Applications Lab~(LAViD). Both routers have gigabit connection and are compatible with 802.11ac wireless standard;
 	\item The interconnection between devices was managed through Multicast, Unicast, and Cloud Services;
 	\item The research involved: the Universidade de São Paulo~(USP) at São Paulo, SP, Brazil, Universidade Federal da Paraíba~(UFPB) at João Pessoa, PB, Brazil, and University of Michigan~(UMich) at Ann Arbor, Michigan, USA;
-	\item The academic gigabit research network infrastructure was selected for this evaluation both in Brazil and USA, being Rede Nacional de Pesquisa~(RNP) and Internet2~(I2) responsible for the interconnection in both countries, respectively, while the RedCLARA is responsible for some intermediate connection paths between RNP and I2.
+	\item The academic gigabit research network infrastructure was selected for this evaluation both in Brazil and USA, being Rede Nacional de Ensino e Pesquisa~(RNP) and Internet2~(I2) responsible for the interconnection in both countries, respectively, while the RedCLARA is responsible for some intermediate connection paths between RNP and I2.
 \end{itemize}
 
 \paragraphdesc{why Android and the devices used}
@@ -85,9 +86,9 @@ The difference between the Z3 models D8533 and D8503 refers only to their cellul
 \paragraphdesc{the delay between packets relation with sensors and touch events}
 %TODO: discuss about MTU, sensors, touch, and the number of data transferred in order to justify the values from 1 to 250 floats per second.
 Android Developer guide for Sensors describe four different sensor rate defined as Normal with a delay of 200~ms between each sample, UI with 60~ms, Game with 20~ms, and Fastest 0~$\mu$~s~\cite{Android2017sensorsoverview}.
-From the experiences with the development of some applications such as the Thereminal~(Section~\ref{sec:appthereminimal}) and Sensors2PD~(Section~\ref{subsec:appsensors2pd}) I noticed that the sensor rate works as expected but the Fastest that was always higher than the defined.
+From the experiences with the development of some applications such as the Thereminal~(Appendix~\ref{sec:appthereminimal}) and Sensors2PD~(Appendix~\ref{subsec:appsensors2pd}) I noticed that the sensor rate works as expected but the Fastest that was always higher than the defined.
 \citefullauthor{Ma2013experimental} evaluated Android sensors and defined the minimum delay between sensor events is around 5ms for accelerometer at fastest sampling rate option~\cite{Ma2013experimental}.
-These results express that the maximum frequency of 200~Hz for three float numbers representing the accelerometer coordinates, although the device can have more sensors and the report of all sensors are independent.
+These results express that the maximum frequency is 200~Hz for three float numbers representing the accelerometer coordinates.
 For instance, the touch responsiveness of Android devices depends on the screen scan frequency but some circuits can scan at 120~Hz and find up to 10 fingers position, what implies 10 pair of position values on every 8~ms in the best situation~\cite{Padre2017touchresponsiveness}.
 Bearing in mind these values, the evaluation considers the sampling rate varying from 4~Hz to 500~Hz, in order to verify the performance at normal situations and also at fastest ones.  
 
@@ -108,12 +109,12 @@ Considering that the Internet options are getting better from time to time, the 
 \paragraphdesc{the cloud services selected, size of packets, and transmission limits}
 Multicast and Unicast were selected to interconnect the devices inside the academic network due to its benefit of use when configured, while the Cloud Services were selected in order to save effort with a distributed server development for devices interconnection.
 Multicast requires all devices sending and receiving messages through the same group which is defined by an IP and network Port.
-In order to use Unicast, the user need to know the public IPs of all devices with which he wants to exchange messages.
+In order to use Unicast, the user needs to know the public IPs of all devices with which he/she wants to exchange messages.
 Although public IPv4 is a scarce network resource today, IPv6 is becoming available for more devices.
 
 The Cloud Services is another option for interconnection as it can be used to interconnect any device compatible with its APIs.
 Devices can exchange messages using the same channel and same security keys, even behind NATs.
-Pusher and PubNub were the Cloud Services selected for this evaluation due to its popularity and their higher number of APIs.
+Pusher and PubNub were the Cloud Services selected for this evaluation based on past experiences during the development of applications presented at Appendix~\ref{ape:applications}.
 Pusher presents some restrictions such as 10kB per message and a maximum rate of 10 messages per second per device, while PubNub restricts message exchanging to 32kB per message and the devices can send as much messages as wanted.
 The size of messages was not a problem during the evaluations because the MTU size is smaller, but the limit of messages per second applied on Pusher implied a minimum delay of 100ms between messages during the tests including Pusher.
 
@@ -155,13 +156,13 @@ The UMich network managers set-up everything considering my UMich number and ema
 \paragraphdesc{academic network set up}
 The settings requested during this research at both Universidade de São Paulo and University of Michigan was a VLAN with IPv4 and IPv6 blocks for interaction through Unicast and Multicast services, and also with Internet access for intercommunication with the Cloud Services.
 Although it seemed to be an easy request from my point of view, the services were unstable during most of the time of the research.
-The Multicast was a the most troublesome setting and required many requests to Network Operations Center~(NOC) throughout the whole path between Universidade de São Paulo and University of Michigan.
+The Multicast was the most troublesome setting and required many requests to Network Operations Center~(NOC) throughout the whole path between Universidade de São Paulo and University of Michigan.
 The Unicast and Internet were available most of the time, on the other hand.
 
-At Universidade de São Paulo, the VLAN created had the ID 1104, Gateway v4 200.133.200.241/29, and Gateway v6 2001:12f0:507:1::/64.
-The jack available for this VLAN during the research was the \textit{IME-CCSL-01A PP09.21} situated at room 118, from CCSL, IME, USP.
-The VLAN ID 265 (DEPT-EECS-BEYSTER-4A) was created at University of Michigan and configured with DHCP over the Gateway v4 141.212.110.0/24 and Gateway v6 2607:F018:600:6::/64.
-The jack was labeled 4916\_1D40 and connected to s-BEYSTER-4942-1 port gi8\/22 at Bob and Betty Beyster building in University of Michigan.
+%At Universidade de São Paulo, the VLAN created had the ID 1104, Gateway v4 200.133.200.241/29, and Gateway v6 2001:12f0:507:1::/64.
+%The jack available for this VLAN during the research was the \textit{IME-CCSL-01A PP09.21} situated at room 118, from CCSL, IME, USP.
+%The VLAN ID 265 (DEPT-EECS-BEYSTER-4A) was created at University of Michigan and configured with DHCP over the Gateway v4 141.212.110.0/24 and Gateway v6 2607:F018:600:6::/64.
+%The jack was labeled 4916\_1D40 and connected to s-BEYSTER-4942-1 port gi8\/22 at Bob and Betty Beyster building in University of Michigan.
 
 \paragraphdesc{academic network IP and port}
 

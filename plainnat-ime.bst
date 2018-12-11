@@ -5,10 +5,17 @@
 % - FUNCTION {format.full.names}
 % -- add first name to full names
 %
+% - FUNCTION {format.pages}
+% -- change página to page
+%
+% - FUNCTION {calc.label}
+% -- change "(" to " ("
+%
 %
 % Versão modificada do arquivo plainnat.bst
 % by J.P. Mena-Chalco
 % Wed Nov 25 09:38:47 BRST 2009
+% 
 % 
 %
 %% File: `plainnat.bst'
@@ -534,8 +541,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "p\'{a}ginas" pages n.dashify tie.or.space.connect }
-        { "p\'{a}gina" pages tie.or.space.connect }
+        { "pages" pages n.dashify tie.or.space.connect }
+        { "page" pages tie.or.space.connect }
       if$
     }
   if$
@@ -1226,7 +1233,7 @@ FUNCTION {calc.short.authors}
 FUNCTION {calc.label}
 { calc.short.authors
   short.list
-  "("
+  " ("
   *
   year duplicate$ empty$
   short.list key field.or.null = or

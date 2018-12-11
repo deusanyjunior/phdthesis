@@ -3,12 +3,10 @@
 \label{cap:mobilemusic}
 
  \epigraph{
- Buy it, use it, break it, fix it,\\
- Trash it, change it, mail - upgrade it,\\
- Charge it, point it, zoom it, press it,\\
- Snap it, work it, quick - erase it..\\
- ..\\
- Technologic. technologic.}
+	Let the music in tonight\\
+	Just turn on the music\\
+	Let the music of your life\\
+	Give life back to music.}
  {Daft Punk}
 
 \paragraphdesc{the first days of mobile music using cellphones and ringtones}
@@ -259,19 +257,19 @@ Moreover, the majority of new mobile devices can run Web Audio API applications 
 \paragraphdesc{direct manipulation: buttons and touch}
 In terms of MM interaction, the applications can apply direct or indirect audio manipulation.
 Apps using buttons, visual controls, and touchscreen permit direct manipulation as the interaction depends on a user's actions, i.e., the user decides when to send new inputs or parameters to the application through the interface.
-The application ``Touches on The Line'', described in Section~\ref{sec:apptouchesontheline}, applies the idea of direct manipulation.
+The application ``Touches on The Line'', described in Appendix~\ref{apesec:apptouchesontheline}, applies the idea of direct manipulation.
 The touch position acts as an input to the CSound synthesizer and sound is generated following the position of the fingers on the screen before being sent to other users who will reproduce the same audio~\citep{deCarvalhoJunior2013touches}.
 
 \paragraphdesc{indirect manipulation: sensors and gestures}
 Developers take advantage of sensors, gestures, and  multimedia resources like audio and camera for indirect audio manipulation on mobile applications.
 Although these inputs sometimes require specific actions from the user's side to interact with MM, their current values are sent with a fixed (or variable) sample rate to the application.
 This situation provides new parameters to the application constantly, even if the user is not interacting with the mobile device.
-The application ``Sensors2PD'' described in Section \ref{subsec:appsensors2pd} is an example of indirect manipulation where users can control which sensor will send values to a Pure Data patch, so sensor events are sent when they are acquired by the system~\citep{deCarvalhoJunior2014sensors2pd}.
+The application ``Sensors2PD'' described in Appendix~\ref{apesubsec:appsensors2pd} is an example of indirect manipulation where users can control which sensor will send values to a Pure Data patch, so sensor events are sent when they are acquired by the system~\citep{deCarvalhoJunior2014sensors2pd}.
 
 \paragraphdesc{mixed manipulation: direct and indirect}
 It is also possible to have mixed interaction when applications allow direct and indirect manipulation of audio parameters.
 Ocarina~\citep{Wang2014ocarina} uses this in its approach whereby buttons manipulate the tone of the output while, at the same time, the audio input is used to capture the blow from a user's mouth to control the amplitude of that tone's synthesis.
-The project ``Hoketus'' described in Section \ref{sec:apphoketus} uses available wireless network information to define the sound synthesizer, to modify synthesizer parameters through touch on a smartphone screen, and to allow the use of accelerometer values as parameters at the same time~\citep{Bandeira2014notes,deCarvalhoJunior2015indoor}.
+The project ``Hoketus'' described in Appendix~\ref{apesec:apphoketus} uses available wireless network information to define the sound synthesizer, to modify synthesizer parameters through touch on a smartphone screen, and to allow the use of accelerometer values as parameters at the same time~\citep{Bandeira2014notes,deCarvalhoJunior2015indoor}.
 The direct, indirect, and mixed manipulation definitions here are far from being a general classification, although it gives support to HCI concepts with similar descriptions.
 
 \paragraphdesc{link mobile controllers to mobile instruments}
@@ -297,10 +295,10 @@ Projects and companies that encouraged the boom of MM in recent years are cited 
 \label{sec:mobileinstruments}
 
 \paragraphdesc{definition based on Miranda/Wanderley: new digital music instruments}
-The insertion of mobile devices in the ambit of musical instruments has been an important approach for the digital musical instrument (DMI) concept~\citep{miranda2006newdigitalmusical}.
+The insertion of mobile devices in the ambit of musical instruments has been an important approach for the digital musical instrument (DMI) concept~\citep{Miranda2006newdigitalmusical}.
 The representation of a DMI runs from the input to the sound production, including a gestural controller, mapping section, primary feedback from the gestural controller, and secondary feedback from the sound production.
 This possible approach to represent a DMI is similar to the process of generating sound on acoustic instruments.
-However, the fixed causality is optional, so the same input can be mapped to a different sound~\citep{miranda2006newdigitalmusical}.
+However, the fixed causality is optional, so the same input can be mapped to a different sound~\citep{Miranda2006newdigitalmusical}.
 The possible ways of using smartphones discussed in Section~\ref{sec:mobiletechnologies} can place them in any position of this representation without the necessity of being a complete DMI.
 
 \paragraphdesc{the bottleneck: data processing, OS, programming languages}
@@ -339,7 +337,7 @@ The development of libpd was an important advance in recent years.
 This library allows loading of Pd patches inside programs written in Java, Objective C, and other languages.
 This solution encouraged the use of Pd on Android and iOS applications.
 Examples of these applications are, for example, RjDj and PdDroidParty~\citep{Brinkmann2011embeddingpd,Brinkmann2012makingmusicalapps}.
-During our research we also created apps using libpd, like the \textit{thereminimal}, \textit{Hoketus}, and \textit{Sensors2Pd}, described in Sections \ref{sec:appthereminimal} \ref{sec:apphoketus}, and \ref{subsec:appsensors2pd}, respectively.
+During our research we also created apps using libpd, like the \textit{thereminimal}, \textit{Hoketus}, and \textit{Sensors2Pd}, described in Appendices~\ref{apesec:appthereminimal}, \ref{apesec:apphoketus}, and \ref{apesubsec:appsensors2pd}, respectively.
 
 ``WebPd'' from \citeauthor{Piquemal2017webpd} is a recent project that allows the use of Pd patches on diverse systems through a browser~\citep{Piquemal2017webpd}.
 It is a JavaScript library that interprets some Pd elements from the patch, projects them on web pages, and runs the patch using the Web Audio API.
@@ -365,7 +363,7 @@ The users can program interactions and interfaces using the Lua language for the
 Network interaction is also allowed through Bonjour or TCP connections. 
 The system permits the use of all available sensors and input/output interfaces like audio, camera, and GPS as well.
 Since its development, urMus has been used in many research projects like a machine learning environment for percussive music collaborations~\citep{Derbinsky2012exploring}, and audience participation using the Mobile Ad-hoc Network~(MANET)~\citep{Lee2014manet}.
-Many urMus applications were also created by students as their final project of the ``Building a Mobile Phone Ensemble'' course from the University of Michigan since 2009 under the direction of Prof. Georg Essl and resulted in some performances, the last one being in 2015~\citep{michigan2017mobilephoneensempleperformance}.
+Many urMus applications were also created by students as their final project of the ``Building a Mobile Phone Ensemble'' course from the University of Michigan since 2009 under the direction of Prof. Georg Essl and resulted in some performances, the last one being in 2015~\citep{Michigan2017mobilephoneensempleperformance}.
 
 \paragraphdesc{mobile music examples with Chuck}
 One of the most prominent MM applications is the Ocarina for iPhone~\citep{Wang2008domobilephones}.
@@ -374,17 +372,17 @@ User interaction is made through the blowing on the smartphone's mic while the m
 The application was on the Hall of Fame of Apple Store for many years and today users can still play the legendary ocarina on iPhone devices and listen to other users playing around the world~\citep{Wang2014ocarina}. 
 
 \paragraphdesc{mobile music examples with CSound}
-During the 2010's, mobile devices became also compatible with one of the oldest computer music languages, the CSound~\citep{vercoe1990csound}.
+During the 2010's, mobile devices became also compatible with one of the oldest computer music languages, the CSound~\citep{Vercoe1990csound}.
 Available for Android and iOS devices, many applications have been developed using the mobile API and are distributed as demonstrations inside the CSound mobile application.
 During our research, we also used the CSound mobile API to create an application named ``Touches on the Line'' in which user's touch movements are shared through a webserver to all connected users so that they can listen and play together.
 The audio synthesis is made with pure CSound while the server uses Ruby on Rails (RoR).
-The application is better described in Section~\ref{sec:apptouchesontheline}.
+The application is better described in Appendix~\ref{apesec:apptouchesontheline}.
 
 CSound files can also be loaded on to web browsers through the use of the Emscripten compiler that compiles C/C++ into JavaScript applications compatible with Web Audio API, and also through the use of the Portable NativeClient~(PNaCl) that compiles C/C++ into abstract architecture-independent executables.
-This web interface is compatible only with specific browsers and is better described by \cite{lazzarini2014csound}.
+This web interface is compatible only with specific browsers and is better described by \cite{Lazzarini2014csound}.
 
 \paragraphdesc{mobile music examples with SuperCollider}
-Mobile applications using the language ``SuperCollider''~\citep{mccartney2002supercollider} have recently been conceived and can be found in some research projects as well.
+Mobile applications using the language ``SuperCollider''~\citep{Mccartney2002supercollider} have recently been conceived and can be found in some research projects as well.
 The AuRal system is an example of an Android application that allows users to create ad-hoc ensembles based on geolocation.
 The SuperCollider server running on the mobile application receives OSC messages with parameters used during real-time music generation~\citep{Allison2012aural}.
 The iSuperColliderKit is an alternative for iOS programmers.
@@ -417,7 +415,7 @@ In this case we took advantage of Web Audio API to create an application that co
 A musician would also guide the audience harmony from the stage in this case, but, differently from echobo, the devices were interconnected using Cloud Services.
 Doing this, we allowed users from anywhere to join the performance without any network setup besides entering a web page URL.
 The scalability of Cloud Services is another advantage of this approach that permits a high number of users to interact together, while the distributed Cloud clusters shorten the interconnection paths depending on each user's location.
-More details regarding this project are presented in Section~\ref{sec:appcrowdincloud}.
+More details regarding this project are presented in Appendix~\ref{apesec:appcrowdincloud}.
 
 \paragraphdesc{collaboration: controllers merge with instruments}
 These selected applications represent only particular cases of MM technologies.
@@ -450,7 +448,7 @@ Users may have different constraints in MM interactions depending on the channel
 %Data loss and delay can be unacceptable for some MM experiences, although it is not a general rule. 
 \paragraphdesc{synchronization problems: example of a simple call}
 Data exchange constraints can also affect the idea of synchronization during collaborative MM experiences.
-Some works already discussed in Section \ref{sec:networkmusic} determined that network interaction have problems with delays higher than 30~ms~\cite{Lago2004thequest}.
+Some works already discussed in Section~\ref{sec:networkmusic} determined that network interaction have problems with delays higher than 30~ms~\cite{Lago2004thequest}.
 Imagine a single call between two extremes of the Equator through an optical fiber.
 The data would be transmitted at 200,000~km/s over 20,000~km, and the communication would have 100~ms of delay, which is unacceptable by the telephony industry~\citep{Cheshire1996latency}.
 Another example is a call using optical fiber between Brazilian extremes, North-South or East-West, through a path of approximately 4,000~km.
@@ -481,7 +479,7 @@ While the cloud server would act as a master sound card, the devices would act a
 At TweetDreams, the users would contribute to the main performance through the Tweeter system by sending specified search terms translated into musical and visual reactions~\citep{Dahl2011tweetdreams}.
 Python, Chuck, and Processing languages are used in this project to retrieve tweets, generate melodies, and render the graphical interface, respectively.
 The Python application acts as the master application, while the slave is the Tweeter application.
-Crowd in C[loud], described in Section \ref{sec:appcrowdincloud}, is a performance where the master stays on stage while the slaves are the audience's mobile devices acting as performers~\citep{Lee2016crowd,deCarvalhoJunior2016understanding}.
+Crowd in C[loud], described in Appendix~\ref{apesec:appcrowdincloud}, is a performance where the master stays on stage while the slaves are the audience's mobile devices acting as performers~\citep{Lee2016crowd,deCarvalhoJunior2016understanding}.
 
 In the Delayed Feedback approach Carot defines that, independently of the delay, all inputs will be in sync in the future and the participants will feel like they are working together.
 massMobile is an example of this approach as the authors take advantage of time-stamped messages in order to minimize the effects of latency, playing all events together based on the time-stamps.
@@ -489,12 +487,12 @@ This project also takes advantage of a robust cloud based Java server and has be
 
 In the Fake Time approach, the issue with latency is avoided.
 The musical events will only be played at the next musical bar and the participants will play with events during the previous bar by other participants.
-The project `Touches On The Line' described in Section \ref{sec:apptouchesontheline} can be considered an example of this approach as the finger movements on touchscreen are sent only when the finger releases the screen~\cite{deCarvalhoJunior2013touches}.
+The project `Touches On The Line' described in Appendix~\ref{apesec:apptouchesontheline} can be considered an example of this approach as the finger movements on touchscreen are sent only when the finger releases the screen~\cite{deCarvalhoJunior2013touches}.
 Although the application was conceived for distributed performances, when all devices share the same physical space, the musicians can hear what will be played in the future and then react consciously, as for example during my performance at the 2nd International CSound Conference. 
 
 The Latency Accepting approach is applied in cases when the composer and musicians do accept latency and packet loss as part of the performance.
 This model of collaboration is more relaxed regarding network constraints.
-The application Sensors2OSC described in Section \ref{subsec:appsensors2osc} is an example of this approach~\citep{deCarvalhoJunior2015sensors2osc}.
+The application Sensors2OSC described in Appendix~\ref{apesubsec:appsensors2osc} is an example of this approach~\citep{deCarvalhoJunior2015sensors2osc}.
 The data is exchanged within this application context using the UDP protocol that doesn't guarantee packet delivery and can have a high latency depending on the network.
 
 \paragraphdesc{Internet Music discussion}

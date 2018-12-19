@@ -11,76 +11,18 @@
  	Technologic. Technologic.}
  {Daft Punk}
 
-
-
-%%MQZ: Aqui tem MUITA repetição do capítulo de metodologia! Estou eliminando as redundâncias, mas a fluência do texto será prejudicada...
-%% Também não faz sentido no seu capítulo de resultados apresentar resultados de outros (isso fica em "trabalhos relacionados", não aqui...)
-%\paragraphdesc{motivation based on experiences from compmus and nusom}
-%Currently I am a member of Computer Music Research Group~(Compmus) from Universidade de São Paulo, and this group is a partner of the Research Centre on Sonology~(NuSom) from the same university.
-%Recent projects and performances at the Compmus and NuSom research groups have used technologies for music interaction for short and long range distances.
-%Scientists and musicians were working together in order to create multimedia environments for musical performances using local networks and the Internet.
-%As this research unfolded, mobile devices have reached a comparable level of computation power with respect to desktop computers, having their mobility also improved by advances in network technologies such as the development of 4G and faster WiFi standards.
-%The projects from the group and the advances in mobile technologies during the 2010's encouraged the development of this research in the field of music and mobile networks, or better saying in MM.
-
-%\paragraphdesc{group results}
-%The past researches decided to transmit audio between devices locally connected or through the Internet, but some researchers were the main inspiration for this work.
-%As previously discussed, \citefullauthor{Schiavoni2013thesis} developed Medusa, a distributed audio environment~\cite{Schiavoni2013thesis} that allows users to interconnect using several  network protocols for audio and MIDI exchange.
-%The protocols implemented were UDP, TCP, DCCP, and SCTP while the audio transmitted was configured to 44.1~kHz and 16~bits that would require a network bandwidth of almost 700~kbps for each audio channel.
-%Many evaluations were conducted in different scenarios for LAN intercommunication, with latency varying from 0.13~ms to 72.06~ms, jitter varying from 0.08~ms to 166.49~ms, and packet loss up to 7.065\%.
-%%MQZ: o Marcio não fez avaliações de comunicação em rede.
-%Another research is \citefullauthor{Tomiyoshi2013thesis}, who developed the JackTripMod, a flexible and easy-to-use alternative for network music performances~\cite{Tomiyoshi2013thesis}.
-%As modification of the JackTrip, this project includes a lossy compression using CELT~\cite{Valin2010high}, which is an efficient and low latency solution for encoding audio before transmitting over the network.
-%This project shows that 93~kbps is the bandwidth required for transmitting an audio with 48~kbps of compression quality through the JackTripMod, in comparison with the 128~kbps required by the SoundJack~\cite{Carot2009musical} at the same setting and the 28~kbps by Skype~\cite{Skype2017} with an unknown configuration.
-%Their results show that some protocols have good performance for local audio transmission in local networks, and audio transmission with lossy compression and high quality is possible depending on the network bandwidth available.
-%High quality audio transmission through a large bandwidth can be considered a problem at some contexts and the addition of delays to permit this high quality may be another problem as well.
-
-%%MQZ: As duas frases abaixo têm cara de introdução
-%Although mobile devices present wireless connection as an alternative to wired solutions, the bandwidth of new wireless standards is quite comparable to wired options.
-%Additionally, new mobile devices present multicore processors and optimized operating systems that surpass previous devices settings and drawbacks from old systems regarding the audio stack.
-
 \paragraphdesc{description of our evaluation: data transmission over long distance}
 The context of the evaluations in this chapter follows the proposals and results from past researches from Compmus group members, including some other assumptions.
 \paragraphdesc{audio synthesis in realtime on mobile devices}
 In the beginning of my research I collaborated with a project by \citefullauthor{bianchi2014processamento}, in which he evaluated realtime DSP on Android devices.
 Together we explored the advantages of using JNI instead of pure Java with results described in \citep{deCarvalhoJunior2013fftbenchmark}.
 In his thesis, \citefullauthor{bianchi2014processamento} concluded that most Android devices are able to process audio in realtime even for large blocks of samples.
-%From this perspective, audio synthesis in realtime is possible in mobile technologies, and the quality of digital audio synthesized by any programming language available for mobile devices will be equivalent to the same quality obtained in desktops.
-
-
-
 \textbf{In that sense, I decided to evaluate the performance of mobile device technologies related to data transmission using different network alternatives for long distance interaction.}
-%%MQZ: Não faz sentido insistir nessa altura da tese que você não vai transmitir áudio. Isso tem que estar claro desde a introdução, e não precisa repetir.
-Particularly in this research, the evaluation focuses on the transmission of symbolic data (i.e. synthesis and effects parameters, control data, and sensors values).
-%In order to evaluate an alternative that would have high audio quality and small bandwidth consumption through mobile networks.
 
-%%MQZ: Está quase igual na metodologia:
-%\paragraphdesc{the options selected: cloud, unicast, and multicast}
-%Evaluating long distance interaction provides results for mobile music applications regarding the current situation of the ``Always On'' paradigm, that considers people always online and interacting~\citep[p.~10]{Baron2008alwayson}. 
-%Long distance interaction requires specific communication technologies.
-%Cloud Services were first selected to be evaluated as communication technologies due to its popularity among mobile applications and after a comparison with other alternatives such as webservices.
-%The decision to add Unicast and Multicast to the evaluation followed results from other research and I considered the possibility of also using the academic network structure.
-
-%\paragraphdesc{data formatting used during evaluation}
-%The data type selected to be transmitted in this evaluation process was defined as a packet of numbers represented by one integer (the identifier) followed by float numbers (the data).
-%This choice considered that synthesizers and computer music languages are all compatible with these kinds of arguments and thus our results would be representative for many situations.
-%The data encoding format selected for each communication method was defined to represent the data following the same structure for any evaluation.
-%JSON was opted for cloud services while OSC was the choice for Unicast and Multicast.
-%I decided on lightweight formats available in each technology and formatted the messages following the same structure in order to avoid many differences between the packets exchanged.
-%All of these definitions will be better specified in the next sections.
-
-%% ------------------------------------------------------------------------- %%
-% \chapter{Experiments, Results, and Discussion}
-% \label{cap:results}
-
-\paragraphdesc{describe the chapter structure}
-
-\paragraphdesc{application developed: PushLoop}
-
-\section{First trial: Size of packets}
+\section{First experiment: Size of packets}
 \label{sec:firsttrial}
 
-
-The first trial evaluated the network communication through the Pusher cloud service on a mobile application.
+The first experiment evaluated the network communication through the Pusher cloud service on a mobile application.
 This evaluation was conducted between Ann Arbor, São Paulo, and João Pessoa in December, 2014, and January, 2015.
 Some pilot tests performed before the full evaluation had an intermittent loss of connection when exactly 10~messages were sent per second, which represent the nominal maximum allowed.
 In order to avoid this issue a 150~ms delay between messages was used, and we established 10~cycles of~100 messages per test with a delay of 500~ms between each cycle during the tests.
@@ -98,11 +40,21 @@ The route passing through SAO has the highest throughput, and was selected for t
 Additionally, all messages should pass through the main cluster.
 Considering the distances and routes on the map in Figure~\ref{fig:routes}, we have a theoretical (light speed) RTT of 174ms in the first evaluation, between S\~{a}o Paulo and Jo\~{a}o Pessoa (SAO-JPA)\footnote{The distance between S\~{a}o Paulo and Jo\~{a}o Pessoa is 34,800km (route SAO-NVG-SAO-JPA-SAO-NVG-SAO).}, and of 104ms in the second evaluation, between Ann Arbor and Jo\~{a}o Pessoa (ARB-JPA)\footnote{The distance between Ann Arbor and Jo\~{a}o Pessoa is 20,940km (route ARB-NVG-SAO-JPA-SAO-NVG-ARB).}.
 
+Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main results extracted from all measurements.
+The results summarized in Table~\ref{tab:sao-jpa} present a minimum RTT of 329ms with 150 floats and average RTT values between 486-578ms for all message sizes.
+On the other hand, we have a minimum RTT of 166ms with 1 float in Table~\ref{tab:arb-jpa}, and average RTT values between 230-348ms.
+We sent 1000 messages on each test and lost no more than 4\% of the messages in the worst case.
+Packet loss and RTT were higher in SAO-JPA test probably due to the distance, as the cluster is situated in USA.
+Moreover, ARB-JPA evaluation had tests with zero message loss.
 
-The actual RTT for each message sent is presented in the charts of Figure~\ref{fig:z3-d685-evaluation}.
+The actual RTT for each message sent is presented in the charts in Figure~\ref{fig:z3-d685-evaluation}.
 Some values overshoot the chart limit (chosen to maintain the scale of all charts), and they are considered to be lost during transmission (i.e. either a packet loss or a broken connection). 
-Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main results extracted from these measurements.
+The SAO-JPA evaluation presented some instability regarding the average RTT and there was no discernible pattern linking the number of floats to the average RTT.
+Although we have had some high RTT values during the tests, the concentration of high RTT values appear to be more frequent in clustered sequential messages than when messages are isolated (meaning musical algorithms based on sporadic communication would suffer less). Furthermore, it was relatively common for the service to lose at least one message after a high RTT value.
 
+The RTT was somewhat stable during this experiment as visually presented in Figures~\ref{fig:sao-jpa-boxplot} and \ref{fig:arb-jpa-boxplot}.
+However, the tests between ARB and JPA seems to indicate a correlation between the large messages and high RTTs for this path.
+These results are also discussed in the paper presented at Appendix~\ref{ape:papericmc2015}.
 
 \begin{figure*}[!ht]
 	\centering
@@ -139,12 +91,11 @@ Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main
 		\label{fig:z3-d685-c250}
 	\end{subfigure} 
 	
-	\caption{RTT comparison for different number of floats included in messages sent from São Paulo to João Pessoa~(SAO-JPA) and Ann Arbor to João Pessoa~(ARB-JPA). Lost messages are represented with 0ms RTT. The y-axis maximum is 2000ms for better visualization, but there are some RTTs reaching 4s.}
+	\caption{RTT comparison for different number of floats included in messages sent from SAO to JPA and ARB to JPA. Lost messages are represented with 0ms RTT. The y-axis maximum is 2000ms for better visualization, but there are some RTTs reaching 4s.}
 	\label{fig:z3-d685-evaluation}
 \end{figure*}
 
-
-\begin{table}[]
+\begin{table}[!ht]
 	\centering
 	\begin{tabular}{ll|llllll|}
 		&                    & \multicolumn{6}{c|}{Floats per message} \\
@@ -157,11 +108,18 @@ Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main
 		& Standard deviation & 224  & 366  & 394  & 181  & 305  & 168  \\ \hline
 	\end{tabular}
 	
-	\caption{SPA-JPA tests: Results from RTT evaluation using cloud services between S\~{a}o Paulo and Jo\~{a}o Pessoa.}
+	\caption{Results from RTT evaluation using cloud services between SAO and JPA.}
 	\label{tab:sao-jpa}
 \end{table}
 
-\begin{table}[]
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{1saojpa_boxplot.png}
+	\caption{Boxplot of RTT evaluation with Pusher cloud service and different message sizes between SAO and JPA. Delay between packages fixed in 150~ms}
+	\label{fig:sao-jpa-boxplot}
+\end{figure}
+
+\begin{table}[!ht]
 	\centering
 	\begin{tabular}{ll|llllll|}
 		&                    & \multicolumn{6}{c|}{Floats per message}  \\
@@ -174,26 +132,23 @@ Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main
 		& Standard deviation & 138  & 83   & 103  & 317  & 143  & 101  \\ \hline
 	\end{tabular}
 	
-	\caption{ARB-JPA tests: Results from RTT evaluation using cloud services between Ann Arbor and Jo\~{a}o Pessoa.}
+	\caption{Results from RTT evaluation using cloud services between ARB and JPA}
 	\label{tab:arb-jpa}
 \end{table}
 
-We can see in the charts that the RTT is better on ARB-JPA evaluation.
-Another point from ARB-JPA evaluation is that the more floats we have on a message, the higher RTT we find.
-The SAO-JPA evaluation presented some instability regarding the average RTT and there was no discernible pattern linking the number of floats to the average RTT.
-Although we have had some high RTT values during the tests, the concentration of high RTT values appear to be more frequent in clustered sequential messages than when messages are isolated (meaning musical algorithms based on sporadic communication would suffer less). Furthermore, it was relatively common for the service to lose at least one message after a high RTT value.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{1arbjpa_boxplot.png}
+	\caption{Boxplot of RTT evaluation with Pusher cloud service and different message sizes between ARB and JPA. Delay between packages fixed in 150~ms}
+	\label{fig:arb-jpa-boxplot}
+\end{figure}
 
-The results summarized in Table~\ref{tab:sao-jpa} present a minimum RTT of 329ms with 150 floats and average RTT values between 486-578ms for all message sizes.
-On the other hand, we have a minimum RTT of 166ms with 1 float in Table~\ref{tab:arb-jpa}, and average RTT values between 230-348ms.
-We sent 1000 messages on each test and lost no more than 4\% of the messages in the worst case, and we lost more messages in the SAO-JPA evaluation than in ARB-JPA.
-Moreover, ARB-JPA evaluation had tests with zero message loss.
-These results are also discussed in the paper presented at Appendix~\ref{ape:papericmc2015}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Second trial: Delay between packets}
+\section{Second experiment: Delay between packets}
 \label{sec:secondtrial}
 
-Based on the results of the first trial we decided to evaluate more services changing the size of the packets.
+Based on the results of the first experiment we decided to evaluate more services changing the size of the packets.
 This evaluation was conducted between Ann Arbor, São Paulo, and João Pessoa in June and July, 2015.
 In this case, we evaluated the Pusher and PubNub cloud services regarding their free and paid plans, and we included the Unicast as a reference.
 The tables below present the results of the evaluations including these services and the statistical evaluation of the RTT results.
@@ -201,19 +156,36 @@ The Pusher paid plan is named pusherP, while the PubNub paid plan is name pubnub
 At the tables' header, Nobs is the number of observations and when this number is under 1000 it means the we had packet loss during the evaluation.
 The size is the number of float numbers inside the packet sent.
 
-
 \subsection*{Evaluation between São Paulo and João Pessoa} 
 
-The Table~\ref{tab:secondtrialsaojpa} presents the results of RTT evaluation with all the services between São Paulo and João Pessoa.
+The Table~\ref{tab:secondtrialsaojpa} presents the results for RTT evaluation with all the services between SAO and JPA.
 The results from PubNub were better than the results with the Pusher in most of the cases.
 The possible reason is because PubNub presents a cluster in Brazil.
 In this case, the packets from PubNub had a shortest path.
-The packets sent by Pusher had to travel from São Paulo to USA before coming to João Pessoa, and they also traveled to USA before coming back to São Paulo.
+The packets sent by Pusher had to travel from São Paulo to USA before coming to João Pessoa, and they also traveled to USA from João Pessoa before coming back to São Paulo.
+
+Figure~\ref{fig:second-sao-jpa-rtt} presents the mean RTT between SAO and JPA considering only 150~ms delay between packets, in order to compare with the first experiment.
+The results were similar for Pusher, even for paid plan and in a different period of the year.
+As discussed before, PubNub had better results, but Unicast surpassed all other options as expected.
+The apparent parallelism between the results from PubNub and Unicast also implies some similar routes.
+
+The tests were done automatically by the PushLoop application and they were later analyzed.
+This approach had an impact on the final results as the unexpected results could be better studied during the time of its occurrence by means of application notifications.
+As for example, the packet loss during some tests could be reported to the user in the interval between tests.
+Also, the users could define a threshold for RTT based on terrestrial distances and set up a notification for RTTs exceeding this limit.
+In this evaluation, the results for PubNub with 1 float per message could be benefit from these notifications as the results are far from the others, although it is just an assumption and requires better analysis.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{2saojpa_rtt_mean.png}
+	\caption{Mean RTT between SAO and JPA for different services and message sizes. Delay between packages is 150~ms}
+	\label{fig:second-sao-jpa-rtt}
+\end{figure}
 
 \begin{table}[!htb]
 	\small
 	\centering
-	\caption{Second trial results: RTT evaluation between São Paulo and João Pessoa}
+	\caption{Second experiment results: RTT evaluation between SAO and JPA}
 	\label{tab:secondtrialsaojpa}
 	\begin{tabular}{llllllllllllll}
 		Service    & Size & Delay & Nobs & $\mu$ & $\sigma$  & $\sigma$ \textsuperscript{2} & Skew & Kurt & Min & q1   & q2   & q3   & Max   \\ \midrule
@@ -250,20 +222,30 @@ The packets sent by Pusher had to travel from São Paulo to USA before coming to
 	\end{tabular}
 \end{table}
 
-
-
 \subsection*{Evaluation between Ann Arbor and São Paulo} 
 
-The Table~\ref{tab:secondtrialarbsao} presents the results of RTT evaluation with all the services between Ann Arbor and São Paulo.
-In this evaluation the PubNub had RTT higher than expected, even on paid plan.
-These results are possible due the Service Layer Agreement~(SLA) of 99.999\% for paid plan users~\footnote{PubNub SLA: \url{https://support.pubnub.com/support/solutions/articles/14000043627-does-pubnub-provide-a-premium-sla-} (visited on December, 2018)}. 
+Table~\ref{tab:secondtrialarbsao} presents the results of RTT evaluation with all the services between Ann Arbor and São Paulo.
+In this evaluation the PubNub had RTT higher than expected, but with better results in paid plan.
+These results are possible due the Service Layer Agreement~(SLA) of 99.999\% for paid plan users~\footnote{PubNub SLA support page: \url{https://support.pubnub.com/support/solutions/articles/14000043627} (visited on December, 2018)}. 
 The PubNub and Pusher had similar results between the free and paid plan.
 It is assumed that all traffic passed through the same clusters for both plans in this case.
+
+Figure~\ref{fig:second-arb-sao-rtt} shows the mean RTT during the evaluation between ARB and SAO with 150~ms delay between packets.
+The lines for Pusher and Unicast got similar results to previous tests, but PubNub results were somewhat unexpected.
+In this case, Unicast and Pusher were closer than before, and the results still seem to provide clues that the number of floats per message has a correlation with the RTT.
+PubNub were somewhat stable but higher than expected for this path.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{2arbsao_rtt_mean.png}
+	\caption{Mean RTT between ARB and SAO for different services and message sizes. Delay between packages is 150~ms}
+	\label{fig:second-arb-sao-rtt}
+\end{figure}
 
 \begin{table}[!htb]
 	\footnotesize
 	\centering
-	\caption{Second trial results: RTT evaluation between Ann Arbor and São Paulo}
+	\caption{Second experiment results: RTT evaluation between ARB and SAO}
 	\label{tab:secondtrialarbsao}
 	\begin{tabular}{llllllllllllll}
 		Service    & Size & Delay & Nobs & $\mu$ & $\sigma$  & $\sigma$ \textsuperscript{2} & Skew & Kurt & Min & q1   & q2   & q3   & Max   \\ \midrule
@@ -300,18 +282,27 @@ It is assumed that all traffic passed through the same clusters for both plans i
 	\end{tabular}
 \end{table} 
 
+\vfill
+\pagebreak
 
 \subsection*{Evaluation between Ann Arbor and João Pessoa} 
 
-The Table~\ref{tab:secondtrialarbjpa} presents the results of RTT evaluation with all the services between Ann Arbor and João Pessoa.
+Figure~\ref{fig:second-arb-jpa-rtt} and Table~\ref{tab:secondtrialarbjpa} presents the results of RTT evaluation with all the services between ARB and JPA.
 The results of this evaluation presented similar values between Pusher and Unicast, which were unexpected.
 The possible reason is that the packets sent using Unicast were passing by São Paulo PoP instead of Fortaleza PoP, which is the closest to US.
 At the same time, packets sent using Pusher can follow routes outside the academic network before reaching the clusters.
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{2arbjpa_rtt_mean.png}
+	\caption{Mean RTT between ARB and JPA for different services and message sizes. Delay between packages fixed in 150~ms}
+	\label{fig:second-arb-jpa-rtt}
+\end{figure}
+
 \begin{table}[!htb]
 	\small
 	\centering
-	\caption{Second trial results: RTT evaluation between Ann Arbor and João Pessoa}
+	\caption{Second experiment results: RTT evaluation between ARB and JPA}
 	\label{tab:secondtrialarbjpa}
 	\begin{tabular}{llllllllllllll}
 		Service    & Size & Delay & Nobs & $\mu$ & $\sigma$  & $\sigma$ \textsuperscript{2} & Skew & Kurt & Min & q1   & q2   & q3   & Max   \\ \midrule
@@ -348,16 +339,12 @@ At the same time, packets sent using Pusher can follow routes outside the academ
 	\end{tabular}
 \end{table}
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Third trial: IPv4 versus IPv6}
+\section{Third experiment: IPv4 versus IPv6}
 \label{sec:thirdtrial}
 
-The Table~\ref{tab:thirdtrialarbsaoipv4} and Table~\ref{tab:thirdtrialarbsaoipv6} present the results of RTT evaluation with Unicast through IPv4 and IPv6 protocols between Ann Arbor and São Paulo.
+Table~\ref{tab:thirdtrialarbsaoipv4} and Table~\ref{tab:thirdtrialarbsaoipv6} present the results of RTT evaluation with Unicast through IPv4 and IPv6 protocols between Ann Arbor and São Paulo.
+Figure~\ref{fig:third-ipv4-rtt} and \ref{fig:third-ipv6-rtt} visually presents the results for RTT in IPv4 and IPv6, respectively, while Figure~\ref{fig:third-ipv6-packetloss} presents the packet loss for IPv6 evaluation (observe that IPv4 test lost only one packet and this result is presented only in Table~\ref{tab:thirdtrialarbsaoipv4}).
 This evaluation was conducted on February, 2017, due to many technical reasons.
 We spent more than one year trying to setup the Multicast between RNP and Internet2, but the service was unstable all the time.
 The network managers did their best, but in the end we decided to abort the evaluation due to time limit constraints to finish this thesis.
@@ -365,13 +352,33 @@ The network managers did their best, but in the end we decided to abort the eval
 In the end, the evaluation with on IPv4 and IPv6 had interesting results.
 IPv6 seems to offer fastest paths than IPv4, although IPv4 presents less packet loss.
 The packet loss was present in all evaluations with IPv6 and the possible reason for this situation is that the protocol is still being implemented and evaluated at some paths of the academic network.
-Another possible reason is that some devices may not work properly with this protocol yet.
+Another possible reason is that some devices may work unpredictably with this protocol yet.
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{unicastipv4_meanrtt.png}
+	\caption{Unicast IPv4: RTTs for different message sizes and delays between packets.}
+	\label{fig:third-ipv4-rtt}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{unicastipv6_meanrtt.png}
+	\caption{Unicast IPv6: RTTs for different message sizes and delays between packets.}
+	\label{fig:third-ipv6-rtt}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{unicastipv6_packageloss.png}
+	\caption{Unicast IPv6: Packet loss for different message sizes and delays between packets.}
+	\label{fig:third-ipv6-packetloss}
+\end{figure}
 
 \begin{table}[!htb]
 	\small
 	\centering
-	\caption{Third trial results: IPv4 RTT evaluation between Ann Arbor and São Paulo}
+	\caption{Third experiment results: IPv4 RTT evaluation between Ann Arbor and São Paulo}
 	\label{tab:thirdtrialarbsaoipv4}
 	\begin{tabular}{@{}llllllllllllll@{}}
 		\toprule
@@ -428,11 +435,9 @@ Another possible reason is that some devices may not work properly with this pro
 	\end{tabular}
 \end{table}
 
-
-
 \begin{table}[!htb]
 	\centering
-	\caption{Third trial results: IPv6 RTT evaluation between Ann Arbor and São Paulo}
+	\caption{Third experiment results: IPv6 RTT evaluation between Ann Arbor and São Paulo}
 	\label{tab:thirdtrialarbsaoipv6}
 	\begin{tabular}{@{}llllllllllllll@{}}
 		\toprule
@@ -488,7 +493,3 @@ Another possible reason is that some devices may not work properly with this pro
 		unicastIPv6 & 128          & 128   & \textbf{980}  & 240  & 59  & 3,486.10 & 1.52     & 2.27     & 175 & 199 & 209 & 275 & 531  \\ \bottomrule
 	\end{tabular}
 \end{table}
-
-
-
-

@@ -66,9 +66,9 @@ Bjork's ``\textit{Biophillia}'' album and mobile app appeared in a post on 13 Ju
 \paragraphdesc{the evolution of smartphones (technologies) during 2000's}
 Smartphones, the improved versions of the original cell phones, are now taking the place of computers.
 Mobile processor power increases at the same time miniaturization reduces the size of many components, and batteries last longer than before even under this condition.
-They usually utilize many diverse technologies into a single smartphone board: as of 2010, several simultaneous communication technologies exist, many processing cores, large storage capacity, and dozens of sensors~\footnote{
+They usually utilize many diverse technologies into a single smartphone board: as of 2010, several simultaneous communication technologies exist, many processing cores, large storage capacity, and dozens of sensors\footnote{
 	Regarding technological upgrades throughout the years, the reader may find that, in the past 10 years, processors got almost 10 times faster in each core, memory capacity got 25 times bigger, and communication technologies increased the number of network bands and their bandwidth~(Appendix~\ref{ape:gsmarena-n95-s7}).}.
-It is interesting to note that by 2006, one could find smartphones with WLAN, 3G, Bluetooth, infrared, GPS and radio technologies integrated into a single board~\footnote{
+It is interesting to note that by 2006, one could find smartphones with WLAN, 3G, Bluetooth, infrared, GPS and radio technologies integrated into a single board\footnote{
 	Appendix~\ref{ape:android-sensors} shows sensors available for mobile devices, both base sensors (the ones related to physical sensors) and composite sensors (which build upon values from base sensors, or merge two or more sensors).}.
 These technologies make this device a suitable option for collaborative and interactive ideas.
 
@@ -174,7 +174,7 @@ All of these works can be arranged together to better understand network music i
 \paragraphdesc{distributed music projects}
 In addition to those theoretical discussions, network music ideas have been put into practice frequently during the past decade.
 The diffusion of the megabit Internet benefited distributed music projects, while providing fast communication between distant places.
-The concept behind distributed music can be explained by the idea that when you distribute, there may be similar music in every place, but it is not necessarily the same.
+The concept behind distributed music can be explained by the idea that when you distribute, there may be similar music in every place, but it is unnecessarily the same.
 By taking advantage of local networks or the Internet, researchers improved ideas discussed in the beginning of this section.
 These improvements occurred around the world and also in Brazil, as we will see below.
 
@@ -203,7 +203,7 @@ Introducing smartphones into this field provides mobility, easy access to sensor
 The use of smartphones in network music and the development of MM are discussed in the next sections.
 
 %% ------------------------------------------------------------------------- %%
-\section{Mobile Devices overview}\index{mobile music!mobile controllers}
+\section{Devices overview}\index{mobile music!mobile controllers}
 \label{sec:mobiletechnologies}
 
 \paragraphdesc{mobile devices fast upgrades and patent warfare}
@@ -263,7 +263,7 @@ The touch position acts as an input to the CSound synthesizer and sound is gener
 \paragraphdesc{indirect manipulation: sensors and gestures}
 Developers take advantage of sensors, gestures, and  multimedia resources like audio and camera for indirect audio manipulation on mobile applications.
 Although these inputs sometimes require specific actions from the user's side to interact with MM, their current values are sent with a fixed (or variable) sample rate to the application.
-This situation provides new parameters to the application constantly, even if the user is not interacting with the mobile device.
+This situation constantly provides new parameters to the application, even if the user stops interacting with the mobile device.
 The application ``Sensors2PD'' described in Appendix~\ref{apesubsec:appsensors2pd} is an example of indirect manipulation where users can control which sensor will send values to a Pure Data patch, so sensor events are sent when they are acquired by the system~\citep{deCarvalhoJunior2014sensors2pd}.
 
 \paragraphdesc{mixed manipulation: direct and indirect}
@@ -277,21 +277,8 @@ Given all of these technological advances and features, we will discuss the use 
 Problems faced by developers and musicians are presented with more detailed information regarding musical aspects.
 Projects and companies that encouraged the boom of MM in recent years are cited as well as past distinguished researchers from the field.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 %% ------------------------------------------------------------------------- %%
-\section{Mobile Devices as Music Instruments}\index{mobile music!mobile instruments}
+\section{Devices as Music Instruments}\index{mobile music!mobile instruments}
 \label{sec:mobileinstruments}
 
 \paragraphdesc{definition based on Miranda/Wanderley: new digital music instruments}
@@ -303,10 +290,7 @@ The possible ways of using smartphones discussed in Section~\ref{sec:mobiletechn
 
 \paragraphdesc{the bottleneck: data processing, OS, programming languages}
 Adopting mobile devices as musical instruments has some restrictions.
-During musical performances and musical practices, real-time signal processing and network data streaming 
-%are some of the bottlenecks that 
-require attention.
-%Current mobile devices have processing similarities with desktop computers, but there are still critical issues with some algorithms, e.g. any acoustic simulation with many objects, parameters, and variables.
+During musical performances and musical practices, real-time signal processing and network data streaming require attention.
 Processing high quality audio on mobile devices in real-time while applying effects on many audio sources can result in undesirable glitches that also occur on any computer.
 Despite that, companies are constantly improving device hardware and software, and offering new options for composers and performers.
 The composers can also avoid some strategies until they become adept at running them on a possible device.
@@ -391,9 +375,7 @@ SuperCollider code fragments can be sent to the server through native language m
 
 \paragraphdesc{mobile phone orchestras}
 The idea of using mobile phones as musical instruments goes far beyond simply creating applications to be used during performances.
-The first mobile phone orchestra was conceived in 2007
-% by \citefullauthor{Wang2008domobilephones} 
-at Stanford University and is known as MoPhO~\citep{Wang2008domobilephones}.
+The first mobile phone orchestra was conceived in 2007 at Stanford University and is known as MoPhO~\citep{Wang2008domobilephones}.
 In the beginning, they used the Nokia N95, a revolutionary smartphone from that time in terms of functionalities, available buttons, and the number of sensors.
 Later they changed to iPhone devices due to iOS SDK advantages already explained in this section.
 The musicians amplified the sound of smartphones with speakers attached to the arms and plugged to the mobile device.
@@ -441,11 +423,7 @@ The movement is inherent to communication technologies from the computer network
 This field improved interaction paradigms by permitting user's intercommunication with network servers, computer machines, and distant users.
 
 \paragraphdesc{data transmission channels and noise}
-Users may have different constraints in MM interactions depending on the channel and noise during communication.
-%The Intranet through a home router is expected to be a channel with less noise than the Internet through 4G technology, while the latter presents a bigger structure with the throughput reaching hundreds of gigabits per second on some paths and the Intranet offers communication at around 1 gigabit per second.
-%Another important point is the distance that the data will travel through in the selected channel.
-%Both Intranet and Internet allow short and long range interconnection with unpredictable probability of noise in most situations.
-%Data loss and delay can be unacceptable for some MM experiences, although it is not a general rule. 
+Users may have different constraints in MM interactions depending on the channel and noise during communication. 
 \paragraphdesc{synchronization problems: example of a simple call}
 Data exchange constraints can also affect the idea of synchronization during collaborative MM experiences.
 Some works already discussed in Section~\ref{sec:networkmusic} determined that network interaction have problems with delays higher than 30~ms~\cite{Lago2004thequest}.
@@ -454,8 +432,6 @@ The data would be transmitted at 200,000~km/s over 20,000~km, and the communicat
 Another example is a call using optical fiber between Brazilian extremes, North-South or East-West, through a path of approximately 4,000~km.
 The delay in this case would be 20~ms, which is almost acceptable.
 The transmission and propagation contributors are considered in these examples, but there are many others, and the final delay clearly would be longer than expected from our calculations~\citep[p.~8831]{Rottondi2016overview}.
-
-%\paragraphdesc{solutions for audience participation during musical performance}
 
 \paragraphdesc{performance models from Marcio Masaki Tomiyoshi's master thesis}
 Carot's approaches cited early in this chapter are related to the way users could manage the network constraints and finally interact throughout a performance.

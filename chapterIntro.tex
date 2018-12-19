@@ -7,7 +7,6 @@ Music, science and technology intersect at many different points and are of inte
 Digital synthesis of sound, for instance, is practically synchronous with the appearance of digital computers, and even though electronic instruments existed at the same time, the diversity and quantity of electronic/digital instruments has grown rapidly since then.
 Musicians soon started to explore the use of computerized technology for performance and composition, including experimenting with newer technologies in their work as soon as they became available.
 
-%%MQZ: Cuidado, "advance" não é substantivo, é verbo. Corrigi a 2a ocorrência aqui, deve haver outras.
 \paragraphdesc{music collaboration: acoustic and digital}
 Music collaboration and interaction are as old as music itself and take many forms, such as defining a common interpretation of a piece during a group music performance. 
 In most situations, musicians needed to be in the same place and hear (and see) each other to play together and explore performance alternatives.
@@ -18,17 +17,6 @@ At another front of technological developments, portable devices appeared on the
 Synthesizers could be devised as minikeyboards running on batteries, and smartphones became hosts for musical instrument apps, based on knowledge and technology inherited from the fields of mobile computing and computer music. 
 Interest in portability considering size, space, and wireless connections accompanied the emergence of music performance groups using mainly mobile controllers and instruments, a practice that is well-described by the term Mobile Music.
 
-%%MQZ: Não tem conexão com o resto do parágrafo
-%%The idea of using portable devices as music controllers started with the MIDI conception and continued with the appearance of OSC.
-
-%%MQZ: Isso está bastante deslocado em relação ao tom generalista da introdução (que não menciona datas e nem advoga em favor de tecnologias específicas).
-%%\paragraphdesc{mobile network}
-%%The adoption of network interaction started during the 1970's with computers connected through Ethernet cables.
-%%Wireless connection became popular only from the 1990's to 2000's, when, at this time, mobile devices assumed their position in the music environment.
-%%WiFi and 4G are the current attractive intercommunication technologies and they keep improving year by year.
-%%However, these technologies are misused mostly for exchanging messages and media with friends instead of academic and artistic purposes.
-%%MQZ: misused?? Essa é a principal razão da invenção dessas tecnologias!
-
 \paragraphdesc{statement of the problem: ease the massive local/distributed collaboration}
 The recent boom of musical application development for smartphones using mobile technologies explores the fact that many users are always connected and able to interact with other users. 
 Several music performances connecting participants through local networks and web servers have taken place worldwide with very interesting results. 
@@ -37,7 +25,7 @@ Another downside is that overcoming the complexity and logistics of implementati
 
 \paragraphdesc{purpose of this study}
 Facing these two downsides is a challenge that characterizes the purpose of this study.
-The literature presents many practical instances of performances using systems that allow music collaboration through computer networks, although most of them present many difficulties (if not impossibilities due to lack of detail) for reimplementation, which is bound to be burdensome whenever possible.
+The literature presents many practical instances of performances using systems that allow music collaboration through computer networks, although most of them present many difficulties (and even impossibilities due to lack of detail) for reimplementation, which is bound to be burdensome whenever possible.
 Moreover, few network evaluations in terms of statistical data were made with these technologies that could help future systems/technologies and music performances be designed building upon previous experiences.
 
 \paragraphdesc{hypothesis and link to goals}
@@ -50,7 +38,6 @@ Bridging this gap is the motivation leading to the goals of this study.
 \section{Goals}
 
 \paragraphdesc{describe the main goal: explore technologies for collaborative mobile music}
-%by explore we mean study, map, experiment
 This work explores current technologies for collaborative music, by mapping, development, and experimentation of applications for mobile music interaction through network technologies.
 This exploration follows two main approaches: using the technologies for application development, and using the network for collaboration and interaction.
 
@@ -69,65 +56,28 @@ These applications were used in the music performances for which they were devel
 \section{Research description}
 
 \paragraphdesc{related works regarding network music and their gaps}
-%network use, streaming, signal degradation, audio compression.
 A first step in the research process was to study the relevant literature on mobile music.
 Many works present the use of computer networks in music making, especially work related to distributed concerts, under the terms network music and internet music.
 These are described in Section~\ref{sec:networkmusic}.
 Music ensembles using computers and laptops as musical instruments for networked collaborative performances dealt with many technical issues, such as latency, jitter, and packet loss, especially when using non-local networks (although they also had some restrictions when using local networks).
 Scalability is also an important issue in many projects using home routers or web servers (instead of distributed solutions).
 Although most projects focused on performing music within a given space (e.g. a theater), some considered the problem of expanding the number of participants to reach for larger audiences.
-
-\paragraphdesc{related works regarding mobile music and their gaps}
-%large scale, devices and system compatibility, local synthesis and distributed collaboration
-Chapter~\ref{cap:mobilemusic} starts with a chronological summary of mobile music and its approaches, discussing
-works in terms of technologies used and artistic conceptions.
-%%MQZ: Essas frases a seguir parecem muito deslocadas (muito específicas para esse contexto).
-Current and actual solutions for the interaction of a large number of users are presented, such as massMobile~\citep{Weitzner2012massmobile} and CloudOrch~\citep{Hindle2014cloudorch}, which predispose mobile devices to be used by hundreds or thousands of users.
-Their use requires technical adjustments and configurations that are not suitable for users without a technical background, since they require knowledge regarding setting up web servers or virtual machines in the Cloud.
+In this last case, the technologies used required technical adjustments and configurations that are unsuitable for users without a technical background, since they require knowledge regarding setting up web servers or virtual machines in the Cloud.
 
 \paragraphdesc{methods of evaluation}
 For the experimental part, this project took advantage of an academic network which allows many setup options and offers gigabit interconnection (between specific nodes); its evaluation is described in Chapter~\ref{cap:evaluations}.
 Unicast and Multicast\footnote{Unicast was evaluated using IPv4 and IPv6 technology, while Multicast was available only through IPv4 at the time of this research.} are services theoretically available within the networks selected for evaluation in the experiments.
 Pusher and PubNub Cloud Services were also evaluated in comparison with Unicast and Multicast.
-These services are not part of the academic network, so packets must transit through external nodes, but in this case, Cloud Computing benefits were taken into account, such as the localization of the clusters and their scalability.
+These services are unavailable in the academic network, so packets must transit through external nodes.
+In this case, Cloud Computing benefits were taken into account, such as the localization of the clusters and their scalability.
 All services were evaluated using a loopback method, in which a message is sent back to the sender as soon as it is received by a device with timestamps registering the moments when the message passes through each end of the loop.
 
 \paragraphdesc{applications developed and performances}
 An application called \textit{PushLoop} was specifically designed for the quantitative evaluation of the above services.
-%% MQZ: muito específico para introdução...: Although the application had all its settings available for configuration, during the tests, some specific values were fixed in order to simulate common interactions in mobile music performances.
 This and many other applications developed during this research process are presented in Appendix~\ref{ape:applications}, including their technical discussion and motivational aspects.
-The codes for these applications are available at Github~\footnote{Author's Github account: \url{www.github.com/deusanyjunior} (visited on May, 2018)} under different licenses when defined by the creators.
+The codes for these applications are available at Github\footnote{Author's Github account: \url{www.github.com/deusanyjunior} (visited on May, 2018)} under different licenses when defined by the creators.
 
 \paragraphdesc{contributions for future works}
 Both quantitative experiments and music applications are products of this research, which are contributions to the field of mobile music with the intention of helping interested musicians and non-musicians to explore available technologies for mobile music.
 Most contributions presented here were also published as papers at international conferences in order to help disseminate the knowledge gained during the research process.
-The papers are presented at Appendices~E.
-
-%The list of conference papers based on thesis research is presented below.
-%The full content of these papers can be found in the Appendix.
-%
-%\begin{itemize}
-%	\item \cite{deCarvalhoJunior2013fftbenchmark}
-%	\item \cite{deCarvalhoJunior2013touches}
-%	\item \cite{deCarvalhoJunior2014sensors2pd}
-%	\item \cite{Bandeira2014notes}
-%	\item \cite{deCarvalhoJunior2015indoor}
-%	\item \cite{deCarvalhoJunior2015sensors2osc}
-%	\item \cite{deCarvalhoJunior2015supercopair}
-%	\item \cite{deCarvalhoJunior2015cooperative}
-%	\item \cite{Lee2016crowd}
-%	\item \cite{deCarvalhoJunior2016understanding}
-%	\item \cite{Stolfi2017openwac}
-%	\item \cite{Stolfi2017openam}
-%\end{itemize}
-
-
-%TODO: describe the chapters
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Thesis structure}
-\paragraphdesc{(\#2) mobile music overview and (\#3) mobile networks}
-
-\paragraphdesc{(\#4) methodology of evaluation and (\#5) results and discussion}
-
-\paragraphdesc{(\#6) applications and (\#7) conclusion}
+The published papers are briefly discussed in the Conclusions~(Chapter~\ref{cap:conclusions}) and are presented at Appendix~\ref{ape:papers}.

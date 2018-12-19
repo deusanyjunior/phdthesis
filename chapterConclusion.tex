@@ -2,18 +2,12 @@
 \chapter{Conclusions}
 \label{cap:conclusions}
 
-
-
  \epigraph{
 	We are human \\
 	After all. \\
 	Flesh in common \\
 	After all.}
  {Daft Punk}
-
-% contribuições para a ciência
-
-% citar fog e edge computing?!
 
 Mobile Music is a growing field that can still be considered in its initial stages of experimentation.
 Mobile technologies are improving and should continue to do so as mobile computing remains the focus of the market.
@@ -42,8 +36,7 @@ In this way, many musical works formerly conceived for local networks might now 
 The evaluations using the academic network provided insights into many challenges and difficulties that may be faced by those who plan to use it.
 The initial configuration of the network and the requests for changing settings usually depend on many agents and may take from a few weeks to months or even years (in the case of IPv6 and Multicast).
 Although the throughput is much better in Unicast (and probably would be in Multicast) than using Cloud Services, the burden of the network setup may discourage all but the most tenacious mobile musicians.
-Network services such as IPv6 and Multicast were found to be still unstable within the academic network, despite their great theoretical advantages, and Multicast could not even be adequately tested, due to years of recurring problems with network settings over the full network path, inbound and outbound.
-
+Network services such as IPv6 and Multicast were found to be still unstable within the academic network, despite their great theoretical advantages, and Multicast was untested due to years of recurring problems within network settings over the full network path, inbound and outbound.
 
 \paragraphdesc{academic network settings}
 It is important to notice that in order to use the academic network I had to contact many network managers from time to time.
@@ -61,78 +54,85 @@ The applications developed during this research were heavily used and are still 
 Users around the world are still requesting new features, specially in the case of Sensors2PD, Sensors2OSC, SuperCopair, and Crowd in C[loud], which can be taken to mean that these applications have continued to attract some attention and interest even though their original performances and/or developing scenarios are long gone.
 Their code will remain open source in order to allow users to learn from these technologies and developers to collaborate and improve them, participating in the source code projects as members, which is an important aspect of the free open source software community.
 
-\section{Published papers}
+\section{Published papers: description}
 
 During the development of this research, many papers were published in order to help disseminate its results.
 A description of the international papers related to this thesis is given below.
 
-The paper ``FFT benchmark on Android devices: Java versus JNI''~\citep{deCarvalhoJunior2013fftbenchmark} discusses the effects using Java or JNI for DSP on Android devices.
+The first paper published during this research process was ``FFT benchmark on Android devices: Java versus JNI''~\citep{deCarvalhoJunior2013fftbenchmark}, which discusses the effects using Java or JNI for DSP on Android devices.
 The results show that the programmer can use low level and parallel programming depending depending on hardware and OS.
 These options have better performance under specific circumstances, such as multi-core devices, newer OS, and larger block size.
-The full paper is presented at Appendix~\ref{ape:papersbcm2013}.
+The full paper is presented in Appendix~\ref{ape:papersbcm2013}.
 
 The discussion presented in the paper named ``Touches on the line: Sharing Csound scores using web server and mobile phones''~\citep{deCarvalhoJunior2013touches} describes the possibilities of using a RoR web server in order to exchange notes or scores through the Internet.
 A web server created with RoR requires few commands and a single Ruby file.
 This proposal facilitates the development of interactive mobile performances for local and distributed network.
-The full paper is presented at Appendix~\ref{ape:papericsc2013}.
+The full paper is presented in Appendix~\ref{ape:papericsc2013}.
 
-``Notes on the Elimination of the Mobile Music Audience''~\citep{Bandeira2014notes} is an inspiring paper that presents a discussion about new kind of performance without barriers and breaking with traditional art concepts.
-It is inspired by the text ``Notes on the Elimination of the Audience'' by Allan Kaprow.
-The full paper is presented at Appendix~\ref{ape:paperbats2014}.
+A discussion about new kind of performance without barriers and breaking with traditional art concepts is presented in the paper ``Notes on the Elimination of the Mobile Music Audience''~\citep{Bandeira2014notes}.
+It is inspired by the text ``Notes on the Elimination of the Audience'' by Allan Kaprow, and the paper also includes a description of the Hoketus application.
+The full paper is presented in Appendix~\ref{ape:paperbats2014}.
 
 The first paper about Sensors2 applications was ``Sensors2PD: Mobile sensors and WiFi information as input for Pure Data''~\citep{deCarvalhoJunior2014sensors2pd},
 although the paper discussed in the previous paragraph used Sensors2PD initial code.
 This paper discuss the many possibilities of using Sensors2PD to interact with Pure Data patches on Android devices through this application.
 All sensors available in a device can act as an actuator and send data to receivers created on the patch.
-The full paper is presented at Appendix~\ref{ape:papericmc2014}.
+The full paper is presented in Appendix~\ref{ape:papericmc2014}.
 
 ``Indoor localization during installations using Wi-Fi''~\citep{deCarvalhoJunior2015indoor} presents the approach of using WiFi signal quality as an input for Sensors2PD during the installation ``Hoketus''.
 The discussion emphasizes the advantage of using WiFi instead of GPS for indoor localization at installations and performances.
 GPS signal is noisy or unavailable inside buildings with concrete structure and also has interference from the environment nature.
 On the other hand, WiFi signal can be disposed depending on user needs through many devices like routers, or smartphones hot-spots. 
 The latter option was used during the installation.
-The full paper is presented at Appendix~\ref{ape:papernime2015}.
+The full paper is presented in Appendix~\ref{ape:papernime2015}.
 
 ``Sensors2OSC''~\citep{deCarvalhoJunior2015sensors2osc} discuss the approach to conceive this application and all its features.
 Sensors2OSC allows users to send samples from Android sensors through OSC inside a network.
 The application follows the same idea of Sensors2PD where the transmission of samples of a sensor is activated/deactivated in real-time, but includes the possibility of IP and network port definition for routing the se samples.
 The application and the paper came from a partnership with Thomas Mayer.
-The full paper is presented at Appendix~\ref{ape:papersmc2015}.
-
+The full paper is presented in Appendix~\ref{ape:papersmc2015}.
 
 ``Computer Music through the Cloud: Evaluating a Cloud Service for Collaborative Computer Music Applications''~\citep{deCarvalhoJunior2015computer} is a paper that summarize the first attempts to used Cloud Service for mobile music communication during this research.
 The paper shows results with data transmission through Pusher Cloud Service between Brazil and USA.
 The evaluation considered data with different sizes and gave insights to the advantage of using this service at an unusual situation.
-The full paper is presented at Appendix~\ref{ape:papericmc2015}.
+The full paper is presented in Appendix~\ref{ape:papericmc2015}.
 
 The Pusher Cloud Service is also evaluated at the paper ``SuperCopair: Collaborative Live Coding on SuperCollider through the cloud''~\citep{deCarvalhoJunior2015supercopair}.
 In this case, the service is evaluated under unusual circumstances by means of an application for pair-programming live coding.
 SuperCopair application allows users to collaborate inside a live coding session using the SuperCollider language, share the code, and share the code synthesis through the Internet.
 The burden to initiate a collaborative live coding session is surpassed by one or two shortcuts inside Atom.io IDE.
 The sound synthesis happens inside the IDE while the code is shared through the Cloud Service.
-The full paper is presented at Appendix~\ref{ape:papericlc2015}.
+The full paper is presented in Appendix~\ref{ape:papericlc2015}.
 
 ``Cooperative Live Coding as an instructional model''~\citep{deCarvalhoJunior2015cooperative} discuss the experiences of using SuperCopair with users from different cities and countries in real-time.
 The idea of cooperation is highlighted because the users helped themselves fixing codes and writing comments with suggestions close to friends code. during the live sessions.
-The full paper is presented at Appendix~\ref{ape:paperclei2015}.
+The full paper is presented in Appendix~\ref{ape:paperclei2015}.
 
 ``Crowd in C[loud]: Audience Participation Music with Online Dating Metaphor using Cloud Service''~\citep{Lee2016crowd} is paper about an experience with Cloud Services in Mobile Music.
 The piece ``Crowd in C[loud]'' took advantage of Web Audio technology for sound synthesis through the browser of mobile phones and allowed an online dating of melodies using Cloud Services for network interaction in real-time during a live performance inside a theater.
 Around 60 participants joined the session which last for 10 minutes.
 An important point about this piece is that the audio came only from participants devices but could be heard by the whole audience.
-The full paper is presented at Appendix~\ref{ape:paperwac2016}.
+The full paper is presented in Appendix~\ref{ape:paperwac2016}.
 
 A discussion about the network communication is presented in ``Understanding Cloud Service in the Audience Music Performance of Crowd in C[loud]''~\citep{deCarvalhoJunior2016understanding}.
 During the performance we had a backup computer connected to the Cloud Service monitoring the network communication in all channels created on the Cloud Service.
 Data consumption and traffic is presented as motivation for using Cloud technologies in performances due to its capacity and scalability.
-The full paper is presented at Appendix~\ref{ape:papernime2016}.
+The full paper is presented in Appendix~\ref{ape:papernime2016}.
 
 ``Open band: Audience Creative Participation Using Audio Synthesis''~\citep{Stolfi2017openwac} is another performance/installation using Web Audio for sound synthesis including audience interaction through the network.
 The communication can occur within local network or Cloud Services, depending on the proposal.
 This paper discuss the technical aspects and advantages of using Web Audio synthesis for this performance.
-The full paper is presented at Appendix~\ref{ape:paperwac2017}.
+The full paper is presented in Appendix~\ref{ape:paperwac2017}.
 
 ``Open Band: A Platform for Collective Sound Dialogues''~\citep{Stolfi2017openam} discuss Open Band performance in terms of the user experience during the performances.
 Local and distributed performances favored distinct evaluations regarding the same application.
-The full paper is presented at Appendix~\ref{ape:paperam2017}.
+The full paper is presented in Appendix~\ref{ape:paperam2017}.
 
+\newpage
+\thispagestyle{empty}
+\begin{center}
+dj@ime.usp.br
+\vskip 4cm
+\includegraphics[width=0.4\linewidth]{images/doubtsb}
+\end{center}
+\pagebreak

@@ -36,7 +36,7 @@
 \usepackage{titletoc}
 %\usepackage[bf,small,compact]{titlesec} % cabeçalhos dos títulos: menores e compactos
 \usepackage[fixlanguage]{babelbib}
-\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage[justification=centering,font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[usenames,svgnames,dvipsnames]{xcolor}
 \usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
 %\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{hyperref} % links em preto
@@ -210,13 +210,13 @@
 		\Large{Antonio Deusany de Carvalho Junior}
 		
 		\vskip 2cm
-		%%MQZ: Esse modelo é oficial? Parece bizarro essa alternância entre português e inglês. Além disso tenho quase certeza que o título seria "Doctor of Science" e não "Science Doctor".
+		 
 		\textsc{
 			Thesis presented\\[-0.25cm] 
 			to\\[-0.25cm]
-			Instituto de Matemática e Estatística\\[-0.25cm]
+			Institute of Mathematics and Statistics\\[-0.25cm]
 			from\\[-0.25cm]
-			Universidade de São Paulo\\[-0.25cm]
+			University of São Paulo\\[-0.25cm]
             in\\[-0.25cm]
             partial fulfillment\\[-0.25cm]
 			for the\\[-0.25cm]
@@ -225,7 +225,7 @@
 			Doctor of Science}
 		
 		\vskip 1.5cm
-		Program: Pós-Graduação em Ciência da Computação\\
+		Program: Graduate School in Computer Science\\
 		Advisor: Prof. Dr. Marcelo Gomes de Queiroz
 		
 		\vskip 1cm
@@ -309,7 +309,7 @@
 	    This thesis version contains the changes, corrections, and suggestions\\%Esta versão da dissertação/tese contém as correções e alterações sugeridas\\
 		from the Judging Commission during the defense of the original version\\%pela Comissão Julgadora durante a defesa da versão original do trabalho,\\
 		that took place on May 24th, 2017. One copy of the original version is available at\\ %realizada em 14/12/2010. Uma cópia da versão original está disponível no\\
-		the Instituto de Matemática e Estatística from Universidade de São Paulo.% Instituto de Matemática e Estatística da Universidade de São Paulo.
+		the Institute of Mathematics and Statistics from University of São Paulo.% Instituto de Matemática e Estatística da Universidade de São Paulo.
 		
 	
 	    \vskip 2cm
@@ -331,28 +331,60 @@
 	    \end{quote}
 	\pagebreak
 	
+	\newpage
+	\thispagestyle{empty}
+	$ $
+	\vskip 19cm
+	\begin{flushright}
+		Agradeço às energias que proporcionam a existência de tudo.
+	\end{flushright}
+	\pagebreak
 	
 	\pagenumbering{roman}     % começamos a numerar 
 	
+	
+
 	% ---------------------------------------------------------------------------- %
 	% Agradecimentos:
-	% Se o candidato não quer fazer agradecimentos, deve simplesmente eliminar esta página 
-	% \chapter*{Agradecimentos}
-	% Texto texto texto texto texto texto texto texto texto texto texto texto texto
-	% texto texto texto texto texto texto texto texto texto texto texto texto texto
-	% texto texto texto texto texto texto texto texto texto texto texto texto texto
-	% texto texto texto texto. Texto opcional.
+	 \chapter*{Acknowledgments}
 	
+	\begin{flushleft}
 	
+	Thanks God.
+	\linebreak
+	
+	Heartfelt thanks to my Family.
+	\linebreak
+	
+    Cheers to my friends ``from Jampa, Sampa, and Ann Arbor'', Marcelo Queiroz (d' Advisor), Georg Essl (d' Supervisor), USP, UMich, CAPES, RNP, and many others from the universe and beyond.
+	\linebreak	
+	
+	A scientific expertise recognition to Alfredo Goldman vel Lejbman, Lisandro Zambenedetti Granville, José Luiz Ribeiro Filho, Antônio Carlos Fernandes Nunes, Fábio Rodrigues Ribeiro, Edson Lima Monteiro (aka Boni), Victor Igor de Lima Andrade, Luiz Eduardo Silva dos Santos, Henrique Cabral de Souza Rodrigues, Valter Pereira, Wagner Pereira, Rogerio Herrera Mendonça, Andre Lopes da Silva, Kyle Banas, Roy Hockett, Michael Stanton, Marco Antonio M. Teixeira, William Alexandre Miura Gnann, Alex Moura, Aluizio Abrahao Hazin Filho, Brian Pullin, Brady Farver, Guilherme Ladvocat, Nathan Miller, Christian O'Flaherty, Iara Machado, Alex Soares de Moura, Guillermo Cicileo, Eric Boyd, and many many other professionals.
+	\linebreak
+	
+	Fond memories to Tom and Brenda Reedy, Alexia De La Cuba, Marika Feuerstein, Thais Scalia, Panagiotis Trikaliotis, Roque Aleixo, Helena Pereira, Marisa Villas Boas, and Escher House.
+	\linebreak
+	
+	A great smile to Luvyn, Lara, Leã, Petit, Neve, Mingau, and Suri.
+	\linebreak
+	
+	Namaste to all souls and energies surrounding me.
+	\linebreak
+	
+	\centering
+	Thank you all for supporting this research process. \\
+	I am thankfully glad you exist.
+
+	\end{flushleft}
+
 	% ---------------------------------------------------------------------------- %
 	
 	% ---------------------------------------------------------------------------- %
 	% Abstract
 	\chapter*{Abstract}
 	\noindent DE CARVALHO JUNIOR, A. D. \textbf{Mobile Technologies for Music Interaction}. 
-	2017. 160 p.
-	Thesis (Doctorate) - Instituto de Matemática e Estatística,
-	Universidade de São Paulo, São Paulo, 2017.
+	2017. 187 p.
+	Thesis (Doctorate) -  Institute of Mathematics and Statistics, University of São Paulo, São Paulo, 2017.
 	\\
 	
 	% Introduction
@@ -367,7 +399,7 @@
 	Evaluation also includes the development of several applications that make use of these technologies running on Android devices and web browsers. 
 	These applications were used in actual performances, serving as both evaluation tools and experimental music instruments.
 	% Results and Discussion
-	The results were analyzed in terms of round trip time and data loss under very different configuration scenarios, demonstrating that although some obvious impediments cannot be circumvented (e.g. significant delays in international settings), it is possible to choose the specific technology and achieve interesting results under most music application scenarios.
+	The results were analyzed in terms of round trip time and data loss under very different configuration scenarios, demonstrating that although some obvious impediments are unavoidable (e.g. significant delays in international settings), it is possible to choose the specific technology and achieve interesting results under most music application scenarios.
 	I argue that although in theory Multicast appears to be the best technology to use by far, it is the most difficult to implement due to the burden of configuring every step of the network pathway.
 	On the other hand, Cloud Services are certainly slower than direct connections, but are the most compatible and easiest technology to set up, and are definitely suitable for many collaborative music experiences.
 	% Conclusions
@@ -380,7 +412,7 @@
 	\chapter*{Resumo}
 	
 	\noindent DE CARVALHO JUNIOR, A. D. \textbf{Tecnologias Móveis para Interação Musical}. 
-	2017. 160 f.
+	2017. 187 f.
 	Tese (Doutorado) - Instituto de Matemática e Estatística,
 	Universidade de São Paulo, São Paulo, 2017.
 	\\
@@ -396,7 +428,7 @@
 	Através destes serviços as mensagens foram organizadas como fluxos de pacotes caracterizados por diversos tamanhos e intervalos entre envios.
 	A avaliação também inclui o desenvolvimento de diversas aplicações fazendo uso destas tecnologias para dispositivos Android e navegadores Web, que foram utilizados em performances reais, servindo tanto como ferramentas de avaliação quanto como instrumentos para música experimental.
 	% Results and Discussion
-	Os dados são analisados com relação ao tempo de ida-e-volta e perda de pacotes em diferentes configurações de cenário, demonstrando que apesar de alguns impedimentos óbvios não poderem ser contornados (como o longo atraso em configurações internacionais, por exemplo), é possível escolher tecnologias adequadamente e alcançar resultados interessantes em muitos cenários de aplicações musicais.
+	Os dados são analisados com relação ao tempo de ida-e-volta e perda de pacotes em diferentes configurações de cenário, demonstrando que apesar de alguns impedimentos óbvios serem incontornáveis (como o longo atraso em configurações internacionais, por exemplo), é possível escolher tecnologias adequadamente e alcançar resultados interessantes em muitos cenários de aplicações musicais.
 	Argumento que apesar de em teoria o Multicast se apresentar de longe como a melhor tecnologia para estes cenários, ele é o mais difícil de ser implementado devido à grande complexidade na configuração de cada parte da rede para seu uso.
 	Por outro lado, Serviços em Nuvem são certamente mais lentos, porém se apresentam como os mais compatíveis e fáceis de configurar, sendo definitivamente os mais adequados para muitas experiências de música colaborativa.
 	% Conclusions
@@ -434,7 +466,8 @@
 		LAN         & Local Area Network\\
 		MANET       & Mobile Ad-hoc Network\\
 		MIS		    & \textit{Museu da Imagem e do Som de São Paulo} (São Paulo Museum of Image and Sound)\\ 
-		MobileHCI	& ACM International Conference on Human-Computer Interaction with Mobile Devices and Services\\
+		MobileHCI	& ACM International Conference on Human-Computer Interaction with Mobile Devices\\
+		            & and Services\\
 		Mbps        & Megabits per second\\
 		MIDI        & Musical Instrument Digital Interface\\
 		MM          & Mobile Music\\
@@ -449,7 +482,8 @@
 		P2P         & Peer to peer\\
 		PDA		    & Personal digital assistant\\
 		RAD		    & Rapid Application Development\\
-		RNP		    & Rede Nacional de Ensino e Pesquisa (Brazilian National Research and Education Network)\\
+		RNP		    & Rede Nacional de Ensino e Pesquisa (Brazilian National Research and Education\\
+		            & Network)\\
 		RoR		    & Ruby on Rails\\
 		RTT		    & Round Trip Time\\
 		S3		    & Samsung GT-I9300 Galaxy SIII\\
@@ -524,6 +558,5 @@
 	% \index{DFT|see{transformada discreta de Fourier}}
 	% \index{Fourier!transformada|see{transformada de Fourier}}
 	
-	% \printindex   % imprime o índice remissivo no documento 
-	
+	% \printindex   % imprime o índice remissivo no documento 	
 \end{document}

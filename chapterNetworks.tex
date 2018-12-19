@@ -10,31 +10,21 @@
  {Daft Punk}
 
 \paragraphdesc{evolution of network technologies}
+\paragraphdesc{mobile network technologies and 'always on' concept}
 The communication concept reached the current millennium with many small devices communicating through wireless broadband.
-%This concept extends the possibilities as diverse interfaces can now be attached to anything providing communication with devices anywhere in the world.
-%%FEULO achjo que não saquei bem essa utima frase, ficou confusa %dj OK
 On the other hand, the communication medium used may physically define the throughput based on routes and the amount of information for exchanged data.
 In terms of computer networks, although it is possible to use a wired connection, mobile devices are mostly free from cables to favor its own mobility aspect and they require batteries to maintain this condition.
-These two points are important for mobile networks due the restrictions they impose:
-%%FEULO ..networks due the restrictions they impose. %dj OK
-wireless connections are subjected to noise more than wired ones; and power-saving strategies allow longer data transmission avoiding communication breakdown by full discharging.
-%%FEULO ...data transmission avoiding communication breakdown caused by full discharging. %dj OK
+These two points are important for mobile networks due the restrictions they impose: wireless connections are subjected to noise more than wired ones; and power-saving strategies allow longer data transmission avoiding communication breakdown by full discharging.
 Some details regarding computer networks will be discussed in the following paragraphs and sections considering mobile devices communication and connection with other device types. 
-%% .. connection with other device types
-\paragraphdesc{mobile network technologies and 'always on' concept}
 While WiFi networks depend on wireless routers that cover tens of meters with Internet access, the mobile networks cover tens of kilometers from the base station.
-%% FEULO, é "always on" mesmo? always connected me soou melhor %dj YEP
 As the culture of being "always on" is getting more prevalent, range and quality of mobile networks need to be increased constantly due the user's data traffic necessity.
-%% FEULO prevalent, range and quality of mobile networks need to be increased constantly due the user's data traffic necessity %dj OK
 When the mobile network is unstable or presents low quality, switching from mobile networks to WiFi networks is thus the option, even if the user needs to stop physically somewhere just to get online, losing their mobility in exchange for Internet access and that "always on" feeling.
 However, it is important to notice that WiFi networks normally present higher throughput than mobile networks and allow for use at places in which mobile networks may be unsupported, such as inside concrete buildings that would prevent the direct passage of a magnetic field from a mobile network antenna.
 
 \paragraphdesc{physical layer and link layer}
 In order to take advantage of WiFi or mobile network connections, a device needs a specific network interface to allow communication through a physical medium and is part of the physical layer of any network.
 Mobile devices intercommunicate through electromagnetic fields over the air or space with their base stations (or routers), while the wired connection from the base station is made through any other medium, such as fiber optics.
-Infra Red, Bluetooth, and USB interfaces that can also work as physical
-%%FEulo USB interfaces that can also %dj OK
-interfaces for mobile devices as these interfaces can be used to connect to a router device connected to a network, e.g., a computer sharing its Internet through the USB port with a phone.
+Infra Red, Bluetooth, and USB interfaces that can also work as physical interfaces for mobile devices as these interfaces can be used to connect to a router device connected to a network, e.g., a computer sharing its Internet through the USB port with a phone.
 Depending on the interface, different protocols are used to exchange the bits between the interfaces, but the link layer is responsible for deciding how to pack the data depending on the interface available (and connected to a network) when the network layer wants to send this data without knowing the physical layer.
 When receiving data from a physical layer, the link layer verifies if the data needs to be resent through the physical layer or routed to the network layer.
 
@@ -51,6 +41,7 @@ Although unreliable connections inspire unreliable transport protocols such as U
 The main idea inside this layer is that there is a logical interconnection between two hosts where one or both can be using a mobile network, but none of them needs to know their actual interconnection path.
 
 \paragraphdesc{application layer}
+\paragraphdesc{data loss or data delay?! a touch of information theory}
 Mobile network applications assume the device will often change its IPv4 address, disconnect for a long period, and can discharge while connected.
 These circumstances require sessions to keep devices logged independently of a network address, data synchronization based on online state, and synchronization methods that download only important data from time to time or consider downloading heavy data online while connected through WiFi in order to save money on a mobile network data plan.
 In this case, dealing with unstable connections is a situation that requires good communication strategies from the application layer point of view.
@@ -58,16 +49,12 @@ The protocols and interfaces used may thus interfere with the communication depe
 If every single data is important, the devices may require a confirmation for each message sent, for example.
 On the other hand, the devices can just send as many messages as possible using protocols that are fast and unreliable if data loss is expected, planned, or desired.
 Network application programmers and users need to adhere to conditions regarding data transmission between devices, as packet delay and packet loss are inherent to this context.
-%Notwithstanding these network constraints, dealing with them is an option.
-%% FEULO pra mim essa ultima frase não fez sentido =P %dj OK
-\paragraphdesc{data loss or data delay?! a touch of information theory}
 In terms of communication, when a person decides to send a message, this person needs to decide the message encoding, the transmitter, the channel, and expects that the destination will share the same channel, use a receiver, and decode the message correctly.
 This concept is based on Shannon's Information Theory~\citep{Shannon1948mathematical}, that is widely used on communication studies~\citep{Fiske2010introduction}.
 As the receiver may need to answer a message, probably the same channel and encoding will be used for communication to occur.
 Shannon also studied this scenario~\citep{Shannon1961two}, and the networks follow some of their results even today.
 Encoding a message effectively instead of sending the complete raw information has its effect as the channel will need to move less data.
-On the other hand, the channel selected may delay the message delivery or impose noise risk, so that the message may be delivered when it is not necessary or even undelivered.
-%%FEULO or even not delivered at all
+On the other hand, the channel selected may delay the message delivery or impose noise risk, so that the message may be delivered when it is unnecessary or even undelivered.
 The Information Theory was an important key for Internet development, and selecting the best network options for data exchange based on this theory is a desirable expectation for people who deal with network communication, or even any kind of communication approach.
 
 \paragraphdesc{describe the chapter}
@@ -84,50 +71,30 @@ The protocols and services used in this thesis are also discussed in terms of th
 Computing data everywhere while moving is just one of the advantages of mobile devices.
 In the past, vehicles were used for transporting computers powered by batteries or power generators.
 However, the mobility got attention with the size reduction of components, that can reach nanometers nowadays in mobile devices
-%The mobile devices achieved their place 
-%%FEULO não ei se "place" é a melhor palavra pra usar aqui, eu tentaria status ou algo similar
-%with the size reduction of the components reaching nanometers nowadays.
-%, that are billionths of a meter.
-%%FEULO Vc repetiu "size reductions of components" duas vezes muito próximas, acho q tb não precisa falar que nanometro é um bilionesico de metro. %dj OK
 This characteristic improved the capacity of mobile devices allowing more components to fit in a handheld board, with diverse communication interfaces, gigabytes of data, many sensors, and a long life battery.
-Although the devices can use all of these technologies in order to exchange data, the users of these devices face many issues related to
-%%FEULO related to %dj OK
-battery and power consumption, data plan costs, handover, and data sync.
+Although the devices can use all of these technologies in order to exchange data, the users of these devices face many issues related to battery and power consumption, data plan costs, handover, and data sync.
 
 \paragraphdesc{problems: battery and power consumption discussion}
-Choosing the smartphone to buy can be life-changing experience
-%%FEULO a life changer ou life changing, mas se a idéia é expor a complexidade da escolha eu usaria outra expressão %dj hmm..
-as the user needs to select brand, the features, the mobile network, the sensors, and all the other features that are available on the market options.
+Choosing the smartphone to buy can be life-changing experience as the user needs to select brand, the features, the mobile network, the sensors, and all the other features that are available on the market options.
 Additionally, the impossibility of using many features at the same time due to power consumption have been caught the attention to  batteries technology improvements as well.
-%%FEULO Since their conception, Smartphones were/have been constantly updated and the impossibility of using the increasing number of features at a time... %dj hmm..
 Power banks were developed in 2001, but they became a must-have accessory for smartphones only years later.
-%%FEULO acho que born fica mto comercial, tenta were developed %dj OK
-%% ...only years later. %dj OK
-The batteries are also improving, but as the smartphones are replacing personal
-%%FEULO avho que aqui caberia "taking places", substituting da ideia de algo temporário %dj hmm
-computers and notebooks --- devices there are utilized with a power supply most of the time ---, the smartphones are expected to work like them in terms of availability, requiring better batteries and recharging technologies.
+The batteries are also improving, but as the smartphones are taking place of computers and notebooks --- devices that are utilized with a power supply most of the time ---, the smartphones are expected to work like them in terms of availability, requiring better batteries and recharging technologies.
 
 \paragraphdesc{mobile networks cost: company and consumer}
 Internet access is another requirement for most of users of smartphones.
-WiFi and mobile networks
-%%FEULO networks %dj OK
-are available at multiple places and while the former is faster, the latter works as an alternative for situations where the first is unavailable or there is need of moving from one place to another, while connected to the Internet.
-%%FEULO ...another while connected to the internet %dj OK
+WiFi and mobile networks are available at multiple places and while the former is faster, the latter works as an alternative for situations where the first is unavailable or there is need of moving from one place to another, while connected to the Internet.
 A qualitative comparison between these two technologies is presented at \cite{Lehr2003wireless}.
 The authors assert WiFi as an alternative to mobile networks considering the cost for data transmission and consumption using mobile network.
 Even if the cost integrates the business model of the mobile network service providers, it affects both consumers and companies.
 The higher cost for installing a new antenna also led companies to invest in public WiFi hotspots for consumers that have an unreliable connection at some places, such as airports or shopping malls.
 In the same way, a performance comparison between the two technologies presented at \cite{Gass20103gwificomparison} affirms that WiFi satisfies expectations in terms of download and upload while the long range in mobile networks surpass the WiFi settings.
 
-
 \paragraphdesc{handover and data sync}
 Smartphones are expected to have battery charged and Internet connection access all the time.
 Users need to be synced with online data as fast as possible and data syncing requires real-time communication between the mobile device and many data servers.
 Instead of checking the servers all the time, the devices may apply some solutions such as a keep-alive socket for receiving notifications regarding any new data.
 Being connected all the time independently of the network interface or geographic location may result in switching between mobile network antennas or WiFi routers, or even between both mobile networks and WiFi technologies, additionally to recharging the device whenever possible.
-Furthermore, dealing with these constraints of mobile devices is inherent in daily life of smartphone users. % and smartphones' OS and interfaces developers.
-
-
+Furthermore, dealing with these constraints of mobile devices is inherent in daily life of smartphone users.
 
 %% ------------------------------------------------------------------------- %%
 \section{Network Interfaces}\index{mobile networks!network interfaces}
@@ -135,7 +102,6 @@ Furthermore, dealing with these constraints of mobile devices is inherent in dai
 
 \paragraphdesc{evolution of ways of exchanging data}
 The way devices exchange messages has evolved throughout the time with diverse technologies being attached to the same device.
-%%FEULO atached to ou  atached at one device %dj OK
 Communication interfaces are compatible with many different devices and the communication quality does depend on the medium condition and noise interference level.
 From calling to high definition video conference, and from bits per second~(bps) over infrared to gigabits per second~(gbps) through WiFi, the mobile device users need to choose an interface to do some of these activities then so they can use WiFi to call someone or try Infrared to transmit a video conference.
 
@@ -163,7 +129,6 @@ The waves are invisible to human eyes and require low power for data transmissio
 Infrared technology efforts are expecting new models that can be scaled up to 5~Gpbs and a new standard with 10 Gbps for broadcasting services~\citep{Deicke201optical}.
 One disadvantage of Infrared communication is that the transmitter and the receiver need to be facing each other while they communicate.
 This disadvantage also imply a single characteristic to Infrared due to its connectionless communication protocol: every device in the range of the transmitter will receive the data allowing a remote control to communicate at the same time with both a TV and DVD close to each other, for example.
-%%FEULO the same time if the first is over the second and share the same manufacturer Infrared standard. %dj ?!
 
 Another wireless technology for short range communication is the Bluetooth~\citep{Bhagwat2001bluetooth}.
 This license-free technology was conceived as a single-chip radio operating in 2.4~GHz ISM~(industrial, scientific, and medical) radio frequency band.
@@ -199,22 +164,19 @@ WiFi Direct is a peer to peer~(P2P) connection and allows two devices to exchang
 
 While there are many new short range technologies that works with dozen of meters range, they are designed for interconnecting devices close to each other.
 A short range technology can work for long range communication if one of the interfaces connects with another interface that would connect to a third interface and so on.
-%%FEULO ...another innterface that would connect to a third interface nd so on. %dj OK
 In this case, the common setup is to have a device connected through a short range technology and another device connected to the Internet.
 This situation keeps the users close to a short range interface but communicating with devices far away, what may be undesirable in some cases, and it is similar to the use of telephones instead of mobile phones. 
 
 \subsection*{Long range technologies} 
 
 \paragraphdesc{wired and wireless}
-%For some short range technologies, the use may be similar to be connected to long cables at a restricted area, even being wireless.
-%%FEULO eh short range aqii mesmo?? %dj hmm
 Wired connections would be most suitable in some situations where the devices do have to stay in a small space or fixed place.
 The quantity of devices connected through wired connection is also another problem as the cable needs space.
 On the other hand, wireless connections would offer the advantage of being free of cables and allow users to keep moving freely while communicating.
 
 \paragraphdesc{long range interfaces descriptions}
 Long range communication require specific network structure or interface: a short range interface can be used to communicate with an interface connected to the Internet or long range interface can communicate with an antenna far away.
-Although short range interfaces can be used for long range communication, they are not projected for this aim and they can consume more power in this situation.
+Although short range interfaces can be used for long range communication, they can consume more power in this unexpected situation.
 The most common long range interfaces are WiFi and interfaces used for mobile telecommunication such as 3G or 4G.
 These interfaces provide fast data exchanging and allow communication with antennas far away geographically. 
 
@@ -225,14 +187,13 @@ A wireless router for WiFi connection can have limitations regarding the number 
 These limitations depend on the routing algorithm and the antenna power that are technical settings related to device's model and brand.
 
 The IEEE 802.11 standards define the possible WiFi technologies that can be available on any device, such as 802.11 a, b, g, n, and ac standards
-These standards are related to the network physical layer and they are available at IEEE Standards Association~(IEEE-SA) website~\footnote{IEEE Standards Association website: \url{http://standards.ieee.org/} (visited on May, 2017)}.
+These standards are related to the network physical layer and they are available at IEEE Standards Association~(IEEE-SA) website\footnote{IEEE Standards Association website: \url{http://standards.ieee.org/} (visited on May, 2017)}.
 A WiFi router is able to implement different standards at the same time in order to be compatible with as many devices as possible, but the router needs to offer a high power to its antenna in order to have a long range signal strength and allow devices to move far away.
 
 \paragraphdesc{4G}
 Another network interface available in mobile devices is conceived for mobile telecommunications.
 2G to 5G are current options for mobile telecommunication.
 The name of the technologies are related to their generation, represented by the number in front of the `G' which stands for generation.
-%%FEULO fico meio repetitivo esse role d repetição %dj OK
 A new generation of mobile telecommunication technology is defined when a new standard is defined without back compatibility.
 A device compatible with 4G is able to connect to the older generations only when the manufacture implements the compatibility so that the device can switch between all of them, however the network interface of this device will dismiss any information regarding a new generation such as 5G.
 2G has a power consumption higher than 3G and 3G consumes more power than WiFi, though it is expected that a new generation will always offer higher throughput and less power consumption than older ones~\citep{Rice2010decomposing,Balasubramanian2009energy}.
@@ -247,24 +208,7 @@ The costs here are related both to money expenses on data plan and energy consum
 It is expected that devices will switch between mobile data to WiFi when possible, and from WiFi to any wired connection as well.
 The network topology is also important at this point, as the device may be unaware of which technology has internet access and in this case particular setups are required for specific purposes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Barriers in long distance networking}
+\section{Drawbacks in long distance networking}
 
 Network latency in the communication between devices from different locations offers a great barrier for those aiming music interaction between performers connected via long distance networks through mobile devices.
 Another barrier is the setup necessary to permit the interconnection between these devices in these networks through a wireless connection. 
@@ -275,12 +219,12 @@ A latency of 100ms and above implies some difficulty for network interaction eve
 The latency has a lower limit based on some constraints.
 If we consider the speed of light on optical fiber~(200,000km/s) as a reference for data transmission and Earth circumference around Equator~(40,000km) as the longest distance, a packet would take 200ms to finish the round trip.
 This result implies a latency of 100ms and it shows that interactions from different countries will have problems.
-One way to tackle this problem in local networks is using lightweight transport protocols such as UDP~\citep{Harker2008laptop,Caceres2010jacktrip}, that has a low overhead when compared with TCP and fast data diffusion because it does not need the establishment of connections and acknowledgment to each packet.
+One way to tackle this problem in local networks is using lightweight transport protocols such as UDP~\citep{Harker2008laptop,Caceres2010jacktrip}, that has a low overhead when compared with TCP and fast data diffusion because it bypasses the establishment of connections and acknowledgment to each packet.
 In case we need to communicate with many devices at the same time, UDP has another advantage: it can be used in Multicast communication that we are going to discuss in Section~\ref{sec:multicast}.   
 
 The disadvantage of UDP is the possibility of packet loss during transmission.
 Applications that rely on UDP communication need some alternatives to take on this condition.
-The order of the packets may not be guaranteed in this communication as well and in some cases a missing packet is just a delayed packet that may can be discarded or not.
+The order of the packets is unpredictable in this communication as well and in some cases a missing packet is just a delayed packet that may can be discarded or not.
 These problems are some characteristics of UDP communication and they will probably occur more frequently on long distance connections than in a small local network.
 However, the setup of UDP is nearly network independent in case of a local or big network.
 A big network with the same services available in a local network is a suitable environment for applying solutions that were previously proposed for local networks respecting the distance constraints and the distribution of the devices to be configured when necessary.
@@ -303,113 +247,32 @@ In the next section we will discuss the Multicast focusing on the restrictions o
 
 We have different network methods for exchanging messages using UDP.
 The Unicast is used to send messages to one and only one point on the network, while the Broadcast can be used to diffuse messages to all connected devices inside a network.  
-Multicast permits packet diffusion to a group of devices that had already subscribed to the group.
+Multicast permits packet diffusion to all devices that had subscribed to a multicasting group.
 
-Multicast is available through various multicasting mechanisms, e.g. IP Multicast~\citep{Diot2000ipmulticast}.
+Multicast is available through various mechanisms, e.g. IP Multicast~\citep{Diot2000ipmulticast}.
 Additionally, the network need to understand a protocol like Multicast Source Discovery Protocol (MSDP) in order to permit devices to find Multicast groups inside the network and create routes between them through the Rendezvous points~(RP).
 The RPs defined on a network are the routers that serve as an encounter point from the information regarding group announcements and device's join requests.
 
 Routers available in most of the houses are configured with Multicast natively and the users don't need to change anything.
-On the other hand, the same is not true at academic networks.
+On the other hand, the same is untrue at academic networks.
 The routers available at most institutions on academic networks have specific hardware and software configuration due to the high number of computers connected through them.
 It implies many security settings and filters that may interfere with the use of Multicast.
 Although some routers come with the support to Multicast, their default settings avoid announcement of Multicast groups to devices outside the local network and the router will discard announcements arriving from outside.
-The devices can use the method internally but will not be able to communicate with devices at other institutions through Multicast.
+The devices can use the method internally but will be unable to communicate with devices at other institutions through Multicast.
 
 Network administrators can enable the MSDP at these routers when the protocol is supported by the network interface on the router.
 In this case, all devices in the route need to accept the same configuration.
-Routers or network interfaces may or may not support the necessary settings, and in the last case they need to be changed or the route need to follow another path to complete the tree of nodes.    
+Routers or network interfaces may have or lack support for the necessary settings, and in the last case they need to be changed or the route need to follow another path to complete the tree of nodes.    
 
 At this point the users need to select and join a Multicast group before using it.
 This group is defined by an IP and port.
 The IP range for Multicast is defined on RFC1112~\citep{RFC1112Multicasting} and goes from 224.0.0.0 to 239.255.255.255.
 The port number is expected to be an unassigned port in order to avoid problems with any other running service.
 The RFC6335~\citep{RFC6335IANA} suggests the use of any dynamic port from 49152 to 65535 during tests or evaluations.
-The dynamic ports will never be assigned to any specific software by IANA~\footnote{Internet Assigned Numbers Authority (IANA): \url{http://www.iana.org} (visited on May, 2017)} and the ports are expected to be free in most part of time.
+The dynamic ports will never be assigned to any specific software by IANA\footnote{Internet Assigned Numbers Authority (IANA): \url{http://www.iana.org} (visited on May, 2017)} and the ports are expected to be free in most part of time.
 
 Other network solutions for distributed communication are available for situations outside local or private networks.
 One of these technologies is the Cloud Computing and the Cloud Services, which are discussed in the next section.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% ------------------------------------------------------------------------- %%
-%\section{Network Topology}\index{mobile networks!network topologies}
-%\label{sec:topologies}
-
-
-%TODO: discuss peer-to-peer and other computer network structures (ring, star, cluster, grid, cloud..)
-\paragraphdesc{standard topology: ring, star, cluster, grid}
-
-\paragraphdesc{one-to-one, one-to-many, many-to-many communication: p2p, server, cloud}
-% Direct communication or one-to-one data transmission is a common setting for mobile network technologies, but we can also take advantage of one-to-many or many-to-many.
-% The structure of a network is an important definition when we are planning the distribution of data between deices during a musical performance as we need to define the technologies to be used based on their availability.
-% The resultant delay for exchanging messages may also depend on the network structure and will probably affect some performances.
-
-
-\paragraphdesc{topology for computer music: Alvaro, Weinberg, Lee, Carot}
-%TODO: discuss Alvaro and Weinberg works
-
-\paragraphdesc{Alvaro discussion}
-
-\paragraphdesc{Weinberg diagrams}
-
-%TODO: discuss the work from Lee and Essl
-\paragraphdesc{Lee revisiting Weinberg}
-% Another recent work revisits these structures and evaluate the possible structures that require some attention to be improved and experimented:
-
-\paragraphdesc{Carot models}
-
-\paragraphdesc{aesthetic discussion regarding topology}
-
-\paragraphdesc{when topology depends on technology}
-
-%% ------------------------------------------------------------------------- %%
-%\section{Protocols}\index{mobile networks!protocols}
-%\label{sec:protocols}
-
-\paragraphdesc{communication channels, code, and translations}
-% In order to communicate, mobile devices need a connection between each other and use some protocols.
-% The connection depends on the network interface and we need protocols to ensure that different interfaces communicate with each other.
-% Both endpoints can use different connections and protocols as long as we have some commuter at some point in the path between them.
-% A device can use Bluetooth to send data to a computer that will send this data through Wifi to another device that is going to receive the data from the WiFi and send to another device using infrared, for example, and than we are using different interfaces and protocols.
-% Network structures define the way devices can communicate but the connection used may be specified in many ways.
-% Some interfaces like infrared require the sender and receiver to share the same medium and avoid barriers while WiFi requires address and specific network settings to allow communication.
-% We can also control one or many televisions with one single infrared remote control and send a message to one or many devices through the same WiFi connection.
-
-\paragraphdesc{device addressing: local and internet}
-% The device addressing is related with the network interface.
-% In case of wireless connection, the frequency is important and some wireless interfaces share an identification attached to the interface like in Bluetooth, WiFi, and mobile networks.
-% Some wireless interfaces also include name tags or other kind of address like IP, in order to be reached.
-
-\paragraphdesc{network protocols: IP, TCP, UDP}
-% When the interfaces are connected to the Internet using the IP, they also make use of specific protocols including TCP and UDP.
-% These protocols differ in the way the messages are exchanged between devices and may be suitable only to some networks structures.
-
-%TODO: discuss about IP, TCP, UDP... cloud
-
-\paragraphdesc{TCP}
-
-\paragraphdesc{UDP}
-
-\paragraphdesc{cloud options: tcp keep alive and web sockets}
-
-\paragraphdesc{protocols and mobility}
 
 %% ------------------------------------------------------------------------- %%
 \section{Cloud Services}\index{mobile networks!cloud services}
@@ -435,7 +298,6 @@ During this research some applications were developed using two specific cloud s
 These cloud services were selected due to their popularity in the time of this research.
 Although they are quite similar, they implement specific rules to use their APIs that can interfere in some interaction approaches.
 
-%TODO: discuss about Cloud Computing (Amazon), Pusher, PubNub, JSON
 \subsection*{Pusher cloud service}
 \paragraphdesc{Pusher}
 
@@ -447,10 +309,6 @@ This cloud service uses cloud computing solutions in order to offer a service th
 One of the advantageous features supported by Pusher API is its support of HTTP Keep-Alive feature. 
 Once connected to Pusher cloud service, it is possible to send and receive messages to/from the cluster without starting a new connection, saving the overhead of restarting new TCP connections.
 The Pusher service offers the possibility of creating real-time applications considering all of its resources.
-
-%Although Pusher has many paid plans with more resources available, a free plan is also available for use.
-%The free plan has a limit of 100,000 messages per day and it counts the API requests and messages delivered to each client.
-%We can have up to 20 clients connected at the same time and all clients will send and receive messages only from the US-East cluster server that is situated in Northern Virginia.
 
 The service has restrictions for all plans, free and paid alike.
 Clients are allowed to send no more that 10 messages per second and will be disconnected from the service when they exceed this limit.
@@ -548,12 +406,6 @@ pubnub.publish({
  }
 });
 \end{lstlisting}
-
-%The advantages of PubNub, compared to Pusher, include larger message size and a greater number of messages allowed. 
-%Both services have plans that preserve the size of the messages but differ in the allowable quantity of serviced messages.
-%While Pusher limits the messages to 10KB, PubNub accepts messages of 32KB.
-%Another disadvantage of Pusher, especially in the context of audience participation music, is that it will discard messages if the device exceeds the rate of 10 messages per second and plans limit the number of messages sent per day.
-%PubNub limits the quantity of messages sent per month but the limits are never throttled even on free plans, so the users can use the full service capacity during one single performance, assuming no other performance within that month.
 
 Pusher and PubNub can send any type of data through the cloud respecting plan limits.
 For instance, one might share codes from computer music languages like CSound\footnote{CSound: \url{http://www.csounds.com/} (visited on May, 2017)}, ChucK\footnote{ChucK: \url{http://chuck.cs.princeton.edu/} (visited on May, 2017)}, and SuperCollider\footnote{SuperCollider: \url{http://supercollider.github.io/} (visited on May, 2017)}.

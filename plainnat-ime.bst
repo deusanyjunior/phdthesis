@@ -10,6 +10,7 @@
 %
 % - FUNCTION {calc.label}
 % -- change "(" to " ("
+% -- changed back to "("
 %
 %
 % Versão modificada do arquivo plainnat.bst
@@ -311,7 +312,7 @@ FUNCTION {format.url}
 }
 
 FUNCTION {format.doi}
-{ doi empty$
+{ doi empty$sec:apppushloop
     { "" }
     { new.block "\doi{" doi * "}" * }
   if$
@@ -1233,7 +1234,7 @@ FUNCTION {calc.short.authors}
 FUNCTION {calc.label}
 { calc.short.authors
   short.list
-  " ("
+  "("
   *
   year duplicate$ empty$
   short.list key field.or.null = or

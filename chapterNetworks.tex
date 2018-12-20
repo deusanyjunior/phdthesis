@@ -16,6 +16,7 @@ On the other hand, the communication medium used may physically define the throu
 In terms of computer networks, although it is possible to use a wired connection, mobile devices are mostly free from cables to favor its own mobility aspect and they require batteries to maintain this condition.
 These two points are important for mobile networks due the restrictions they impose: wireless connections are subjected to noise more than wired ones; and power-saving strategies allow longer data transmission avoiding communication breakdown by full discharging.
 Some details regarding computer networks will be discussed in the following paragraphs and sections considering mobile devices communication and connection with other device types. 
+
 While WiFi networks depend on wireless routers that cover tens of meters with Internet access, the mobile networks cover tens of kilometers from the base station.
 As the culture of being "always on" is getting more prevalent, range and quality of mobile networks need to be increased constantly due the user's data traffic necessity.
 When the mobile network is unstable or presents low quality, switching from mobile networks to WiFi networks is thus the option, even if the user needs to stop physically somewhere just to get online, losing their mobility in exchange for Internet access and that "always on" feeling.
@@ -48,6 +49,7 @@ In this case, dealing with unstable connections is a situation that requires goo
 The protocols and interfaces used may thus interfere with the communication depending on the purpose of data exchange.
 If every single data is important, the devices may require a confirmation for each message sent, for example.
 On the other hand, the devices can just send as many messages as possible using protocols that are fast and unreliable if data loss is expected, planned, or desired.
+
 Network application programmers and users need to adhere to conditions regarding data transmission between devices, as packet delay and packet loss are inherent to this context.
 In terms of communication, when a person decides to send a message, this person needs to decide the message encoding, the transmitter, the channel, and expects that the destination will share the same channel, use a receiver, and decode the message correctly.
 This concept is based on Shannon's Information Theory~\citep{Shannon1948mathematical}, that is widely used on communication studies~\citep{Fiske2010introduction}.
@@ -83,11 +85,11 @@ The batteries are also improving, but as the smartphones are taking place of com
 \paragraphdesc{mobile networks cost: company and consumer}
 Internet access is another requirement for most of users of smartphones.
 WiFi and mobile networks are available at multiple places and while the former is faster, the latter works as an alternative for situations where the first is unavailable or there is need of moving from one place to another, while connected to the Internet.
-A qualitative comparison between these two technologies is presented at \cite{Lehr2003wireless}.
+A qualitative comparison between these two technologies is presented in \cite{Lehr2003wireless}.
 The authors assert WiFi as an alternative to mobile networks considering the cost for data transmission and consumption using mobile network.
 Even if the cost integrates the business model of the mobile network service providers, it affects both consumers and companies.
 The higher cost for installing a new antenna also led companies to invest in public WiFi hotspots for consumers that have an unreliable connection at some places, such as airports or shopping malls.
-In the same way, a performance comparison between the two technologies presented at \cite{Gass20103gwificomparison} affirms that WiFi satisfies expectations in terms of download and upload while the long range in mobile networks surpass the WiFi settings.
+In the same way, a performance comparison between the two technologies presented in \cite{Gass20103gwificomparison} affirms that WiFi satisfies expectations in terms of download and upload while the long range in mobile networks surpass the WiFi settings.
 
 \paragraphdesc{handover and data sync}
 Smartphones are expected to have battery charged and Internet connection access all the time.
@@ -157,8 +159,8 @@ It is necessary to notice that two devices need to share the same standard in or
 The network structure can have router, switch, hub, repeater, and many other devices aimed to interconnect hosts.
 In terms of structure, the possibilities are infinite as long as one network can have its particular structure connected to other network defined in another particular structure.
 
-An optional use of WiFi for short range interconnection is the adoption of WiFi Direct~\citep{Alliance2010wifii}.
-As the WiFi direct is mostly used by smartphones, the power of the antennas can offer a maximum range of 200~m and the network interfaces currently offer 250~Mbps~\citep{Feng2014d2d} maximum throughput, even if some new devices can have gigabit WiFi interfaces.
+WiFi Direct~\citep{Alliance2010wifii} is an optional use of WiFi for short range interconnection.
+As the WiFi direct is mostly used by smartphones, the power of the antennas can offer a maximum range of 200~m and the network interfaces currently offer 250~Mbps maximum throughput, even if some new devices can have gigabit WiFi interfaces~\citep{Feng2014d2d}.
 The WiFi direct technology works like the hotspot, which is an option available in most devices that creates a network using the smartphone as a router.
 WiFi Direct is a peer to peer~(P2P) connection and allows two devices to exchange data like in other short range solutions but using WiFi technology.
 
@@ -181,7 +183,7 @@ The most common long range interfaces are WiFi and interfaces used for mobile te
 These interfaces provide fast data exchanging and allow communication with antennas far away geographically. 
 
 \paragraphdesc{WiFi}
-WiFi technology works well as short and long range, and although the power consumption is almost 2 times higher than some short range alternative such as Bluetooth~\citep{Friedman2013wifibluetooth}, the advantage is the throughput that can reaches gigabits per second in some new standards and the range that can reaches dozen of kilometers with some specific antennas~\citep{Raman2007Experienceswifiindia}.
+WiFi technology works well as short and long range, and although the power consumption is almost 2 times higher than some short range alternative such as Bluetooth~\citep{Friedman2013wifibluetooth}, the advantage is the throughput that can reaches gigabits per second in some new standards and the range that can reaches dozen of kilometers with specific antennas~\citep{Raman2007Experienceswifiindia}.
 Short range technologies are also restrictive due to the number of connected devices, while long range technologies can have a hundred devices connected to the same antenna at the same time.
 A wireless router for WiFi connection can have limitations regarding the number of connected devices even if most of them are able to offer more then 200 IP addresses.
 These limitations depend on the routing algorithm and the antenna power that are technical settings related to device's model and brand.
@@ -214,7 +216,7 @@ Network latency in the communication between devices from different locations of
 Another barrier is the setup necessary to permit the interconnection between these devices in these networks through a wireless connection. 
 In terms of multimedia applications, the latency need to be inferior to 150ms in order to looks like a synchronous interaction~\citep{Coulouris2011distributed}.
 A latency of 100ms and above implies some difficulty for network interaction even with experienced musicians~\citep{Bartlette2006networkeffect}, and if we have a sensitive ensemble performance, this threshold may be as low as 20ms~\citep{Chafe2004network}.
-\cite{Lago2004thequest} says that 50ms is acceptable for chamber music, but the range between 20ms to 30ms is probable the perfect latency for remote musical applications~\citep{Lago2004thequest}. 
+Additionally, \cite{Lago2004thequest} says that 50ms is acceptable for chamber music, but the range between 20ms to 30ms is probable the perfect latency for remote musical applications. 
 
 The latency has a lower limit based on some constraints.
 If we consider the speed of light on optical fiber~(200,000km/s) as a reference for data transmission and Earth circumference around Equator~(40,000km) as the longest distance, a packet would take 200ms to finish the round trip.

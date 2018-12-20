@@ -12,40 +12,40 @@
  {Daft Punk}
 
 \paragraphdesc{description of our evaluation: data transmission over long distance}
-The context of the evaluations in this chapter follows the proposals and results from past researches from Compmus group members, including some other assumptions.
 \paragraphdesc{audio synthesis in realtime on mobile devices}
-In the beginning of my research I collaborated with a project by \citefullauthor{bianchi2014processamento}, in which he evaluated realtime DSP on Android devices.
-Together we explored the advantages of using JNI instead of pure Java with results described in \citep{deCarvalhoJunior2013fftbenchmark}.
-In his thesis, \citefullauthor{bianchi2014processamento} concluded that most Android devices are able to process audio in realtime even for large blocks of samples.
-\textbf{In that sense, I decided to evaluate the performance of mobile device technologies related to data transmission using different network alternatives for long distance interaction.}
+The context of the evaluations in this chapter follows the proposals and results from past research from Compmus group members.
+First, a collaboration with \citefullauthor{bianchi2014processamento} resulted in an evaluation of realtime DSP on Android devices exploring the advantages of using JNI instead of pure Java~\citep{deCarvalhoJunior2013fftbenchmark}.
+In his thesis, André concluded that most Android devices are able to process audio in realtime even for large blocks of samples~\citep{bianchi2014processamento}.
+The focus of the following experiments is the performance of mobile device technologies related to data transmission using different network alternatives for long distance interaction.
+Particularly, the evaluation focuses on the transmission of symbolic data (i.e. synthesis and effects parameters, control data, and sensors values).
 
 \section{First experiment: Size of packets}
 \label{sec:firsttrial}
 
-The first experiment evaluated the network communication through the Pusher cloud service on a mobile application.
+The first experiment evaluated the network communication through the Pusher cloud service using a mobile application.
 This evaluation was conducted between Ann Arbor, São Paulo, and João Pessoa in December, 2014, and January, 2015.
 Some pilot tests performed before the full evaluation had an intermittent loss of connection when exactly 10~messages were sent per second, which represent the nominal maximum allowed.
 In order to avoid this issue a 150~ms delay between messages was used, and we established 10~cycles of~100 messages per test with a delay of 500~ms between each cycle during the tests.
 Each test represented a performance of approximately 3~minutes with these definitions.
 
-Six tests were defined based on the number of floats sent as arguments inside the messages.
-We selected to evaluate messages with 1, 50, 100, 150, 200, and 250 floats.
+Six tests were conducted based on the number of floats sent as arguments inside the messages.
+We selected messages with 1, 50, 100, 150, 200, and 250 floats.
 In this case, the evaluation simulated messages in a range from 7 to 1750 floats per second.
 
 The geographic configuration imposes physical restrictions on the lower bounds of network performance.
 We made use of the broadband Internet connection between the universities, whose actual interconnection medium is an optical fiber, with a light traveling speed of about 200,000 km/s.
-The cloud service main cluster is situated at Northern Virginia~(NVG) in USA~\footnote{Information about Pusher cluster: \url{https://pusher.com/docs/clusters} (visited on November, 2018)}.
-The Internet connection between Jo\~{a}o Pessoa~(JPA) and the world has three intermediary nodes in the path inside RNP: Fortaleza~(FOR), S\~{a}o Paulo~(SAO), and Porto Alegre~(POA)~\footnote{RNP routes: \url{https://www.rnp.br/servicos/conectividade/rede-ipe} (visited on November, 2018)}.
-The route passing through SAO has the highest throughput, and was selected for the next measures.
-Additionally, all messages should pass through the main cluster.
+The cloud service main cluster is situated at Northern Virginia~(NVG) in USA\footnote{Information about Pusher cluster: \url{https://pusher.com/docs/clusters} (visited on November, 2018)}.
+The Internet connection between Jo\~{a}o Pessoa~(JPA) and abroad has three intermediary nodes in the path inside RNP: Fortaleza~(FOR), S\~{a}o Paulo~(SAO), and Porto Alegre~(POA)\footnote{RNP routes: \url{https://www.rnp.br/servicos/conectividade/rede-ipe} (visited on November, 2018)}.
+The route passing through SAO has the highest throughput, and was selected for the next measurements.
+Additionally, all messages should pass through Pusher's main cluster.
 Considering the distances and routes on the map in Figure~\ref{fig:routes}, we have a theoretical (light speed) RTT of 174ms in the first evaluation, between S\~{a}o Paulo and Jo\~{a}o Pessoa (SAO-JPA)\footnote{The distance between S\~{a}o Paulo and Jo\~{a}o Pessoa is 34,800km (route SAO-NVG-SAO-JPA-SAO-NVG-SAO).}, and of 104ms in the second evaluation, between Ann Arbor and Jo\~{a}o Pessoa (ARB-JPA)\footnote{The distance between Ann Arbor and Jo\~{a}o Pessoa is 20,940km (route ARB-NVG-SAO-JPA-SAO-NVG-ARB).}.
 
 Table~\ref{tab:sao-jpa} and Table~\ref{tab:arb-jpa} show a summary with the main results extracted from all measurements.
 The results summarized in Table~\ref{tab:sao-jpa} present a minimum RTT of 329ms with 150 floats and average RTT values between 486-578ms for all message sizes.
 On the other hand, we have a minimum RTT of 166ms with 1 float in Table~\ref{tab:arb-jpa}, and average RTT values between 230-348ms.
 We sent 1000 messages on each test and lost no more than 4\% of the messages in the worst case.
-Packet loss and RTT were higher in SAO-JPA test probably due to the distance, as the cluster is situated in USA.
-Moreover, ARB-JPA evaluation had tests with zero message loss.
+Packet loss and RTT were higher in SAO-JPA link probably due to the distance, as the cluster is situated in USA.
+Moreover, ARB-JPA evaluation had runs with zero message loss.
 
 The actual RTT for each message sent is presented in the charts in Figure~\ref{fig:z3-d685-evaluation}.
 Some values overshoot the chart limit (chosen to maintain the scale of all charts), and they are considered to be lost during transmission (i.e. either a packet loss or a broken connection). 
@@ -54,13 +54,13 @@ Although we have had some high RTT values during the tests, the concentration of
 
 The RTT was somewhat stable during this experiment as visually presented in Figures~\ref{fig:sao-jpa-boxplot} and \ref{fig:arb-jpa-boxplot}.
 However, the tests between ARB and JPA seems to indicate a correlation between the large messages and high RTTs for this path.
-These results are also discussed in the paper presented at Appendix~\ref{ape:papericmc2015}.
+These results are also discussed in the paper presented in Appendix~\ref{ape:papericmc2015}.
 
 \begin{figure*}[!ht]
 	\centering
 	\begin{subfigure}{.45\textwidth}
 		\includegraphics[width=\columnwidth]{z3-d685-c001}
-		\caption{One float}
+		\caption{1 float}
 		\label{fig:z3-d685-c001}
 	\end{subfigure}
 	\begin{subfigure}{.45\textwidth}
@@ -91,7 +91,7 @@ These results are also discussed in the paper presented at Appendix~\ref{ape:pap
 		\label{fig:z3-d685-c250}
 	\end{subfigure} 
 	
-	\caption{RTT comparison for different number of floats included in messages sent from SAO to JPA and ARB to JPA. Lost messages are represented with 0ms RTT. The y-axis maximum is 2000ms for better visualization, but there are some RTTs reaching 4s.}
+	\caption{RTT comparison for different packet size sent from SAO to JPA and ARB to JPA. Lost messages are represented with 0ms RTT. The y-axis maximum is 2000ms for better visualization, but there are some RTTs reaching 4s.}
 	\label{fig:z3-d685-evaluation}
 \end{figure*}
 
@@ -152,15 +152,15 @@ Based on the results of the first experiment we decided to evaluate more service
 This evaluation was conducted between Ann Arbor, São Paulo, and João Pessoa in June and July, 2015.
 In this case, we evaluated the Pusher and PubNub cloud services regarding their free and paid plans, and we included the Unicast as a reference.
 The tables below present the results of the evaluations including these services and the statistical evaluation of the RTT results.
-The Pusher paid plan is named pusherP, while the PubNub paid plan is name pubnubP.
-At the tables' header, Nobs is the number of observations and when this number is under 1000 it means the we had packet loss during the evaluation.
+The Pusher paid plan is named pusherP, while the PubNub paid plan is named pubnubP.
+In the tables' headers, Nobs is the number of observations, and when this number is under 1000 it means the we had packet loss during the evaluation.
 The size is the number of float numbers inside the packet sent.
 
 \subsection*{Evaluation between São Paulo and João Pessoa} 
 
-The Table~\ref{tab:secondtrialsaojpa} presents the results for RTT evaluation with all the services between SAO and JPA.
-The results from PubNub were better than the results with the Pusher in most of the cases.
-The possible reason is because PubNub presents a cluster in Brazil.
+Table~\ref{tab:secondtrialsaojpa} presents the results for RTT evaluation with all the services between SAO and JPA.
+The results from PubNub were better than the results with Pusher in most cases.
+The possible reason is because PubNub has a cluster in Brazil.
 In this case, the packets from PubNub had a shortest path.
 The packets sent by Pusher had to travel from São Paulo to USA before coming to João Pessoa, and they also traveled to USA from João Pessoa before coming back to São Paulo.
 
@@ -169,7 +169,7 @@ The results were similar for Pusher, even for paid plan and in a different perio
 As discussed before, PubNub had better results, but Unicast surpassed all other options as expected.
 The apparent parallelism between the results from PubNub and Unicast also implies some similar routes.
 
-The tests were done automatically by the PushLoop application and they were later analyzed.
+The experiments were done automatically by the PushLoop application and they were later analyzed.
 This approach had an impact on the final results as the unexpected results could be better studied during the time of its occurrence by means of application notifications.
 As for example, the packet loss during some tests could be reported to the user in the interval between tests.
 Also, the users could define a threshold for RTT based on terrestrial distances and set up a notification for RTTs exceeding this limit.
@@ -225,10 +225,10 @@ In this evaluation, the results for PubNub with 1 float per message could be ben
 \subsection*{Evaluation between Ann Arbor and São Paulo} 
 
 Table~\ref{tab:secondtrialarbsao} presents the results of RTT evaluation with all the services between Ann Arbor and São Paulo.
-In this evaluation the PubNub had RTT higher than expected, but with better results in paid plan.
+In this evaluation the PubNub had RTT higher than expected, but with better results on the paid plan.
 These results are possible due the Service Layer Agreement~(SLA) of 99.999\% for paid plan users~\footnote{PubNub SLA support page: \url{https://support.pubnub.com/support/solutions/articles/14000043627} (visited on December, 2018)}. 
 The PubNub and Pusher had similar results between the free and paid plan.
-It is assumed that all traffic passed through the same clusters for both plans in this case.
+It is plausible that all traffic passed through the same clusters for both plans in this case.
 
 Figure~\ref{fig:second-arb-sao-rtt} shows the mean RTT during the evaluation between ARB and SAO with 150~ms delay between packets.
 The lines for Pusher and Unicast got similar results to previous tests, but PubNub results were somewhat unexpected.
@@ -343,13 +343,13 @@ At the same time, packets sent using Pusher can follow routes outside the academ
 \section{Third experiment: IPv4 versus IPv6}
 \label{sec:thirdtrial}
 
-Table~\ref{tab:thirdtrialarbsaoipv4} and Table~\ref{tab:thirdtrialarbsaoipv6} present the results of RTT evaluation with Unicast through IPv4 and IPv6 protocols between Ann Arbor and São Paulo.
+Tables~\ref{tab:thirdtrialarbsaoipv4} and \ref{tab:thirdtrialarbsaoipv6} present the results of RTT evaluation with Unicast through IPv4 and IPv6 protocols between Ann Arbor and São Paulo.
 Figure~\ref{fig:third-ipv4-rtt} and \ref{fig:third-ipv6-rtt} visually presents the results for RTT in IPv4 and IPv6, respectively, while Figure~\ref{fig:third-ipv6-packetloss} presents the packet loss for IPv6 evaluation (observe that IPv4 test lost only one packet and this result is presented only in Table~\ref{tab:thirdtrialarbsaoipv4}).
-This evaluation was conducted on February, 2017, due to many technical reasons.
-We spent more than one year trying to setup the Multicast between RNP and Internet2, but the service was unstable all the time.
-The network managers did their best, but in the end we decided to abort the evaluation due to time limit constraints to finish this thesis.
+This evaluation was conducted much later, on February, 2017, due to many technical reasons.
+We spent more than one year trying to setup Multicast between RNP and Internet2, but the service was unstable all the time.
+The network managers did their best, but in the end we decided to abort the Multicast evaluation due to time limit constraints.
 
-In the end, the evaluation with on IPv4 and IPv6 had interesting results.
+In the end, the Unicast evaluation on IPv4 and IPv6 had interesting results.
 IPv6 seems to offer fastest paths than IPv4, although IPv4 presents less packet loss.
 The packet loss was present in all evaluations with IPv6 and the possible reason for this situation is that the protocol is still being implemented and evaluated at some paths of the academic network.
 Another possible reason is that some devices may work unpredictably with this protocol yet.
@@ -467,7 +467,7 @@ Another possible reason is that some devices may work unpredictably with this pr
 		unicastIPv6 & 16           & 4     & \textbf{979}  & 214  & 58  & 3,402.94 & 1.23     & 0.71     & 162 & 170 & 178 & 253 & 453  \\
 		unicastIPv6 & 16           & 8     & \textbf{976}  & 213  & 56  & 3,094.19 & 1.24     & 0.73     & 163 & 171 & 179 & 249 & 419  \\
 		unicastIPv6 & 16           & 16    & \textbf{976}  & 215  & 60  & 3,547.88 & 1.45     & 1.81     & 163 & 171 & 181 & 251 & 502  \\
-		unicastIPv6 & 16           & 32    & \textbf{978}  & 218  & 60  & 3,577.64 & 1.50     & 1.99     & 164 & 175 & 183 & 251 & 496  \\
+		unicastIPv6 & 16           & 32 with    & \textbf{978}  & 218  & 60  & 3,577.64 & 1.50     & 1.99     & 164 & 175 & 183 & 251 & 496  \\
 		unicastIPv6 & 16           & 64    & \textbf{971}  & 224  & 58  & 3,334.72 & 1.34     & 1.37     & 166 & 181 & 194 & 258 & 478  \\
 		unicastIPv6 & 16           & 128   & \textbf{976}  & 223  & 60  & 3,634.23 & 1.61     & 2.68     & 166 & 182 & 187 & 259 & 517  \\ \hline
 		unicastIPv6 & 32           & 2     & \textbf{978}  & 215  & 56  & 3,137.36 & 1.30     & 1.10     & 165 & 174 & 182 & 253 & 481  \\
